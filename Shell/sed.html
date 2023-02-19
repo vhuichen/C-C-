@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>cp · NoteBook</title>
+        <title>sed · NoteBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="for.html" />
+    <link rel="next" href="../GitBookLearning/GitBook.html" />
     
     
-    <link rel="prev" href="Shell.html" />
+    <link rel="prev" href="if.html" />
     
 
     </head>
@@ -116,7 +116,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.2.1" data-path="cp.html">
+        <li class="chapter " data-level="1.2.1" data-path="cp.html">
             
                 <a href="cp.html">
             
@@ -181,7 +181,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.6" data-path="sed.html">
+        <li class="chapter active" data-level="1.2.6" data-path="sed.html">
             
                 <a href="sed.html">
             
@@ -242,7 +242,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >cp</a>
+        <a href=".." >sed</a>
     </h1>
 </div>
 
@@ -257,19 +257,14 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="cp">cp</h1>
-<h3 id="&#x5355;&#x4E2A;&#x6587;&#x4EF6;&#x590D;&#x5236;">&#x5355;&#x4E2A;&#x6587;&#x4EF6;&#x590D;&#x5236;</h3>
-<pre><code>cp  src_file  dest_file
-</code></pre><h3 id="&#x5C06;&#x6587;&#x4EF6;&#x590D;&#x5236;&#x5230;&#x6587;&#x4EF6;&#x5939;&#x5185;">&#x5C06;&#x6587;&#x4EF6;&#x590D;&#x5236;&#x5230;&#x6587;&#x4EF6;&#x5939;&#x5185;</h3>
-<pre><code>cp a.txt  dir
-cp a.txt  dir/
-</code></pre><h3 id="&#x5C06;&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x7684;&#x6587;&#x4EF6;&#x590D;&#x5236;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#x4E0B;">&#x5C06;&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x7684;&#x6587;&#x4EF6;&#x590D;&#x5236;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#x4E0B;</h3>
-<pre><code>//dir2 &#x76EE;&#x5F55;&#x5FC5;&#x987B;&#x5B58;&#x5728;
-cp dir1/* dir2
-//&#x5982;&#x679C; dir2 &#x76EE;&#x5F55;&#x4E0D;&#x5B58;&#x5728;&#x5219;&#x5148;&#x521B;&#x5EFA;
-cp -r ~/NoteBook/GitBook/_book/* ~/NoteBook/gh-pages
-</code></pre><h4 id="&#x5C06;&#x67D0;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x6587;&#x4EF6;&#x590D;&#x5236;&#x5230;&#x67D0;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#xFF08;&#x4F7F;&#x7528;&#x901A;&#x914D;&#x7B26;&#xFF09;">&#x5C06;&#x67D0;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x6587;&#x4EF6;&#x590D;&#x5236;&#x5230;&#x67D0;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#xFF08;&#x4F7F;&#x7528;&#x901A;&#x914D;&#x7B26;&#xFF09;</h4>
-<pre><code>cp dir/*.txt dir
+                                <h1 id="sed">sed</h1>
+<p>&#x5B57;&#x7B26;&#x4E32;&#x66FF;&#x6362;</p>
+<pre><code># &#x5148;&#x7528; grep &#x67E5;&#x627E;&#x5305;&#x542B;&#x6E90;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x6587;&#x4EF6;
+# &#x518D;&#x7528; sed -i &#x547D;&#x4EE4;&#x66FF;&#x6362;&#x5BF9;&#x5E94;&#x5185;&#x5BB9;
+sed -i &quot;&quot; &quot;s/&#x6E90;&#x5B57;&#x7B26;&#x4E32;/&#x76EE;&#x6807;&#x5B57;&#x7B26;&#x4E32;/g&quot; `grep &quot;&#x6E90;&#x5B57;&#x7B26;&#x4E32;&quot; -rl ./`
+</code></pre><pre><code>//&#x4E24;&#x8005;&#x533A;&#x522B;&#x5728;&#x4E8E;,&#x7B2C;&#x4E00;&#x6761;&#x547D;&#x4EE4;&#x4F1A;&#x66FF;&#x6362;&#x6240;&#x6709;&#x5B57;&#x7B26;&#xFF0C;&#x7B2C;&#x4E8C;&#x6761;&#x547D;&#x4EE4;&#x53EA;&#x4F1A;&#x66FF;&#x6362;&#x6BCF;&#x4E00;&#x884C;&#x5339;&#x914D;&#x5230;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;
+sed -i &quot;&quot; &quot;s/&#x6E90;&#x5B57;&#x7B26;&#x4E32;/&#x76EE;&#x6807;&#x5B57;&#x7B26;&#x4E32;/g&quot; &#x76EE;&#x6807;&#x6587;&#x4EF6;
+sed -i &quot;&quot; &quot;s/&#x6E90;&#x5B57;&#x7B26;&#x4E32;/&#x76EE;&#x6807;&#x5B57;&#x7B26;&#x4E32;&quot; &#x76EE;&#x6807;&#x6587;&#x4EF6;
 </code></pre>
                                 
                                 </section>
@@ -297,12 +292,12 @@ cp -r ~/NoteBook/GitBook/_book/* ~/NoteBook/gh-pages
 
             
                 
-                <a href="Shell.html" class="navigation navigation-prev " aria-label="Previous page: Shell">
+                <a href="if.html" class="navigation navigation-prev " aria-label="Previous page: if">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="for.html" class="navigation navigation-next " aria-label="Next page: for">
+                <a href="../GitBookLearning/GitBook.html" class="navigation navigation-next " aria-label="Next page: GitBook">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -313,7 +308,7 @@ cp -r ~/NoteBook/GitBook/_book/* ~/NoteBook/gh-pages
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"cp","level":"1.2.1","depth":2,"next":{"title":"for","level":"1.2.2","depth":2,"path":"Shell/for.md","ref":"Shell/for.md","articles":[]},"previous":{"title":"Shell","level":"1.2","depth":1,"path":"Shell/Shell.md","ref":"Shell/Shell.md","articles":[{"title":"cp","level":"1.2.1","depth":2,"path":"Shell/cp.md","ref":"Shell/cp.md","articles":[]},{"title":"for","level":"1.2.2","depth":2,"path":"Shell/for.md","ref":"Shell/for.md","articles":[]},{"title":"grep","level":"1.2.3","depth":2,"path":"Shell/grep.md","ref":"Shell/grep.md","articles":[]},{"title":"iconv","level":"1.2.4","depth":2,"path":"Shell/iconv.md","ref":"Shell/iconv.md","articles":[]},{"title":"if","level":"1.2.5","depth":2,"path":"Shell/if.md","ref":"Shell/if.md","articles":[]},{"title":"sed","level":"1.2.6","depth":2,"path":"Shell/sed.md","ref":"Shell/sed.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"vhuichen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NoteBook","language":"zh-hans","gitbook":"*","description":"笔记、分享"},"file":{"path":"Shell/cp.md","mtime":"2023-02-19T11:27:43.316Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-02-19T11:33:49.994Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"sed","level":"1.2.6","depth":2,"next":{"title":"GitBook","level":"1.3","depth":1,"path":"GitBookLearning/GitBook.md","ref":"GitBookLearning/GitBook.md","articles":[]},"previous":{"title":"if","level":"1.2.5","depth":2,"path":"Shell/if.md","ref":"Shell/if.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"vhuichen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NoteBook","language":"zh-hans","gitbook":"*","description":"笔记、分享"},"file":{"path":"Shell/sed.md","mtime":"2023-02-19T11:08:05.979Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-02-19T11:33:49.994Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

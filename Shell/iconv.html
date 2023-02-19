@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>cp · NoteBook</title>
+        <title>iconv · NoteBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="for.html" />
+    <link rel="next" href="if.html" />
     
     
-    <link rel="prev" href="Shell.html" />
+    <link rel="prev" href="grep.html" />
     
 
     </head>
@@ -116,7 +116,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.2.1" data-path="cp.html">
+        <li class="chapter " data-level="1.2.1" data-path="cp.html">
             
                 <a href="cp.html">
             
@@ -155,7 +155,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4" data-path="iconv.html">
+        <li class="chapter active" data-level="1.2.4" data-path="iconv.html">
             
                 <a href="iconv.html">
             
@@ -242,7 +242,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >cp</a>
+        <a href=".." >iconv</a>
     </h1>
 </div>
 
@@ -257,19 +257,38 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="cp">cp</h1>
-<h3 id="&#x5355;&#x4E2A;&#x6587;&#x4EF6;&#x590D;&#x5236;">&#x5355;&#x4E2A;&#x6587;&#x4EF6;&#x590D;&#x5236;</h3>
-<pre><code>cp  src_file  dest_file
-</code></pre><h3 id="&#x5C06;&#x6587;&#x4EF6;&#x590D;&#x5236;&#x5230;&#x6587;&#x4EF6;&#x5939;&#x5185;">&#x5C06;&#x6587;&#x4EF6;&#x590D;&#x5236;&#x5230;&#x6587;&#x4EF6;&#x5939;&#x5185;</h3>
-<pre><code>cp a.txt  dir
-cp a.txt  dir/
-</code></pre><h3 id="&#x5C06;&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x7684;&#x6587;&#x4EF6;&#x590D;&#x5236;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#x4E0B;">&#x5C06;&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x7684;&#x6587;&#x4EF6;&#x590D;&#x5236;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#x4E0B;</h3>
-<pre><code>//dir2 &#x76EE;&#x5F55;&#x5FC5;&#x987B;&#x5B58;&#x5728;
-cp dir1/* dir2
-//&#x5982;&#x679C; dir2 &#x76EE;&#x5F55;&#x4E0D;&#x5B58;&#x5728;&#x5219;&#x5148;&#x521B;&#x5EFA;
-cp -r ~/NoteBook/GitBook/_book/* ~/NoteBook/gh-pages
-</code></pre><h4 id="&#x5C06;&#x67D0;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x6587;&#x4EF6;&#x590D;&#x5236;&#x5230;&#x67D0;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#xFF08;&#x4F7F;&#x7528;&#x901A;&#x914D;&#x7B26;&#xFF09;">&#x5C06;&#x67D0;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x6587;&#x4EF6;&#x590D;&#x5236;&#x5230;&#x67D0;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#xFF08;&#x4F7F;&#x7528;&#x901A;&#x914D;&#x7B26;&#xFF09;</h4>
-<pre><code>cp dir/*.txt dir
+                                <h1 id="iconv">iconv</h1>
+<p>&#x7528;&#x6765;&#x683C;&#x5F0F;&#x8F6C;&#x6362;</p>
+<pre><code>//&#x5C06; gbk &#x683C;&#x5F0F;&#x7684; file0 &#x8F6C;&#x6362;&#x4E3A; utf-8 &#x683C;&#x5F0F;&#x7684; file1
+iconv -f gbk -t utf-8 $file0 &gt; $file1
+</code></pre><h3 id="&#x793A;&#x4F8B;">&#x793A;&#x4F8B;</h3>
+<p>&#x5C06; $1 &#x76EE;&#x5F55;&#x4E0B;&#x6240;&#x6709; gbk &#x683C;&#x5F0F;&#x6587;&#x4EF6;&#x8F6C;&#x6362;&#x4E3A; utf-8 &#x683C;&#x5F0F;</p>
+<pre><code>#!/bin/bash
+
+echo &quot;&#x5F00;&#x59CB;&#x6267;&#x884C;...&quot;
+cp -r $1 $1-bakup
+echo &quot;&#x5907;&#x4EFD;&#x6E90;&#x6587;&#x4EF6;...&quot;
+
+tempName=&quot;.temp-bakup-&quot;
+
+downdir() {
+    for file in `ls $1`
+    do
+        if [ -d $1/$file ]
+        then
+            downdir $1/$file
+        else
+            file $1/$file | grep -i &quot;ISO-8859 text&quot; &amp;&amp; \
+            echo &quot;Convert to utf-8&quot;:$1 &amp;&amp; \
+            mkdir -p $1/tempName &amp;&amp; \
+            iconv -f gbk -t utf-8 $1/$file &gt; $1/tempName/$file &amp;&amp; \
+            mv $1/tempName/$file $1/$file &amp;&amp; \
+            rm -rf $1/tempName
+        fi
+    done
+}
+downdir $1
+echo &quot;&#x6267;&#x884C;&#x5B8C;&#x6BD5;...&quot;
 </code></pre>
                                 
                                 </section>
@@ -297,12 +316,12 @@ cp -r ~/NoteBook/GitBook/_book/* ~/NoteBook/gh-pages
 
             
                 
-                <a href="Shell.html" class="navigation navigation-prev " aria-label="Previous page: Shell">
+                <a href="grep.html" class="navigation navigation-prev " aria-label="Previous page: grep">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="for.html" class="navigation navigation-next " aria-label="Next page: for">
+                <a href="if.html" class="navigation navigation-next " aria-label="Next page: if">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -313,7 +332,7 @@ cp -r ~/NoteBook/GitBook/_book/* ~/NoteBook/gh-pages
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"cp","level":"1.2.1","depth":2,"next":{"title":"for","level":"1.2.2","depth":2,"path":"Shell/for.md","ref":"Shell/for.md","articles":[]},"previous":{"title":"Shell","level":"1.2","depth":1,"path":"Shell/Shell.md","ref":"Shell/Shell.md","articles":[{"title":"cp","level":"1.2.1","depth":2,"path":"Shell/cp.md","ref":"Shell/cp.md","articles":[]},{"title":"for","level":"1.2.2","depth":2,"path":"Shell/for.md","ref":"Shell/for.md","articles":[]},{"title":"grep","level":"1.2.3","depth":2,"path":"Shell/grep.md","ref":"Shell/grep.md","articles":[]},{"title":"iconv","level":"1.2.4","depth":2,"path":"Shell/iconv.md","ref":"Shell/iconv.md","articles":[]},{"title":"if","level":"1.2.5","depth":2,"path":"Shell/if.md","ref":"Shell/if.md","articles":[]},{"title":"sed","level":"1.2.6","depth":2,"path":"Shell/sed.md","ref":"Shell/sed.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"vhuichen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NoteBook","language":"zh-hans","gitbook":"*","description":"笔记、分享"},"file":{"path":"Shell/cp.md","mtime":"2023-02-19T11:27:43.316Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-02-19T11:33:49.994Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"iconv","level":"1.2.4","depth":2,"next":{"title":"if","level":"1.2.5","depth":2,"path":"Shell/if.md","ref":"Shell/if.md","articles":[]},"previous":{"title":"grep","level":"1.2.3","depth":2,"path":"Shell/grep.md","ref":"Shell/grep.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"vhuichen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NoteBook","language":"zh-hans","gitbook":"*","description":"笔记、分享"},"file":{"path":"Shell/iconv.md","mtime":"2023-02-19T10:27:31.110Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-02-19T11:33:49.994Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
