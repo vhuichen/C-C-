@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>time.h · NoteBook</title>
+        <title>PCM · NoteBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,8 +61,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="../GitBookLearning/GitBook.html" />
     
-    <link rel="prev" href="C.html" />
+    
+    <link rel="prev" href="音视频.html" />
     
 
     </head>
@@ -227,7 +229,110 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="../GitBookLearning/GitBook.html">
+        <li class="chapter " data-level="1.3" data-path="../流媒体/streamingMedia.html">
+            
+                <a href="../流媒体/streamingMedia.html">
+            
+                    
+                    流媒体
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../流媒体/FLV.html">
+            
+                <a href="../流媒体/FLV.html">
+            
+                    
+                    FLV
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../流媒体/HLS.html">
+            
+                <a href="../流媒体/HLS.html">
+            
+                    
+                    HLS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../流媒体/RTMP.html">
+            
+                <a href="../流媒体/RTMP.html">
+            
+                    
+                    RTMP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../流媒体/RTP-RTCP-RTSP.html">
+            
+                <a href="../流媒体/RTP-RTCP-RTSP.html">
+            
+                    
+                    RTP-RTCP-RTSP
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="音视频.html">
+            
+                <a href="音视频.html">
+            
+                    
+                    音视频
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.4.1" data-path="PCM.html">
+            
+                <a href="PCM.html">
+            
+                    
+                    PCM
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../GitBookLearning/GitBook.html">
             
                 <a href="../GitBookLearning/GitBook.html">
             
@@ -241,7 +346,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="../GitBookLearning/plugins.html">
+        <li class="chapter " data-level="1.5.1" data-path="../GitBookLearning/plugins.html">
             
                 <a href="../GitBookLearning/plugins.html">
             
@@ -259,9 +364,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="C.html">
+        <li class="chapter " data-level="1.6" data-path="../C语言/C语言.html">
             
-                <a href="C.html">
+                <a href="../C语言/C语言.html">
             
                     
                     C语言
@@ -273,9 +378,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.4.1" data-path="time.html">
+        <li class="chapter " data-level="1.6.1" data-path="../C语言/time.html">
             
-                <a href="time.html">
+                <a href="../C语言/time.html">
             
                     
                     time.h
@@ -291,7 +396,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" >
+        <li class="chapter " data-level="1.7" >
             
                 <span>
             
@@ -305,25 +410,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="../Others/CritScope锁.html">
+        <li class="chapter " data-level="1.7.1" data-path="../Others/CritScope锁.html">
             
                 <a href="../Others/CritScope锁.html">
             
                     
                     CritScope锁
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5.2" data-path="../Others/PCM.html">
-            
-                <a href="../Others/PCM.html">
-            
-                    
-                    PCM
             
                 </a>
             
@@ -366,7 +458,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >time.h</a>
+        <a href=".." >PCM</a>
     </h1>
 </div>
 
@@ -381,15 +473,10 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="timeh">time.h</h1>
-<p>&#x83B7;&#x53D6;&#x79D2;&#x7EA7;&#x522B;&#x65F6;&#x95F4;</p>
-<pre><code>//&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x53EA;&#x80FD;&#x83B7;&#x53D6;&#x79D2;&#x5355;&#x4F4D;&#x65F6;&#x95F4;
-time_t start, end;
-start = time(NULL);
-sleep(1000);
-end = time(NULL);
-printf(&quot;start=%ld;end=%ld;interval=%ld\n&quot;, start, end, end - start);
-</code></pre>
+                                <h1 id="pcm">PCM</h1>
+<h3 id="&#x901A;&#x8FC7;-pcm-&#x97F3;&#x9891;&#x6570;&#x636E;&#x8BA1;&#x7B97;&#x5206;&#x8D1D;">&#x901A;&#x8FC7; pcm &#x97F3;&#x9891;&#x6570;&#x636E;&#x8BA1;&#x7B97;&#x5206;&#x8D1D;</h3>
+<p>&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x6839;&#x636E;&#x97F3;&#x9891;&#x503C;&#x5927;&#x5C0F;&#x6765;&#x8BA1;&#x7B97;&#xFF0C;&#x4F46;&#x7531;&#x4E8E;&#x97F3;&#x9891;&#x5927;&#x5C0F;&#x90FD;&#x662F;&#x5F52;&#x4E00;&#x5316;&#x540E;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x6240;&#x4EE5;&#x6700;&#x7EC8;&#x6570;&#x636E;&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x76F8;&#x5BF9;&#x503C;</p>
+
                                 
                                 </section>
                             
@@ -416,10 +503,14 @@ printf(&quot;start=%ld;end=%ld;interval=%ld\n&quot;, start, end, end - start);
 
             
                 
-                <a href="C.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: C语言">
+                <a href="音视频.html" class="navigation navigation-prev " aria-label="Previous page: 音视频">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="../GitBookLearning/GitBook.html" class="navigation navigation-next " aria-label="Next page: GitBook">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -428,7 +519,7 @@ printf(&quot;start=%ld;end=%ld;interval=%ld\n&quot;, start, end, end - start);
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"time.h","level":"1.4.1","depth":2,"next":{"title":"未整理","level":"1.5","depth":1,"ref":"","articles":[{"title":"CritScope锁","level":"1.5.1","depth":2,"path":"Others/CritScope锁.md","ref":"Others/CritScope锁.md","articles":[]},{"title":"PCM","level":"1.5.2","depth":2,"path":"Others/PCM.md","ref":"Others/PCM.md","articles":[]}]},"previous":{"title":"C语言","level":"1.4","depth":1,"path":"C/C.md","ref":"C/C.md","articles":[{"title":"time.h","level":"1.4.1","depth":2,"path":"C/time.md","ref":"C/time.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"vhuichen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NoteBook","language":"zh-hans","gitbook":"*","description":"笔记、分享"},"file":{"path":"C/time.md","mtime":"2023-02-19T15:17:59.453Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-02-19T17:24:21.354Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"PCM","level":"1.4.1","depth":2,"next":{"title":"GitBook","level":"1.5","depth":1,"path":"GitBookLearning/GitBook.md","ref":"GitBookLearning/GitBook.md","articles":[{"title":"plugins","level":"1.5.1","depth":2,"path":"GitBookLearning/plugins.md","ref":"GitBookLearning/plugins.md","articles":[]}]},"previous":{"title":"音视频","level":"1.4","depth":1,"path":"音视频/音视频.md","ref":"音视频/音视频.md","articles":[{"title":"PCM","level":"1.4.1","depth":2,"path":"音视频/PCM.md","ref":"音视频/PCM.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"vhuichen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NoteBook","language":"zh-hans","gitbook":"*","description":"笔记、分享"},"file":{"path":"音视频/PCM.md","mtime":"2023-02-19T16:18:38.875Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-02-23T17:23:54.987Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
