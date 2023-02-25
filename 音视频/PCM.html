@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../GitBookLearning/GitBook.html" />
+    <link rel="next" href="TS.html" />
     
     
-    <link rel="prev" href="音视频.html" />
+    <link rel="prev" href="MP4.html" />
     
 
     </head>
@@ -229,9 +229,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="../流媒体/streamingMedia.html">
+        <li class="chapter " data-level="1.3" data-path="../流媒体/流媒体.html">
             
-                <a href="../流媒体/streamingMedia.html">
+                <a href="../流媒体/流媒体.html">
             
                     
                     流媒体
@@ -243,12 +243,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="../流媒体/FLV.html">
+        <li class="chapter " data-level="1.3.1" data-path="../流媒体/HLS.html">
             
-                <a href="../流媒体/FLV.html">
+                <a href="../流媒体/HLS.html">
             
                     
-                    FLV
+                    HLS
             
                 </a>
             
@@ -256,12 +256,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="../流媒体/HLS.html">
+        <li class="chapter " data-level="1.3.2" data-path="../流媒体/HTTP-FLV.html">
             
-                <a href="../流媒体/HLS.html">
+                <a href="../流媒体/HTTP-FLV.html">
             
                     
-                    HLS
+                    HTTP-FLV
             
                 </a>
             
@@ -314,12 +314,51 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.4.1" data-path="PCM.html">
+        <li class="chapter " data-level="1.4.1" data-path="FLV.html">
+            
+                <a href="FLV.html">
+            
+                    
+                    FLV
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="MP4.html">
+            
+                <a href="MP4.html">
+            
+                    
+                    MP4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.3" data-path="PCM.html">
             
                 <a href="PCM.html">
             
                     
                     PCM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="TS.html">
+            
+                <a href="TS.html">
+            
+                    
+                    TS
             
                 </a>
             
@@ -423,6 +462,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.7.2" data-path="../Others/Fastlane.html">
+            
+                <a href="../Others/Fastlane.html">
+            
+                    
+                    Fastlane
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -474,7 +526,15 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="pcm">PCM</h1>
-<h3 id="&#x901A;&#x8FC7;-pcm-&#x97F3;&#x9891;&#x6570;&#x636E;&#x8BA1;&#x7B97;&#x5206;&#x8D1D;">&#x901A;&#x8FC7; pcm &#x97F3;&#x9891;&#x6570;&#x636E;&#x8BA1;&#x7B97;&#x5206;&#x8D1D;</h3>
+<p>PCM&#xFF08;Pulse Code Modulation&#xFF0C;&#x8109;&#x51B2;&#x7F16;&#x7801;&#x8C03;&#x5236;&#xFF09; &#x4E5F;&#x5C31;&#x662F;&#x91C7;&#x96C6;&#x5230;&#x7684;&#x539F;&#x59CB;&#x97F3;&#x9891;&#x6570;&#x636E;&#xFF0C;&#x662F;&#x7531;&#x6A21;&#x62DF;&#x4FE1;&#x53F7;&#x7ECF;&#x8FC7;&#x91C7;&#x6837;&#x3001;&#x91CF;&#x5316;&#x3001;&#x7F16;&#x7801;&#x8F6C;&#x6362;&#x6210;&#x7684;&#x6807;&#x51C6;&#x6570;&#x5B57;&#x97F3;&#x9891;&#x6570;&#x636E;&#x3002;</p>
+<h3 id="&#x63CF;&#x8FF0;pcm">&#x63CF;&#x8FF0;PCM</h3>
+<p>Sample Rate : &#x91C7;&#x6837;&#x9891;&#x7387;&#x3002;</p>
+<p>Sample Size : &#x4F4D;&#x6570;&#xFF0C;&#x5E38;&#x89C1;&#x503C;&#xFF1A;8bit&#x3001;16bit&#x3002;</p>
+<p>Number of Channels : &#x901A;&#x9053;&#x6570;&#x3002;&#x7ACB;&#x4F53;&#x58F0;(stereo)&#x548C;&#x5355;&#x58F0;&#x9053;(mono)&#xFF0C;&#x7ACB;&#x4F53;&#x58F0;&#x5305;&#x542B;&#x5DE6;&#x58F0;&#x9053;&#x548C;&#x53F3;&#x58F0;&#x9053;&#x3002;</p>
+<p>Sign : &#x7B26;&#x53F7;&#x4F4D;&#xFF0C;&#x6709;&#x7B26;&#x53F7;&#x8868;&#x793A;&#x8303;&#x56F4;&#x4E3A;-128 ~ 127&#xFF0C;&#x65E0;&#x7B26;&#x53F7;&#x5219;&#x662F;0 ~ 255&#x3002;</p>
+<p>Byte Ordering : &#x5B57;&#x8282;&#x5E8F;&#xFF0C;&#x5927;&#x7AEF;big-endian &#x3001;&#x901A;&#x5E38;&#x4E3A;&#x5C0F;&#x7AEF;little-endian&#x3002;</p>
+<p>Integer Or Floating Point : &#x6574;&#x5F62;&#x3001;&#x6D6E;&#x70B9;&#x578B;&#x8868;&#x793A;&#x3002;</p>
+<h4 id="&#x901A;&#x8FC7;-pcm-&#x97F3;&#x9891;&#x6570;&#x636E;&#x8BA1;&#x7B97;&#x5206;&#x8D1D;">&#x901A;&#x8FC7; pcm &#x97F3;&#x9891;&#x6570;&#x636E;&#x8BA1;&#x7B97;&#x5206;&#x8D1D;</h4>
 <p>&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x6839;&#x636E;&#x97F3;&#x9891;&#x503C;&#x5927;&#x5C0F;&#x6765;&#x8BA1;&#x7B97;&#xFF0C;&#x4F46;&#x7531;&#x4E8E;&#x97F3;&#x9891;&#x5927;&#x5C0F;&#x90FD;&#x662F;&#x5F52;&#x4E00;&#x5316;&#x540E;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x6240;&#x4EE5;&#x6700;&#x7EC8;&#x6570;&#x636E;&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x76F8;&#x5BF9;&#x503C;</p>
 
                                 
@@ -503,12 +563,12 @@
 
             
                 
-                <a href="音视频.html" class="navigation navigation-prev " aria-label="Previous page: 音视频">
+                <a href="MP4.html" class="navigation navigation-prev " aria-label="Previous page: MP4">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../GitBookLearning/GitBook.html" class="navigation navigation-next " aria-label="Next page: GitBook">
+                <a href="TS.html" class="navigation navigation-next " aria-label="Next page: TS">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -519,7 +579,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"PCM","level":"1.4.1","depth":2,"next":{"title":"GitBook","level":"1.5","depth":1,"path":"GitBookLearning/GitBook.md","ref":"GitBookLearning/GitBook.md","articles":[{"title":"plugins","level":"1.5.1","depth":2,"path":"GitBookLearning/plugins.md","ref":"GitBookLearning/plugins.md","articles":[]}]},"previous":{"title":"音视频","level":"1.4","depth":1,"path":"音视频/音视频.md","ref":"音视频/音视频.md","articles":[{"title":"PCM","level":"1.4.1","depth":2,"path":"音视频/PCM.md","ref":"音视频/PCM.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"vhuichen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NoteBook","language":"zh-hans","gitbook":"*","description":"笔记、分享"},"file":{"path":"音视频/PCM.md","mtime":"2023-02-19T16:18:38.875Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-02-23T17:23:54.987Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"PCM","level":"1.4.3","depth":2,"next":{"title":"TS","level":"1.4.4","depth":2,"path":"音视频/TS.md","ref":"音视频/TS.md","articles":[]},"previous":{"title":"MP4","level":"1.4.2","depth":2,"path":"音视频/MP4.md","ref":"音视频/MP4.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"vhuichen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NoteBook","language":"zh-hans","gitbook":"*","description":"笔记、分享"},"file":{"path":"音视频/PCM.md","mtime":"2023-02-24T08:08:24.281Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-02-25T04:38:03.104Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

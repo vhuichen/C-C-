@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="HLS.html" />
+    <link rel="next" href="MP4.html" />
     
     
-    <link rel="prev" href="streamingMedia.html" />
+    <link rel="prev" href="音视频.html" />
     
 
     </head>
@@ -229,9 +229,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="streamingMedia.html">
+        <li class="chapter " data-level="1.3" data-path="../流媒体/流媒体.html">
             
-                <a href="streamingMedia.html">
+                <a href="../流媒体/流媒体.html">
             
                     
                     流媒体
@@ -243,22 +243,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.3.1" data-path="FLV.html">
+        <li class="chapter " data-level="1.3.1" data-path="../流媒体/HLS.html">
             
-                <a href="FLV.html">
-            
-                    
-                    FLV
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.2" data-path="HLS.html">
-            
-                <a href="HLS.html">
+                <a href="../流媒体/HLS.html">
             
                     
                     HLS
@@ -269,9 +256,22 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.3" data-path="RTMP.html">
+        <li class="chapter " data-level="1.3.2" data-path="../流媒体/HTTP-FLV.html">
             
-                <a href="RTMP.html">
+                <a href="../流媒体/HTTP-FLV.html">
+            
+                    
+                    HTTP-FLV
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../流媒体/RTMP.html">
+            
+                <a href="../流媒体/RTMP.html">
             
                     
                     RTMP
@@ -282,9 +282,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.4" data-path="RTP-RTCP-RTSP.html">
+        <li class="chapter " data-level="1.3.4" data-path="../流媒体/RTP-RTCP-RTSP.html">
             
-                <a href="RTP-RTCP-RTSP.html">
+                <a href="../流媒体/RTP-RTCP-RTSP.html">
             
                     
                     RTP-RTCP-RTSP
@@ -300,9 +300,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="../音视频/音视频.html">
+        <li class="chapter " data-level="1.4" data-path="音视频.html">
             
-                <a href="../音视频/音视频.html">
+                <a href="音视频.html">
             
                     
                     音视频
@@ -314,12 +314,51 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="../音视频/PCM.html">
+        <li class="chapter active" data-level="1.4.1" data-path="FLV.html">
             
-                <a href="../音视频/PCM.html">
+                <a href="FLV.html">
+            
+                    
+                    FLV
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="MP4.html">
+            
+                <a href="MP4.html">
+            
+                    
+                    MP4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="PCM.html">
+            
+                <a href="PCM.html">
             
                     
                     PCM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="TS.html">
+            
+                <a href="TS.html">
+            
+                    
+                    TS
             
                 </a>
             
@@ -423,6 +462,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.7.2" data-path="../Others/Fastlane.html">
+            
+                <a href="../Others/Fastlane.html">
+            
+                    
+                    Fastlane
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -474,6 +526,24 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="flv">FLV</h1>
+<p>Flash Video&#xFF0C;Adobe &#x516C;&#x53F8;&#x8BBE;&#x8BA1;&#x97F3;&#x89C6;&#x9891;&#x5C01;&#x88C5;&#x683C;&#x5F0F;&#xFF0C;&#x5177;&#x6709;&#x4F53;&#x79EF;&#x8F7B;&#x5DE7;&#x3001;&#x5C01;&#x88C5;&#x7B80;&#x5355;&#x7B49;&#x7279;&#x70B9;&#x3002;</p>
+<p>FLV = FLV Header + FLV Body</p>
+<h2 id="flv-header">FLV Header</h2>
+<p>Header &#x5360;9&#x4E2A;&#x5B57;&#x8282;&#xFF0C;&#x8BB0;&#x5F55;&#x4E86;&#x7C7B;&#x578B;&#x3001;&#x7248;&#x672C;&#x3001;&#x6D41;&#x4FE1;&#x606F;&#x3001;&#x957F;&#x5EA6;&#x7B49;&#x4FE1;&#x606F;&#x3002;&#x5927;&#x4E8E;9&#x4E2A;&#x5B57;&#x8282;&#x5219;&#x8868;&#x793A;&#x8FD8;&#x5B58;&#x50A8;&#x6269;&#x5C55;&#x6570;&#x636E;</p>
+<h2 id="flv-body">FLV Body</h2>
+<p>FLV Body = PreviousTag+Tag&#xFF0C;PreviousTag &#x5B58;&#x653E;&#x524D;&#x9762;&#x4E00;&#x4E2A; Tag &#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x90A3;&#x8FD9;&#x6837;&#x7684;&#x8BDD;&#xFF0C;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x5C31;&#x53EA;&#x80FD;&#x4ECE;&#x540E;&#x9762;&#x5F00;&#x59CB;&#x8BFB;&#x53D6;&#x4E86;</p>
+<h4 id="tag">Tag</h4>
+<p>FLV Tag = Tag Header + Tag Data&#x3002;</p>
+<p>Tag Header &#x5B58;&#x653E;&#x4E86;&#x7C7B;&#x578B;&#x3001;&#x6570;&#x636E;&#x957F;&#x5EA6;&#x3001;&#x65F6;&#x95F4;&#x6233;&#x3001;&#x65F6;&#x95F4;&#x6233;&#x6269;&#x5C55;&#x3001;StreamsID&#x7B49;&#x4FE1;&#x606F;&#x3002;</p>
+<p>Tag Data &#x5B58;&#x653E; Audio&#x3001;Video&#x3001;Script &#x4E09;&#x8005;&#x4E4B;&#x4E00;&#x3002;</p>
+<h4 id="audio-tag-data">Audio Tag Data</h4>
+<p>Audio Tag Data = AudioTagHeader + Data&#x3002;</p>
+<p>AudioTagHeader &#x5B58;&#x653E;&#x4E86;&#x97F3;&#x9891;&#x683C;&#x5F0F;&#x63CF;&#x8FF0;&#x3001;&#x9891;&#x7387;&#x3001;&#x91C7;&#x6837;&#x4F4D;&#x3001;&#x58F0;&#x9053;&#x7C7B;&#x578B;&#x7B49;</p>
+<h4 id="video-tag-data">Video Tag Data</h4>
+<p>Video Tag = VideoTagHeader + Video&#x3002;</p>
+<p>VideoTagHeader &#x5B58;&#x653E;Frame&#x7C7B;&#x578B; &#x8DDF; &#x7F16;&#x7801;&#x7C7B;&#x578B;</p>
+<h3 id="script-tag-data">Script Tag Data</h3>
+<p><img src="../&#x6D41;&#x5A92;&#x4F53;/assets/FLV&#x6587;&#x4EF6;&#x683C;&#x5F0F;.png" alt="FLV&#x6587;&#x4EF6;&#x683C;&#x5F0F;"></p>
 
                                 
                                 </section>
@@ -501,12 +571,12 @@
 
             
                 
-                <a href="streamingMedia.html" class="navigation navigation-prev " aria-label="Previous page: 流媒体">
+                <a href="音视频.html" class="navigation navigation-prev " aria-label="Previous page: 音视频">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="HLS.html" class="navigation navigation-next " aria-label="Next page: HLS">
+                <a href="MP4.html" class="navigation navigation-next " aria-label="Next page: MP4">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -517,7 +587,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"FLV","level":"1.3.1","depth":2,"next":{"title":"HLS","level":"1.3.2","depth":2,"path":"流媒体/HLS.md","ref":"流媒体/HLS.md","articles":[]},"previous":{"title":"流媒体","level":"1.3","depth":1,"path":"流媒体/streamingMedia.md","ref":"流媒体/streamingMedia.md","articles":[{"title":"FLV","level":"1.3.1","depth":2,"path":"流媒体/FLV.md","ref":"流媒体/FLV.md","articles":[]},{"title":"HLS","level":"1.3.2","depth":2,"path":"流媒体/HLS.md","ref":"流媒体/HLS.md","articles":[]},{"title":"RTMP","level":"1.3.3","depth":2,"path":"流媒体/RTMP.md","ref":"流媒体/RTMP.md","articles":[]},{"title":"RTP-RTCP-RTSP","level":"1.3.4","depth":2,"path":"流媒体/RTP-RTCP-RTSP.md","ref":"流媒体/RTP-RTCP-RTSP.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"vhuichen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NoteBook","language":"zh-hans","gitbook":"*","description":"笔记、分享"},"file":{"path":"流媒体/FLV.md","mtime":"2023-02-23T15:08:55.065Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-02-23T17:23:54.987Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"FLV","level":"1.4.1","depth":2,"next":{"title":"MP4","level":"1.4.2","depth":2,"path":"音视频/MP4.md","ref":"音视频/MP4.md","articles":[]},"previous":{"title":"音视频","level":"1.4","depth":1,"path":"音视频/音视频.md","ref":"音视频/音视频.md","articles":[{"title":"FLV","level":"1.4.1","depth":2,"path":"音视频/FLV.md","ref":"音视频/FLV.md","articles":[]},{"title":"MP4","level":"1.4.2","depth":2,"path":"音视频/MP4.md","ref":"音视频/MP4.md","articles":[]},{"title":"PCM","level":"1.4.3","depth":2,"path":"音视频/PCM.md","ref":"音视频/PCM.md","articles":[]},{"title":"TS","level":"1.4.4","depth":2,"path":"音视频/TS.md","ref":"音视频/TS.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"vhuichen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NoteBook","language":"zh-hans","gitbook":"*","description":"笔记、分享"},"file":{"path":"音视频/FLV.md","mtime":"2023-02-24T17:28:20.618Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-02-25T04:38:03.104Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
