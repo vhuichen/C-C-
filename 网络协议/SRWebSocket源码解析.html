@@ -1,0 +1,1869 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>SRWebSocket源码解析 · NoteBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="vhuichen">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../操作系统/_操作系统.html" />
+    
+    
+    <link rel="prev" href="WebSocket.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../流媒体/流媒体.html">
+            
+                <a href="../流媒体/流媒体.html">
+            
+                    
+                    流媒体
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../流媒体/HLS.html">
+            
+                <a href="../流媒体/HLS.html">
+            
+                    
+                    HLS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../流媒体/HTTP-FLV.html">
+            
+                <a href="../流媒体/HTTP-FLV.html">
+            
+                    
+                    HTTP-FLV
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../流媒体/RTMP.html">
+            
+                <a href="../流媒体/RTMP.html">
+            
+                    
+                    RTMP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../流媒体/RTP-RTCP-RTSP.html">
+            
+                <a href="../流媒体/RTP-RTCP-RTSP.html">
+            
+                    
+                    RTP-RTCP-RTSP
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../音视频/音视频.html">
+            
+                <a href="../音视频/音视频.html">
+            
+                    
+                    音视频
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../音视频/FLV.html">
+            
+                <a href="../音视频/FLV.html">
+            
+                    
+                    FLV
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../音视频/MP4.html">
+            
+                <a href="../音视频/MP4.html">
+            
+                    
+                    MP4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../音视频/PCM.html">
+            
+                <a href="../音视频/PCM.html">
+            
+                    
+                    PCM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../音视频/TS.html">
+            
+                <a href="../音视频/TS.html">
+            
+                    
+                    TS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../iOS/_iOS.html">
+            
+                <a href="../iOS/_iOS.html">
+            
+                    
+                    iOS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../iOS/书籍/_书籍.html">
+            
+                <a href="../iOS/书籍/_书籍.html">
+            
+                    
+                    书籍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="../iOS/书籍/Effective Objective-C 2.0/_Effective Objective-C 2.0.html">
+            
+                <a href="../iOS/书籍/Effective Objective-C 2.0/_Effective Objective-C 2.0.html">
+            
+                    
+                    Effective Objective-C 2.0
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1.1" data-path="../iOS/书籍/Effective Objective-C 2.0/Chapter 1-1.html">
+            
+                <a href="../iOS/书籍/Effective Objective-C 2.0/Chapter 1-1.html">
+            
+                    
+                    Chapter 1-1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.1.2" data-path="../iOS/书籍/Effective Objective-C 2.0/Chapter 2-1.html">
+            
+                <a href="../iOS/书籍/Effective Objective-C 2.0/Chapter 2-1.html">
+            
+                    
+                    Chapter 2-1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.1.3" data-path="../iOS/书籍/Effective Objective-C 2.0/Chapter 2-2.html">
+            
+                <a href="../iOS/书籍/Effective Objective-C 2.0/Chapter 2-2.html">
+            
+                    
+                    Chapter 2-2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.1.4" data-path="../iOS/书籍/Effective Objective-C 2.0/Chapter 2-3.html">
+            
+                <a href="../iOS/书籍/Effective Objective-C 2.0/Chapter 2-3.html">
+            
+                    
+                    Chapter 2-3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.1.5" data-path="../iOS/书籍/Effective Objective-C 2.0/Chapter 3-1.html">
+            
+                <a href="../iOS/书籍/Effective Objective-C 2.0/Chapter 3-1.html">
+            
+                    
+                    Chapter 3-1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.1.6" data-path="../iOS/书籍/Effective Objective-C 2.0/Chapter 4-1.html">
+            
+                <a href="../iOS/书籍/Effective Objective-C 2.0/Chapter 4-1.html">
+            
+                    
+                    Chapter 4-1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.1.7" data-path="../iOS/书籍/Effective Objective-C 2.0/Chapter 5-1.html">
+            
+                <a href="../iOS/书籍/Effective Objective-C 2.0/Chapter 5-1.html">
+            
+                    
+                    Chapter 5-1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.1.8" data-path="../iOS/书籍/Effective Objective-C 2.0/Chapter 5-2.html">
+            
+                <a href="../iOS/书籍/Effective Objective-C 2.0/Chapter 5-2.html">
+            
+                    
+                    Chapter 5-2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.1.9" data-path="../iOS/书籍/Effective Objective-C 2.0/Chapter 5-3.html">
+            
+                <a href="../iOS/书籍/Effective Objective-C 2.0/Chapter 5-3.html">
+            
+                    
+                    Chapter 5-3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.1.10" data-path="../iOS/书籍/Effective Objective-C 2.0/Chapter 6-1.html">
+            
+                <a href="../iOS/书籍/Effective Objective-C 2.0/Chapter 6-1.html">
+            
+                    
+                    Chapter 6-1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.1.11" data-path="../iOS/书籍/Effective Objective-C 2.0/Chapter 6-2.html">
+            
+                <a href="../iOS/书籍/Effective Objective-C 2.0/Chapter 6-2.html">
+            
+                    
+                    Chapter 6-2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.1.12" data-path="../iOS/书籍/Effective Objective-C 2.0/Chapter 6-3.html">
+            
+                <a href="../iOS/书籍/Effective Objective-C 2.0/Chapter 6-3.html">
+            
+                    
+                    Chapter 6-3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.1.13" data-path="../iOS/书籍/Effective Objective-C 2.0/Chapter 7-1.html">
+            
+                <a href="../iOS/书籍/Effective Objective-C 2.0/Chapter 7-1.html">
+            
+                    
+                    Chapter 7-1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.1.14" data-path="../iOS/书籍/Effective Objective-C 2.0/Chapter 7-2.html">
+            
+                <a href="../iOS/书籍/Effective Objective-C 2.0/Chapter 7-2.html">
+            
+                    
+                    Chapter 7-2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../iOS/CocoaPods之Profile.html">
+            
+                <a href="../iOS/CocoaPods之Profile.html">
+            
+                    
+                    CocoaPods之Profile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../iOS/对象什么时候加入自动释放池.html">
+            
+                <a href="../iOS/对象什么时候加入自动释放池.html">
+            
+                    
+                    对象什么时候加入自动释放池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../iOS/内存管理机制.html">
+            
+                <a href="../iOS/内存管理机制.html">
+            
+                    
+                    内存管理机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../iOS/Allocations.html">
+            
+                <a href="../iOS/Allocations.html">
+            
+                    
+                    Allocations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../iOS/libffi探究.html">
+            
+                <a href="../iOS/libffi探究.html">
+            
+                    
+                    libffi探究
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../iOS/MVC、MVP、MVVM.html">
+            
+                <a href="../iOS/MVC、MVP、MVVM.html">
+            
+                    
+                    MVC、MVP、MVVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../iOS/Modules.html">
+            
+                <a href="../iOS/Modules.html">
+            
+                    
+                    Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../iOS/检测未使用的类.html">
+            
+                <a href="../iOS/检测未使用的类.html">
+            
+                    
+                    检测未使用的类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../iOS/自定义对象去重.html">
+            
+                <a href="../iOS/自定义对象去重.html">
+            
+                    
+                    自定义对象去重
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../iOS/一个Workspace多个Project.html">
+            
+                <a href="../iOS/一个Workspace多个Project.html">
+            
+                    
+                    一个Workspace多个Project
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../iOS/单例完整写法.html">
+            
+                <a href="../iOS/单例完整写法.html">
+            
+                    
+                    单例完整写法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="../iOS/地图坐标系.html">
+            
+                <a href="../iOS/地图坐标系.html">
+            
+                    
+                    地图坐标系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="../iOS/加密解密.html">
+            
+                <a href="../iOS/加密解密.html">
+            
+                    
+                    加密解密
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="../iOS/Notification.html">
+            
+                <a href="../iOS/Notification.html">
+            
+                    
+                    Notification
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../Swift/_Swift.html">
+            
+                <a href="../Swift/_Swift.html">
+            
+                    
+                    Swift
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../Swift/访问权限修饰符.html">
+            
+                <a href="../Swift/访问权限修饰符.html">
+            
+                    
+                    访问权限修饰符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../Swift/ABI稳定、模块稳定.html">
+            
+                <a href="../Swift/ABI稳定、模块稳定.html">
+            
+                    
+                    ABI稳定、模块稳定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../Swift/as as! as?.html">
+            
+                <a href="../Swift/as as! as?.html">
+            
+                    
+                    as as! as?
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../WebRTC/_WebRTC.html">
+            
+                <a href="../WebRTC/_WebRTC.html">
+            
+                    
+                    WebRTC
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../WebRTC/CritScope锁.html">
+            
+                <a href="../WebRTC/CritScope锁.html">
+            
+                    
+                    CritScope锁
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="_网络协议.html">
+            
+                <a href="_网络协议.html">
+            
+                    
+                    网络协议
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="HTTP.html">
+            
+                <a href="HTTP.html">
+            
+                    
+                    HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="TCP.html">
+            
+                <a href="TCP.html">
+            
+                    
+                    TCP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="KCP.html">
+            
+                <a href="KCP.html">
+            
+                    
+                    KCP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="Socket.html">
+            
+                <a href="Socket.html">
+            
+                    
+                    Socket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="WebSocket.html">
+            
+                <a href="WebSocket.html">
+            
+                    
+                    WebSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7.6" data-path="SRWebSocket源码解析.html">
+            
+                <a href="SRWebSocket源码解析.html">
+            
+                    
+                    SRWebSocket源码解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../操作系统/_操作系统.html">
+            
+                <a href="../操作系统/_操作系统.html">
+            
+                    
+                    操作系统
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../操作系统/线程&进程.html">
+            
+                <a href="../操作系统/线程&进程.html">
+            
+                    
+                    线程&进程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../C语言/C语言.html">
+            
+                <a href="../C语言/C语言.html">
+            
+                    
+                    C语言
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../C语言/time.html">
+            
+                <a href="../C语言/time.html">
+            
+                    
+                    time.h
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../Algorithm/_Algorithm.html">
+            
+                <a href="../Algorithm/_Algorithm.html">
+            
+                    
+                    算法
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../Algorithm/时间复杂度.html">
+            
+                <a href="../Algorithm/时间复杂度.html">
+            
+                    
+                    时间复杂度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../Algorithm/尾调用优化.html">
+            
+                <a href="../Algorithm/尾调用优化.html">
+            
+                    
+                    尾调用优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../重构/_重构.html">
+            
+                <a href="../重构/_重构.html">
+            
+                    
+                    重构
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../重构/下拉刷新逻辑重构.html">
+            
+                <a href="../重构/下拉刷新逻辑重构.html">
+            
+                    
+                    下拉刷新逻辑重构
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../Shell/_Shell.html">
+            
+                <a href="../Shell/_Shell.html">
+            
+                    
+                    Shell
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../Shell/组合命令.html">
+            
+                <a href="../Shell/组合命令.html">
+            
+                    
+                    组合命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" >
+            
+                <span>
+            
+                    
+                    命令
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.2.1" data-path="../Shell/命令/cp.html">
+            
+                <a href="../Shell/命令/cp.html">
+            
+                    
+                    cp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2.2" data-path="../Shell/命令/echo.html">
+            
+                <a href="../Shell/命令/echo.html">
+            
+                    
+                    echo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2.3" data-path="../Shell/命令/for.html">
+            
+                <a href="../Shell/命令/for.html">
+            
+                    
+                    for
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2.4" data-path="../Shell/命令/grep.html">
+            
+                <a href="../Shell/命令/grep.html">
+            
+                    
+                    grep
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2.5" data-path="../Shell/命令/iconv.html">
+            
+                <a href="../Shell/命令/iconv.html">
+            
+                    
+                    iconv
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2.6" data-path="../Shell/命令/if.html">
+            
+                <a href="../Shell/命令/if.html">
+            
+                    
+                    if
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2.7" data-path="../Shell/命令/rm.html">
+            
+                <a href="../Shell/命令/rm.html">
+            
+                    
+                    rm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2.8" data-path="../Shell/命令/sed.html">
+            
+                <a href="../Shell/命令/sed.html">
+            
+                    
+                    sed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2.9" data-path="../Shell/命令/unzip.html">
+            
+                <a href="../Shell/命令/unzip.html">
+            
+                    
+                    unzip
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../Fastlane/_Fastlane.html">
+            
+                <a href="../Fastlane/_Fastlane.html">
+            
+                    
+                    Fastlane
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../Fastlane/Fastlane问题记录.html">
+            
+                <a href="../Fastlane/Fastlane问题记录.html">
+            
+                    
+                    Fastlane问题记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../博客搭建/_博客搭建.html">
+            
+                <a href="../博客搭建/_博客搭建.html">
+            
+                    
+                    博客搭建
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../博客搭建/GitBook/_GitBook.html">
+            
+                <a href="../博客搭建/GitBook/_GitBook.html">
+            
+                    
+                    GitBook
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1.1" data-path="../博客搭建/GitBook/plugins.html">
+            
+                <a href="../博客搭建/GitBook/plugins.html">
+            
+                    
+                    plugins
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2" data-path="../博客搭建/Hexo/_Hexo.html">
+            
+                <a href="../博客搭建/Hexo/_Hexo.html">
+            
+                    
+                    Hexo
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.2.1" data-path="../博客搭建/Hexo/基础.html">
+            
+                <a href="../博客搭建/Hexo/基础.html">
+            
+                    
+                    基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2.2" data-path="../博客搭建/Hexo/进阶.html">
+            
+                <a href="../博客搭建/Hexo/进阶.html">
+            
+                    
+                    进阶
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >SRWebSocket源码解析</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="srwebsocket-&#x6E90;&#x7801;&#x89E3;&#x6790;">SRWebSocket &#x6E90;&#x7801;&#x89E3;&#x6790;</h1>
+<h3 id="&#x521D;&#x59CB;&#x5316;&#x6D41;&#x7A0B;">&#x521D;&#x59CB;&#x5316;&#x6D41;&#x7A0B;</h3>
+<h5 id="-idinitwithurlrequestnsurlrequest-request-protocolsnsarray-protocols-allowsuntrustedsslcertificatesboolallowsuntrustedsslcertificates">- (id)initWithURLRequest:(NSURLRequest *)request protocols:(NSArray *)protocols allowsUntrustedSSLCertificates:(BOOL)allowsUntrustedSSLCertificates;</h5>
+<p>&#x521D;&#x59CB;&#x5316;&#x5165;&#x53E3;</p>
+<h5 id="-voidsrcommoninit">- (void)_SR_commonInit;</h5>
+<p>&#x961F;&#x5217;&#x4E4B;&#x7C7B;&#x7684;&#x6570;&#x636E;&#x521D;&#x59CB;&#x5316;&#x3002;
+&#x8FD9;&#x91CC;&#x8981;&#x8BF4;&#x7684;&#x662F;&#xFF0C;SRWebSocket &#x5185;&#x90E8;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5E38;&#x9A7B;&#x7EBF;&#x7A0B;&#xFF0C;&#x7528;&#x6765;&#x63A5;&#x6536;&#x6570;&#x636E;&#x6D41;&#xFF0C;&#x8FD8;&#x6709;&#x4E00;&#x4E2A;&#x4E13;&#x95E8;&#x7528;&#x6765;&#x5904;&#x7406;&#x4E1A;&#x52A1;&#x7684;&#x961F;&#x5217;&#xFF1B;&#x5F53;&#x6CA1;&#x6709;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x65F6;&#x5E38;&#x9A7B;&#x7EBF;&#x7A0B;&#x4F1A;&#x8FDB;&#x5165;&#x4F11;&#x7720;&#xFF0C;&#x6B64;&#x65F6;&#x961F;&#x5217;&#x4EFB;&#x52A1;&#x53D1;&#x73B0;<code>_readBuffer</code>&#x6CA1;&#x6709;&#x6570;&#x636E;&#xFF0C;&#x4E5F;&#x4F1A;&#x8DF3;&#x51FA;&#x5FAA;&#x73AF;&#x7B49;&#x5F85;&#xFF0C;&#x8FD9;&#x6837;&#x6CA1;&#x6709;&#x6570;&#x636E;&#x65F6;&#x4E5F;&#x5C31;&#x4E0D;&#x9700;&#x8981;&#x6D88;&#x8017;&#x591A;&#x5C11;&#x8D44;&#x6E90;&#x4E86;&#x3002;</p>
+<h5 id="-voidinitializestreams">- (void)_initializeStreams;</h5>
+<p>&#x521D;&#x59CB;&#x5316;&#x8F93;&#x5165;&#x8F93;&#x51FA;&#x6D41;</p>
+<pre><code>- (void)_initializeStreams {
+    uint32_t port = _url.port.unsignedIntValue;
+    if (port == 0) {
+        if (!_secure) {
+            port = 80;
+        } else {
+            port = 443;
+        }
+    }
+    NSString *host = _url.host;
+
+    CFReadStreamRef readStream = NULL;
+    CFWriteStreamRef writeStream = NULL;
+    //&#x5C06; host port &#x4E0E;&#x8F93;&#x5165;&#x8F93;&#x51FA;&#x6D41;&#x7ED1;&#x5B9A;&#x5728;&#x4E00;&#x8D77;
+    CFStreamCreatePairWithSocketToHost(NULL, (__bridge CFStringRef)host, port, &amp;readStream, &amp;writeStream);
+
+    _outputStream = CFBridgingRelease(writeStream);
+    _inputStream = CFBridgingRelease(readStream);
+
+    _inputStream.delegate = self;
+    _outputStream.delegate = self;
+}
+</code></pre><h3 id="&#x8FDE;&#x63A5;&#x6D41;&#x7A0B;">&#x8FDE;&#x63A5;&#x6D41;&#x7A0B;</h3>
+<h5 id="-voidopen">- (void)open;</h5>
+<p>&#x8FDE;&#x63A5;&#x5165;&#x53E3;</p>
+<h5 id="-voidopenconnection">- (void)openConnection;</h5>
+<ol>
+<li>&#x5C06;&#x8F93;&#x5165;&#x8F93;&#x51FA;&#x6D41;&#x6CE8;&#x518C;&#x5230;&#x5E38;&#x9A7B;&#x7EBF;&#x7A0B;</li>
+<li>&#x5F00;&#x542F;&#x8F93;&#x5165;&#x8F93;&#x51FA;&#x6D41;</li>
+</ol>
+<pre><code>[_outputStream scheduleInRunLoop:aRunLoop forMode:mode];
+[_inputStream scheduleInRunLoop:aRunLoop forMode:mode];
+[_outputStream open];
+[_inputStream open];
+</code></pre><h5 id="-voidstreamnsstream-astream-handleeventnsstreameventeventcode">- (void)stream:(NSStream *)aStream handleEvent:(NSStreamEvent)eventCode;</h5>
+<p>&#x6253;&#x5F00;&#x6D41;&#x6210;&#x529F;&#x540E;&#x7684;&#x56DE;&#x8C03;</p>
+<pre><code>- (void)stream:(NSStream *)aStream handleEvent:(NSStreamEvent)eventCode {
+    __weak typeof(self) weakSelf = self;
+    //&#x7B2C;&#x4E00;&#x6B21;&#x8FDB;&#x6765;&#x6CA1;&#x8BA4;&#x8BC1;&#xFF0C;&#x5219;&#x8FDB;&#x5165;&#xFF0C;&#x8BA4;&#x8BC1;&#x4E00;&#x6B21;
+    if (_secure &amp;&amp; !_pinnedCertFound &amp;&amp; (eventCode == NSStreamEventHasBytesAvailable || eventCode == NSStreamEventHasSpaceAvailable)) {
+        NSArray *sslCerts = [_urlRequest SR_SSLPinnedCertificates];
+        if (sslCerts) {
+            SecTrustRef secTrust = (__bridge SecTrustRef)[aStream propertyForKey:(__bridge id)kCFStreamPropertySSLPeerTrust];
+            if (secTrust) {
+                NSInteger numCerts = SecTrustGetCertificateCount(secTrust);
+                for (NSInteger i = 0; i &lt; numCerts &amp;&amp; !_pinnedCertFound; i++) {
+                    SecCertificateRef cert = SecTrustGetCertificateAtIndex(secTrust, i);
+                    NSData *certData = CFBridgingRelease(SecCertificateCopyData(cert));
+                    for (id ref in sslCerts) {
+                        SecCertificateRef trustedCert = (__bridge SecCertificateRef)ref;
+                        NSData *trustedCertData = CFBridgingRelease(SecCertificateCopyData(trustedCert));
+                        if ([trustedCertData isEqualToData:certData]) {
+                            _pinnedCertFound = YES;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            if (!_pinnedCertFound) {
+                return;//&#x5F02;&#x5E38;
+            } else if (aStream == _outputStream) {
+                // &#x8BA4;&#x8BC1;&#x6210;&#x529F;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x8F93;&#x51FA;&#x6D41;&#xFF0C;&#x5219;&#x8BA4;&#x4E3A;&#x6D41;&#x8FDE;&#x63A5;&#x6210;&#x529F;&#xFF0C;&#x5F00;&#x59CB;HTTP&#x8FDE;&#x63A5;
+                dispatch_async(_workQueue, ^{
+                    [self didConnect];
+                });
+            }
+        }
+    }
+    dispatch_async(_workQueue, ^{
+            // &#x540E;&#x9762;&#x6240;&#x6709;&#x7684;&#x6D41;&#x90FD;&#x5728;&#x8FD9;&#x91CC;&#x5904;&#x7406;
+        [weakSelf safeHandleEvent:eventCode stream:aStream];
+    });
+}
+</code></pre><h5 id="-voiddidconnect">- (void)didConnect;</h5>
+<p>websocket &#x8FDE;&#x63A5;&#x8BF7;&#x6C42;</p>
+<pre><code>- (void)didConnect {
+    CFHTTPMessageRef request = CFHTTPMessageCreateRequest(NULL, CFSTR(&quot;GET&quot;), (__bridge CFURLRef)_url, kCFHTTPVersion1_1);
+
+    // Set host first so it defaults
+    CFHTTPMessageSetHeaderFieldValue(request, CFSTR(&quot;Host&quot;), (__bridge CFStringRef)(_url.port ? [NSString stringWithFormat:@&quot;%@:%@&quot;, _url.host, _url.port] : _url.host));
+
+    NSMutableData *keyBytes = [[NSMutableData alloc] initWithLength:16];
+    SecRandomCopyBytes(kSecRandomDefault, keyBytes.length, keyBytes.mutableBytes);
+
+    if ([keyBytes respondsToSelector:@selector(base64EncodedStringWithOptions:)]) {
+        _secKey = [keyBytes base64EncodedStringWithOptions:0];
+    } else {
+        _secKey = [keyBytes base64Encoding];
+    }
+
+    // Apply cookies if any have been provided
+    NSDictionary * cookies = [NSHTTPCookie requestHeaderFieldsWithCookies:[self requestCookies]];
+    for (NSString * cookieKey in cookies) {
+        NSString * cookieValue = [cookies objectForKey:cookieKey];
+        if ([cookieKey length] &amp;&amp; [cookieValue length]) {
+            CFHTTPMessageSetHeaderFieldValue(request, (__bridge CFStringRef)cookieKey, (__bridge CFStringRef)cookieValue);
+        }
+    }
+
+    // set header for http basic auth
+    if (_url.user.length &amp;&amp; _url.password.length) {
+        NSData *userAndPassword = [[NSString stringWithFormat:@&quot;%@:%@&quot;, _url.user, _url.password] dataUsingEncoding:NSUTF8StringEncoding];
+        NSString *userAndPasswordBase64Encoded;
+        if ([keyBytes respondsToSelector:@selector(base64EncodedStringWithOptions:)]) {
+            userAndPasswordBase64Encoded = [userAndPassword base64EncodedStringWithOptions:0];
+        } else {
+            userAndPasswordBase64Encoded = [userAndPassword base64Encoding];
+        }
+        _basicAuthorizationString = [NSString stringWithFormat:@&quot;Basic %@&quot;, userAndPasswordBase64Encoded];
+        CFHTTPMessageSetHeaderFieldValue(request, CFSTR(&quot;Authorization&quot;), (__bridge CFStringRef)_basicAuthorizationString);
+    }
+
+    CFHTTPMessageSetHeaderFieldValue(request, CFSTR(&quot;Upgrade&quot;), CFSTR(&quot;websocket&quot;));
+    CFHTTPMessageSetHeaderFieldValue(request, CFSTR(&quot;Connection&quot;), CFSTR(&quot;Upgrade&quot;));
+    CFHTTPMessageSetHeaderFieldValue(request, CFSTR(&quot;Sec-WebSocket-Key&quot;), (__bridge CFStringRef)_secKey);
+    CFHTTPMessageSetHeaderFieldValue(request, CFSTR(&quot;Sec-WebSocket-Version&quot;), (__bridge CFStringRef)[NSString stringWithFormat:@&quot;%ld&quot;, (long)_webSocketVersion]);
+
+    CFHTTPMessageSetHeaderFieldValue(request, CFSTR(&quot;Origin&quot;), (__bridge CFStringRef)_url.SR_origin);
+
+    if (_requestedProtocols) {
+        CFHTTPMessageSetHeaderFieldValue(request, CFSTR(&quot;Sec-WebSocket-Protocol&quot;), (__bridge CFStringRef)[_requestedProtocols componentsJoinedByString:@&quot;, &quot;]);
+    }
+
+    [_urlRequest.allHTTPHeaderFields enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        CFHTTPMessageSetHeaderFieldValue(request, (__bridge CFStringRef)key, (__bridge CFStringRef)obj);
+    }];
+
+    NSData *message = CFBridgingRelease(CFHTTPMessageCopySerializedMessage(request));
+
+    CFRelease(request);
+        // &#x901A;&#x8FC7;&#x8F93;&#x5165;&#x8F93;&#x51FA;&#x6D41;&#x53D1;&#x8D77;&#x8FDE;&#x63A5;
+    [self _writeData:message];
+    //&#x8BFB;&#x53D6; HTTP &#x54CD;&#x5E94;&#x5934;
+    [self _readHTTPHeader];
+}
+</code></pre><h5 id="-voidreadhttpheader">- (void)_readHTTPHeader;</h5>
+<p>&#x5FAA;&#x73AF;&#x8BFB;&#x53D6;HTTP&#x5934;&#x90E8;&#x6570;&#x636E;&#xFF0C;&#x5206;&#x9694;&#x7B26; <code>\r\n\r\n</code></p>
+<pre><code>- (void)_readHTTPHeader {
+    if (_receivedHTTPHeaders == NULL) {
+        _receivedHTTPHeaders = CFHTTPMessageCreateEmpty(NULL, NO);
+    }
+
+    [self _readUntilHeaderCompleteWithCallback:^(SRWebSocket *self,  NSData *data) {
+        CFHTTPMessageAppendBytes(_receivedHTTPHeaders, (const UInt8 *)data.bytes, data.length);
+        if (CFHTTPMessageIsHeaderComplete(_receivedHTTPHeaders)) {
+            //&#x8BFB;&#x53D6;&#x5230;&#x5934;&#x90E8;
+            [self _HTTPHeadersDidFinish];
+        } else {
+            [self _readHTTPHeader];
+        }
+    }];
+}
+</code></pre><h3 id="-voidhttpheadersdidfinish">- (void)_HTTPHeadersDidFinish;</h3>
+<p>&#x5224;&#x65AD;&#x8FDE;&#x63A5;&#x662F;&#x5426;&#x6210;&#x529F;</p>
+<pre><code>- (void)_HTTPHeadersDidFinish {
+    NSInteger responseCode = CFHTTPMessageGetResponseStatusCode(_receivedHTTPHeaders);
+    // key &#x6821;&#x9A8C;
+    if(![self _checkHandshake:_receivedHTTPHeaders]) {
+        return;
+    }
+
+    NSString *negotiatedProtocol = CFBridgingRelease(CFHTTPMessageCopyHeaderFieldValue(_receivedHTTPHeaders, CFSTR(&quot;Sec-WebSocket-Protocol&quot;)));
+    if (negotiatedProtocol) {
+        // Make sure we requested the protocol
+        if ([_requestedProtocols indexOfObject:negotiatedProtocol] == NSNotFound) {
+            //&#x5B50;&#x534F;&#x8BAE;&#x6821;&#x9A8C;
+            return;
+        }
+        _protocol = negotiatedProtocol;
+    }
+
+    self.readyState = SR_OPEN;
+
+    if (!_didFail) {
+            // &#x8FDE;&#x63A5;&#x6210;&#x529F;&#x4E86;&#xFF0C;&#x5F00;&#x59CB;&#x63A5;&#x6536;&#x6570;&#x636E;
+        [self _readFrameNew];
+    }
+        // &#x56DE;&#x8C03;&#x7ED9;&#x5F15;&#x7528;&#x5C42;
+    [self _performDelegateBlock:^{
+        if ([self.delegate respondsToSelector:@selector(webSocketDidOpen:)]) {
+            [self.delegate webSocketDidOpen:self];
+        };
+    }];
+}
+</code></pre><h3 id="&#x6570;&#x636E;&#x6D41;&#x63A5;&#x6536;&#x6D41;&#x7A0B;">&#x6570;&#x636E;&#x6D41;&#x63A5;&#x6536;&#x6D41;&#x7A0B;</h3>
+<h5 id="-voidsafehandleeventnsstreameventeventcode-streamnsstream-astream">- (void)safeHandleEvent:(NSStreamEvent)eventCode stream:(NSStream *)aStream</h5>
+<p>&#x8FD9;&#x91CC;&#x4F1A;&#x5C06;&#x8F93;&#x5165;&#x6D41;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x8BFB;&#x53D6;&#x5230;<code>_readBuffer</code></p>
+<pre><code>- (void)safeHandleEvent:(NSStreamEvent)eventCode stream:(NSStream *)aStream {
+  switch (eventCode) {
+      case NSStreamEventOpenCompleted: {
+          // didConnect fires after certificate verification if we&apos;re using pinned certificates.
+          BOOL usingPinnedCerts = [[_urlRequest SR_SSLPinnedCertificates] count] &gt; 0;
+          if ((!_secure || !usingPinnedCerts) &amp;&amp; self.readyState == SR_CONNECTING &amp;&amp; aStream == _inputStream) {
+              [self didConnect];
+          }
+          [self _pumpWriting];
+          [self _pumpScanner];
+          break;
+      }
+      case NSStreamEventErrorOccurred: {
+          break;
+      }
+      case NSStreamEventEndEncountered: {
+          break;
+      }
+            // &#x63A5;&#x6536;&#x5230;&#x6570;&#x636E;
+      case NSStreamEventHasBytesAvailable: {
+          const int bufferSize = 2048;
+          uint8_t buffer[bufferSize];
+          while (_inputStream.hasBytesAvailable) {
+              NSInteger bytes_read = [_inputStream read:buffer maxLength:bufferSize];
+              if (bytes_read &gt; 0) {
+                  [_readBuffer appendBytes:buffer length:bytes_read];
+              } else if (bytes_read &lt; 0) {
+                  [self _failWithError:_inputStream.streamError];
+              }
+              if (bytes_read != bufferSize) {
+                  break;
+              }
+          };
+          [self _pumpScanner];//&#x5F00;&#x59CB;&#x626B;&#x63CF;
+          break;
+      }
+
+      case NSStreamEventHasSpaceAvailable: {
+              // &#x5199;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x6CA1;&#x6709;&#x5199;&#x5B8C;&#x7684;&#x6570;&#x636E;&#x8FD9;&#x91CC;&#x4F1A;&#x7EE7;&#x7EED;&#x5199;
+          [self _pumpWriting];
+          break;
+      }
+  }
+}
+</code></pre><pre><code>-(void)_pumpScanner {
+    if (!_isPumping) {
+        _isPumping = YES;
+    } else {
+        return;
+    }
+    // &#x5FAA;&#x73AF;&#x8BFB;&#x53D6;&#x6D88;&#x8D39;&#x8005;&#x9700;&#x8981;&#x7684;&#x6570;&#x636E;,&#x5982;&#x679C;&#x6CA1;&#x6709;&#x6570;&#x636E;&#x5219;&#x8FD4;&#x56DE;NO
+    while ([self _innerPumpScanner]) {
+
+    }
+    _isPumping = NO;
+}
+</code></pre><h3 id="-boolinnerpumpscanner">- (BOOL)_innerPumpScanner</h3>
+<p>&#x8BFB;&#x53D6;&#x5230;&#x6D88;&#x8D39;&#x8005;&#x9700;&#x8981;&#x7684;&#x6570;&#x636E;</p>
+<pre><code>- (BOOL)_innerPumpScanner {
+    //&#x5982;&#x679C;&#x6D88;&#x8D39;&#x8005;&#x4E3A;&#x7A7A;&#xFF0C;&#x5219;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;
+    //&#x8BFB;&#x5230;&#x6D88;&#x8D39;&#x8005;&#x9700;&#x8981;&#x7684;&#x6570;&#x636E;&#x957F;&#x5EA6;&#x65F6;&#xFF0C;&#x8FD4;&#x56DE;TRUE
+}
+</code></pre><h3 id="&#x6570;&#x636E;&#x8BFB;&#x53D6;&#x6D41;&#x7A0B;">&#x6570;&#x636E;&#x8BFB;&#x53D6;&#x6D41;&#x7A0B;</h3>
+<h5 id="-voidreadframenew">- (void)_readFrameNew;</h5>
+<p>&#x6E05;&#x7A7A;&#x4E0A;&#x4E00;&#x5E27;&#x4E0A;&#x4E00;&#x5E27;&#x6570;&#x636E;&#xFF0C;&#x968F;&#x540E;&#x8C03;&#x7528; <code>_readFrameContinue</code></p>
+<h4 id="-voidreadframecontinue">- (void)_readFrameContinue;</h4>
+<ol>
+<li>&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x6D88;&#x8D39;&#x8005;</li>
+</ol>
+<pre><code>//&#x6DFB;&#x52A0;&#x6D88;&#x8D39;&#x8005;&#xFF0C;&#x7528;&#x4E00;&#x4E2A;&#x6307;&#x5B9A;&#x7684;&#x957F;&#x5EA6;&#xFF0C;&#x662F;&#x5426;&#x8BFB;&#x5230;&#x5F53;&#x524D;&#x5E27;
+- (void)_addConsumerWithDataLength:(size_t)dataLength callback:(data_callback)callback readToCurrentFrame:(BOOL)readToCurrentFrame unmaskBytes:(BOOL)unmaskBytes {
+    //&#x6DFB;&#x52A0;&#x5230;&#x6D88;&#x8D39;&#x8005;&#x961F;&#x5217;
+    [_consumers addObject:[_consumerPool consumerWithScanner:nil handler:callback bytesNeeded:dataLength readToCurrentFrame:readToCurrentFrame unmaskBytes:unmaskBytes]];
+    //&#x626B;&#x63CF;&#x6D88;&#x8D39;&#x8005;&#x6240;&#x9700;&#x8981;&#x7684;&#x5B57;&#x8282;&#x6570;
+    [self _pumpScanner];
+}
+</code></pre><pre><code>- (void)_readFrameContinue {
+        // &#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x6D88;&#x8D39;&#x8005;
+    [self _addConsumerWithDataLength:2 callback:^(SRWebSocket *self, NSData *data) {
+        __block frame_header header = {0};
+        const uint8_t *headerBuffer = data.bytes;
+        uint8_t receivedOpcode = (SROpCodeMask &amp; headerBuffer[0]);
+        BOOL isControlFrame = (receivedOpcode == SROpCodePing || receivedOpcode == SROpCodePong || receivedOpcode == SROpCodeConnectionClose);
+
+        header.opcode = receivedOpcode == 0 ? self-&gt;_currentFrameOpcode : receivedOpcode;
+        header.fin = !!(SRFinMask &amp; headerBuffer[0]);
+        header.masked = !!(SRMaskMask &amp; headerBuffer[1]);
+        header.payload_length = SRPayloadLenMask &amp; headerBuffer[1];
+
+        headerBuffer = NULL;
+        size_t extra_bytes_needed = header.masked ? sizeof(_currentReadMaskKey) : 0;
+        if (header.payload_length == 126) {
+            extra_bytes_needed += sizeof(uint16_t);
+        } else if (header.payload_length == 127) {
+            extra_bytes_needed += sizeof(uint64_t);
+        }
+        if (extra_bytes_needed == 0) {
+                // &#x4E0D;&#x9700;&#x8981;&#x8BFB;&#x53D6;&#x6269;&#x5C55;&#x5B57;&#x6BB5;&#xFF0C;&#x5219;&#x5F00;&#x59CB;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x6BB5;
+            [self _handleFrameHeader:header curData:self-&gt;_currentFrameData];
+        } else {
+                // &#x8BFB;&#x53D6;&#x6269;&#x5C55;&#x5B57;&#x6BB5;
+            [self _addConsumerWithDataLength:extra_bytes_needed callback:^(SRWebSocket *self, NSData *data) {
+                size_t mapped_size = data.length;
+                const void *mapped_buffer = data.bytes;
+                size_t offset = 0;
+                if (header.payload_length == 126) {
+                    uint16_t newLen = EndianU16_BtoN(*(uint16_t *)(mapped_buffer));
+                    header.payload_length = newLen;
+                    offset += sizeof(uint16_t);
+                } else if (header.payload_length == 127) {
+                    header.payload_length = EndianU64_BtoN(*(uint64_t *)(mapped_buffer));
+                    offset += sizeof(uint64_t);
+                }
+
+                if (header.masked) {
+                    memcpy(self-&gt;_currentReadMaskKey, ((uint8_t *)mapped_buffer) + offset, sizeof(self-&gt;_currentReadMaskKey));
+                }
+                // &#x8BFB;&#x53D6;&#x5230;&#x6269;&#x5C55;&#x5B57;&#x6BB5;&#x540E;&#xFF0C;&#x518D;&#x8BFB;&#x53D6; Data &#x6570;&#x636E;
+                [self _handleFrameHeader:header curData:self-&gt;_currentFrameData];
+            } readToCurrentFrame:NO unmaskBytes:NO];
+        }
+    } readToCurrentFrame:NO unmaskBytes:NO];
+}
+</code></pre><p>&#x8BFB;&#x53D6;&#x5E27;&#x7684;&#x6570;&#x636E;&#x6BB5;</p>
+<pre><code>- (void)_handleFrameHeader:(frame_header)frame_header curData:(NSData *)curData {    
+    BOOL isControlFrame = (frame_header.opcode == SROpCodePing || frame_header.opcode == SROpCodePong || frame_header.opcode == SROpCodeConnectionClose);
+
+    if (!isControlFrame) {
+        _currentFrameOpcode = frame_header.opcode;
+        _currentFrameCount += 1;
+    }
+    //&#x5982;&#x679C;&#x6570;&#x636E;&#x957F;&#x5EA6;&#x4E3A;0
+    if (frame_header.payload_length == 0) {
+        if (isControlFrame) {
+                // &#x6570;&#x636E;&#x8BFB;&#x5B8C;&#xFF0C;&#x5F00;&#x59CB;&#x5904;&#x7406;&#x6570;&#x636E;
+            [self _handleFrameWithData:curData opCode:frame_header.opcode];
+        } else {
+            if (frame_header.fin) {
+                    // &#x6570;&#x636E;&#x8BFB;&#x5B8C;&#xFF0C;&#x5F00;&#x59CB;&#x5904;&#x7406;&#x6570;&#x636E;
+                [self _handleFrameWithData:_currentFrameData opCode:frame_header.opcode];
+            } else {
+                // TODO add assert that opcode is not a control;
+                // &#x6570;&#x636E;&#x8FD8;&#x6CA1;&#x8BFB;&#x5B8C;&#xFF0C;&#x636E;&#x9700;&#x8BFB;&#x53D6;&#x6570;&#x636E;
+                [self _readFrameContinue];
+            }
+        }
+    } else {
+            // &#x8BFB;&#x53D6;&#x6570;&#x636E;&#xFF0C;&#x56DE;&#x8C03;&#x540E;&#x7684;&#x5904;&#x7406;&#x6D41;&#x7A0B;&#x540C;&#x4E0A;
+        [self _addConsumerWithDataLength:(size_t)frame_header.payload_length callback:^(SRWebSocket *self, NSData *newData) {
+            if (isControlFrame) {
+                [self _handleFrameWithData:newData opCode:frame_header.opcode];
+            } else {
+                if (frame_header.fin) {
+                    [self _handleFrameWithData:self-&gt;_currentFrameData opCode:frame_header.opcode];
+                } else {
+                    // TODO add assert that opcode is not a control;
+                    [self _readFrameContinue];
+                }
+            }
+        } readToCurrentFrame:!isControlFrame unmaskBytes:frame_header.masked];
+    }
+}
+</code></pre><p>&#x5F00;&#x59CB;&#x5904;&#x7406;&#x6570;&#x636E;</p>
+<pre><code>- (void)_handleFrameWithData:(NSData *)frameData opCode:(NSInteger)opcode {                
+    BOOL isControlFrame = (opcode == SROpCodePing || opcode == SROpCodePong || opcode == SROpCodeConnectionClose);
+    if (!isControlFrame) {
+            // &#x91CC;&#x9762;&#x662F;&#x5F02;&#x6B65;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#x5E27;&#xFF0C;&#x8DDF;&#x4E0B;&#x9762;&#x7684;&#x533A;&#x522B;&#x5C31;&#x662F;&#xFF0C;&#x975E;&#x6570;&#x636E;&#x5E27;&#xFF0C;&#x9700;&#x8981;&#x5148;&#x6E05;&#x7406;&#x6570;&#x636E;&#x624D;&#x80FD;&#x7EE7;&#x7EED;&#x8BFB;&#x53D6;
+        [self _readFrameNew];
+    } else {
+        dispatch_async(_workQueue, ^{
+                // &#x6570;&#x636E;&#x5E27;&#x4E0D;&#x9700;&#x8981;&#x6E05;&#x7406;&#x6570;&#x636E;&#xFF0C;&#x76F4;&#x63A5;&#x8BFB;&#x53D6;
+            [self _readFrameContinue];
+        });
+    }
+
+    //frameData will be copied before passing to handlers
+    //otherwise there can be misbehaviours when value at the pointer is changed
+    // &#x5F00;&#x59CB;&#x5904;&#x7406;&#x6570;&#x636E;&#xFF0C;&#x5230;&#x8FD9;&#x91CC;&#x6574;&#x4E2A;&#x63A5;&#x6536;&#x6D41;&#x7A0B;&#x4E5F;&#x5C31;&#x8D70;&#x5B8C;&#x4E86;
+    switch (opcode) {
+        case SROpCodeTextFrame: {
+            if ([self.delegate respondsToSelector:@selector(webSocketShouldConvertTextFrameToString:)] &amp;&amp; ![self.delegate webSocketShouldConvertTextFrameToString:self]) {
+                [self _handleMessage:[frameData copy]];
+            } else {
+                NSString *str = [[NSString alloc] initWithData:frameData encoding:NSUTF8StringEncoding];
+                if (str == nil &amp;&amp; frameData) {
+                    [self closeWithCode:SRStatusCodeInvalidUTF8 reason:@&quot;Text frames must be valid UTF-8&quot;];
+                    dispatch_async(_workQueue, ^{
+                        [self closeConnection];
+                    });
+                    return;
+                }
+                [self _handleMessage:str];
+            }
+            break;
+        }
+        case SROpCodeBinaryFrame:
+            [self _handleMessage:[frameData copy]];
+            break;
+        case SROpCodeConnectionClose:
+            [self handleCloseWithData:[frameData copy]];
+            break;
+        case SROpCodePing:
+            [self handlePing:[frameData copy]];
+            break;
+        case SROpCodePong:
+            [self handlePong:[frameData copy]];
+            break;
+    }
+}
+</code></pre><h3 id="&#x53D1;&#x9001;&#x6570;&#x636E;&#x6D41;&#x7A0B;">&#x53D1;&#x9001;&#x6570;&#x636E;&#x6D41;&#x7A0B;</h3>
+<ol>
+<li><ul>
+<li>(void)send:(id)data;  </li>
+</ul>
+</li>
+<li><ul>
+<li>(void)_sendFrameWithOpcode:(SROpCode)opcode data:(id)data;  </li>
+</ul>
+</li>
+<li><ul>
+<li>(void)_writeData:(NSData *)data;</li>
+</ul>
+</li>
+<li><ul>
+<li>(void)_pumpWriting; // &#x5F00;&#x59CB;&#x5199;&#x6570;&#x636E;&#xFF0C;&#x6570;&#x636E;&#x91CF;&#x5F88;&#x5927;&#x7684;&#x8BDD;&#xFF0C;&#x5355;&#x6B21;&#x5199;&#x4E0D;&#x5B8C;&#xFF0C;&#x4F1A;&#x5728;&#x6D41;&#x56DE;&#x8C03;&#x4E2D;&#x7EE7;&#x7EED;&#x5199;&#x6570;&#x636E;</li>
+</ul>
+</li>
+</ol>
+<pre><code>- (void)_pumpWriting {
+    NSUInteger dataLength = _outputBuffer.length;
+    if (dataLength - _outputBufferOffset &gt; 0 &amp;&amp; _outputStream.hasSpaceAvailable) {
+        // &#x8FD9;&#x91CC;&#x5199;&#x6570;&#x636E;&#x4E0D;&#x4E00;&#x5B9A;&#x5168;&#x90E8;&#x5199;&#x5B8C;
+        NSInteger bytesWritten = [_outputStream write:_outputBuffer.bytes + _outputBufferOffset maxLength:dataLength - _outputBufferOffset];
+        if (bytesWritten == -1) {
+             return;
+        }
+        //&#x8868;&#x793A;&#x5DF2;&#x7ECF;&#x5199;&#x5165;&#x7684;&#x5927;&#x5C0F;
+        _outputBufferOffset += bytesWritten;
+        //&#x8D85;&#x8FC7;&#x4E00;&#x5B9A;&#x503C;&#xFF0C;&#x5219;&#x91CD;&#x7F6E;
+        if (_outputBufferOffset &gt; 4096 &amp;&amp; _outputBufferOffset &gt; (_outputBuffer.length &gt;&gt; 1)) {
+            //&#x66F4;&#x65B0;&#x504F;&#x79FB;&#x91CF;&#xFF0C;&#x91CD;&#x65B0;&#x751F;&#x6210;&#x65B0;&#x7684;buffer
+            _outputBuffer = [[NSMutableData alloc] initWithBytes:(char *)_outputBuffer.bytes + _outputBufferOffset length:_outputBuffer.length - _outputBufferOffset];
+            _outputBufferOffset = 0;
+        }
+    }
+}
+</code></pre><h3 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</h3>
+<p>&#x4E24;&#x4E2A;&#x7EBF;&#x7A0B;&#xFF0C;&#x4E00;&#x4E2A;&#x8D1F;&#x8D23;&#x751F;&#x4EA7;&#xFF0C;&#x4E00;&#x4E2A;&#x8D1F;&#x8D23;&#x6D88;&#x8D39;&#xFF0C;&#x8FD9;&#x79CD;&#x751F;&#x4EA7;&#x8005;-&#x6D88;&#x8D39;&#x8005;&#x6A21;&#x5F0F;&#x8FD0;&#x7528;&#x7684;&#x5F88;&#x5DE7;&#x5999;&#x3002;<br>NSMutableData &#x8FD0;&#x7528;&#x7684;&#x5F88;&#x597D;&#xFF0C;&#x907F;&#x514D;&#x4E86;&#x9891;&#x7E41;&#x751F;&#x6210; NSMutableData &#x5BF9;&#x8C61;&#xFF1B;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="WebSocket.html" class="navigation navigation-prev " aria-label="Previous page: WebSocket">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../操作系统/_操作系统.html" class="navigation navigation-next " aria-label="Next page: 操作系统">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"SRWebSocket源码解析","level":"1.7.6","depth":2,"next":{"title":"操作系统","level":"1.8","depth":1,"path":"操作系统/_操作系统.md","ref":"操作系统/_操作系统.md","articles":[{"title":"线程&进程","level":"1.8.1","depth":2,"path":"操作系统/线程&进程.md","ref":"操作系统/线程&进程.md","articles":[]}]},"previous":{"title":"WebSocket","level":"1.7.5","depth":2,"path":"网络协议/WebSocket.md","ref":"网络协议/WebSocket.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"vhuichen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NoteBook","language":"zh-hans","gitbook":"*","description":"笔记、分享"},"file":{"path":"网络协议/SRWebSocket源码解析.md","mtime":"2023-02-25T08:33:21.125Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-02-25T14:07:33.490Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
