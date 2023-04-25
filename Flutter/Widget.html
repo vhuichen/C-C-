@@ -64,7 +64,7 @@
     <link rel="next" href="Channel.html" />
     
     
-    <link rel="prev" href="Flutter.html" />
+    <link rel="prev" href="实例.html" />
     
 
     </head>
@@ -1559,7 +1559,52 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.15.1" data-path="Widget.html">
+        <li class="chapter " data-level="1.15.1" data-path="课程/课程.html">
+            
+                <a href="课程/课程.html">
+            
+                    
+                    课程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1.1" data-path="课程/Flutter核心技术与实战.html">
+            
+                <a href="课程/Flutter核心技术与实战.html">
+            
+                    
+                    Flutter核心技术与实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="实例.html">
+            
+                <a href="实例.html">
+            
+                    
+                    实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.15.3" data-path="Widget.html">
             
                 <a href="Widget.html">
             
@@ -1572,7 +1617,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.15.2" data-path="Channel.html">
+        <li class="chapter " data-level="1.15.4" data-path="Channel.html">
             
                 <a href="Channel.html">
             
@@ -1585,7 +1630,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.15.3" data-path="问题集.html">
+        <li class="chapter " data-level="1.15.5" data-path="问题集.html">
             
                 <a href="问题集.html">
             
@@ -2718,6 +2763,89 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="widget">Widget</h1>
+<h2 id="&#x5E03;&#x5C40;widget">&#x5E03;&#x5C40;Widget</h2>
+<h4 id="container">Container</h4>
+<pre><code class="lang-dart">Container(
+  width: <span class="hljs-built_in">double</span>.infinity, <span class="hljs-comment">//&#x5BBD;&#x5EA6;&#x7B49;&#x4E8E;&#x5C4F;&#x5E55;&#x5BBD;&#x5EA6;</span>
+  color: Colors.red,
+);
+</code></pre>
+<h4 id="column">Column</h4>
+<p>&#x591A;&#x884C;&#x4E0A;&#x4E0B;&#x5E03;&#x5C40;&#xFF0C;Column&#x7684;&#x4E3B;&#x8F74;&#x662F;&#x5782;&#x76F4;&#x65B9;&#x5411;</p>
+<pre><code class="lang-dart">Column(
+  <span class="hljs-comment">//&#x4E3B;&#x8F74;&#xFF0C;&#x4E0A;&#x4E0B;&#x5C45;&#x4E2D;</span>
+  mainAxisAlignment: MainAxisAlignment.center,
+  <span class="hljs-comment">//&#x7EB5;&#x8F74;&#xFF0C;&#x5DE6;&#x53F3;&#x5C45;&#x4E2D;</span>
+  crossAxisAlignment: CrossAxisAlignment.center,
+  <span class="hljs-comment">//&#x4E3B;&#x8F74;&#xFF0C;&#x7A7A;&#x95F4;&#x8BBE;&#x7F6E;&#xFF0C;&#x5C3D;&#x53EF;&#x80FD;&#x5927;&#xFF0C;&#x8FD8;&#x662F;&#x5C3D;&#x53EF;&#x80FD;&#x5C0F;</span>
+  mainAxisSize: MainAxisSize.max,
+  children: [
+    Text(<span class="hljs-string">&quot;111&quot;</span>),
+    Text(<span class="hljs-string">&quot;22222222222&quot;</span>)
+  ],
+);
+</code></pre>
+<h4 id="row">Row</h4>
+<p>Row&#x7684;&#x4E3B;&#x8F74;&#x662F;&#x6C34;&#x5E73;&#x65B9;&#x5411;</p>
+<pre><code class="lang-dart">Row(
+  mainAxisAlignment: MainAxisAlignment.center,
+  mainAxisSize: MainAxisSize.max,
+  verticalDirection: VerticalDirection.up, <span class="hljs-comment">//&#x6587;&#x5B57;&#x9876;&#x90E8;&#x5BF9;&#x9F50;</span>
+  children: [
+    Text(<span class="hljs-string">&quot;Hello&quot;</span>),
+    Text(<span class="hljs-string">&quot; world&quot;</span>)
+  ],
+);
+</code></pre>
+<h4 id="flex">Flex</h4>
+<p>Row &#x548C; Column &#x90FD;&#x7EE7;&#x627F;&#x81EA; Flex&#xFF0C;Flex &#x7EC4;&#x4EF6;&#x53EF;&#x4EE5;&#x6CBF;&#x6C34;&#x5E73;&#x6216;&#x5782;&#x76F4;&#x65B9;&#x5411;&#x6392;&#x5217;&#x5B50;&#x7EC4;&#x4EF6;&#xFF0C;Flex &#x4E5F;&#x53EF;&#x4EE5;&#x4E0E; Expanded &#x914D;&#x5408;&#x4F7F;&#x7528;&#x5B9E;&#x73B0;&#x5F39;&#x6027;&#x5E03;&#x5C40;&#x3002;</p>
+<pre><code class="lang-dart"><span class="hljs-comment">// &#x4E24;&#x4E2A; Expanded &#x6BD4;&#x4F8B;&#x4E3A;2:1</span>
+Flex(
+  direction: Axis.horizontal,
+  children: [
+    Expanded(
+      flex: <span class="hljs-number">2</span>,
+      child: Container(
+        height: <span class="hljs-number">20</span>,
+        color: Colors.red,
+      ),
+    ),
+    Expanded(
+      flex: <span class="hljs-number">1</span>,
+      child: Container(
+        height: <span class="hljs-number">30</span>,
+        color: Colors.black,
+      ),
+    )
+  ],
+);
+</code></pre>
+<h4 id="expanded">Expanded</h4>
+<p>&#x5C3D;&#x53EF;&#x80FD;&#x5360;&#x7528;&#x7A7A;&#x95F4;</p>
+<pre><code class="lang-dart">Expanded(
+  flex: <span class="hljs-number">2</span>,<span class="hljs-comment">//&#x6BD4;&#x4F8B;&#xFF0C;&#x591A;&#x4E2A; Expanded &#x65F6;&#x751F;&#x6548;</span>
+)
+</code></pre>
+<h4 id="offstage--visibility">Offstage &amp; Visibility</h4>
+<pre><code class="lang-dart"><span class="hljs-comment">//&#x4E0D;&#x5360;&#x7528;&#x7A7A;&#x95F4;</span>
+Offstage(
+  offstage: <span class="hljs-keyword">true</span>,
+)
+
+<span class="hljs-comment">//&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8BBE;&#x7F6E;&#x4FDD;&#x7559;&#x7A7A;&#x95F4;</span>
+Visibility(
+  visible: <span class="hljs-keyword">true</span>,
+  maintainAnimation: <span class="hljs-keyword">true</span>,
+  maintainSize: <span class="hljs-keyword">true</span>,
+  maintainState: <span class="hljs-keyword">true</span>,
+)
+</code></pre>
+<h4 id="tabbar">TabBar</h4>
+<pre><code class="lang-dart"><span class="hljs-comment">// false &#x8868;&#x793A; &#x5E73;&#x5206;&#x5BBD;&#x5EA6;&#xFF0C;true &#x5219;&#x81EA;&#x9002;&#x5E94;&#x5BBD;&#x5EA6;</span>
+isScrollable: <span class="hljs-keyword">false</span>
+</code></pre>
+<h4 id="defaulttabcontroller">DefaultTabController</h4>
+<p>&#x5206;&#x6BB5;&#x63A7;&#x5236;&#x5668;</p>
 
                                 
                                 </section>
@@ -2745,7 +2873,7 @@
 
             
                 
-                <a href="Flutter.html" class="navigation navigation-prev " aria-label="Previous page: Flutter">
+                <a href="实例.html" class="navigation navigation-prev " aria-label="Previous page: 实例">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -2761,7 +2889,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Widget","level":"1.15.1","depth":2,"next":{"title":"Channel","level":"1.15.2","depth":2,"path":"Flutter/Channel.md","ref":"Flutter/Channel.md","articles":[]},"previous":{"title":"Flutter","level":"1.15","depth":1,"path":"Flutter/Flutter.md","ref":"Flutter/Flutter.md","articles":[{"title":"Widget","level":"1.15.1","depth":2,"path":"Flutter/Widget.md","ref":"Flutter/Widget.md","articles":[]},{"title":"Channel","level":"1.15.2","depth":2,"path":"Flutter/Channel.md","ref":"Flutter/Channel.md","articles":[]},{"title":"问题集","level":"1.15.3","depth":2,"path":"Flutter/问题集.md","ref":"Flutter/问题集.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"vhuichen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NoteBook","language":"zh-hans","gitbook":"*","description":"笔记、分享"},"file":{"path":"Flutter/Widget.md","mtime":"2023-04-13T13:14:00.876Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-04-15T06:22:06.137Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Widget","level":"1.15.3","depth":2,"next":{"title":"Channel","level":"1.15.4","depth":2,"path":"Flutter/Channel.md","ref":"Flutter/Channel.md","articles":[]},"previous":{"title":"实例","level":"1.15.2","depth":2,"path":"Flutter/实例.md","ref":"Flutter/实例.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"vhuichen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NoteBook","language":"zh-hans","gitbook":"*","description":"笔记、分享"},"file":{"path":"Flutter/Widget.md","mtime":"2023-04-23T05:58:14.540Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-04-25T14:26:10.353Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
