@@ -1,0 +1,2855 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>grep · NoteBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="vhuichen">
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="iconv.html" />
+    
+    
+    <link rel="prev" href="for.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../../Computer/Computer.html">
+            
+                <a href="../../../Computer/Computer.html">
+            
+                    
+                    Computer
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../../Computer/Algorithm/Algorithm.html">
+            
+                <a href="../../../Computer/Algorithm/Algorithm.html">
+            
+                    
+                    Algorithm
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../../../Computer/Algorithm/尾调用优化.html">
+            
+                <a href="../../../Computer/Algorithm/尾调用优化.html">
+            
+                    
+                    尾调用优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../../../Computer/Algorithm/时间复杂度.html">
+            
+                <a href="../../../Computer/Algorithm/时间复杂度.html">
+            
+                    
+                    时间复杂度
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../../Computer/C++/C++.html">
+            
+                <a href="../../../Computer/C++/C++.html">
+            
+                    
+                    C++
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../../../Computer/C++/问题集.html">
+            
+                <a href="../../../Computer/C++/问题集.html">
+            
+                    
+                    问题集
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../../Computer/C语言/C语言.html">
+            
+                <a href="../../../Computer/C语言/C语言.html">
+            
+                    
+                    C语言
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../../../Computer/C语言/time.html">
+            
+                <a href="../../../Computer/C语言/time.html">
+            
+                    
+                    time
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../../Computer/DesignPattern/DesignPattern.html">
+            
+                <a href="../../../Computer/DesignPattern/DesignPattern.html">
+            
+                    
+                    DesignPattern
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../../Computer/编码/编码.html">
+            
+                <a href="../../../Computer/编码/编码.html">
+            
+                    
+                    编码
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="../../../Computer/编码/Base64.html">
+            
+                <a href="../../../Computer/编码/Base64.html">
+            
+                    
+                    Base64
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2" data-path="../../../Computer/编码/哈夫曼编码.html">
+            
+                <a href="../../../Computer/编码/哈夫曼编码.html">
+            
+                    
+                    哈夫曼编码
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../../../Computer/加密解密/加密解密.html">
+            
+                <a href="../../../Computer/加密解密/加密解密.html">
+            
+                    
+                    加密解密
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.6.1" data-path="../../../Computer/加密解密/AES、DES.html">
+            
+                <a href="../../../Computer/加密解密/AES、DES.html">
+            
+                    
+                    AES、DES
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.2" data-path="../../../Computer/加密解密/MD5.html">
+            
+                <a href="../../../Computer/加密解密/MD5.html">
+            
+                    
+                    MD5
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.3" data-path="../../../Computer/加密解密/SHA256.html">
+            
+                <a href="../../../Computer/加密解密/SHA256.html">
+            
+                    
+                    SHA256
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../../../Computer/操作系统/操作系统.html">
+            
+                <a href="../../../Computer/操作系统/操作系统.html">
+            
+                    
+                    操作系统
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.7.1" data-path="../../../Computer/操作系统/线程&进程.html">
+            
+                <a href="../../../Computer/操作系统/线程&进程.html">
+            
+                    
+                    线程&进程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../../../Computer/网络协议/网络协议.html">
+            
+                <a href="../../../Computer/网络协议/网络协议.html">
+            
+                    
+                    网络协议
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.8.1" data-path="../../../Computer/网络协议/HTTP.html">
+            
+                <a href="../../../Computer/网络协议/HTTP.html">
+            
+                    
+                    HTTP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.2" data-path="../../../Computer/网络协议/KCP.html">
+            
+                <a href="../../../Computer/网络协议/KCP.html">
+            
+                    
+                    KCP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.3" data-path="../../../Computer/网络协议/SRWebSocket源码解析.html">
+            
+                <a href="../../../Computer/网络协议/SRWebSocket源码解析.html">
+            
+                    
+                    SRWebSocket源码解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.4" data-path="../../../Computer/网络协议/Socket.html">
+            
+                <a href="../../../Computer/网络协议/Socket.html">
+            
+                    
+                    Socket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.5" data-path="../../../Computer/网络协议/TCP.html">
+            
+                <a href="../../../Computer/网络协议/TCP.html">
+            
+                    
+                    TCP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.6" data-path="../../../Computer/网络协议/WebSocket.html">
+            
+                <a href="../../../Computer/网络协议/WebSocket.html">
+            
+                    
+                    WebSocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../../../Computer/计算机基础/计算机基础.html">
+            
+                <a href="../../../Computer/计算机基础/计算机基础.html">
+            
+                    
+                    计算机基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.9.1" data-path="../../../Computer/计算机基础/文本流&二进制流.html">
+            
+                <a href="../../../Computer/计算机基础/文本流&二进制流.html">
+            
+                    
+                    文本流&二进制流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9.2" data-path="../../../Computer/计算机基础/正则表达式.html">
+            
+                <a href="../../../Computer/计算机基础/正则表达式.html">
+            
+                    
+                    正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../Tool.html">
+            
+                <a href="../../Tool.html">
+            
+                    
+                    Tool
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../Fastlane/Fastlane.html">
+            
+                <a href="../../Fastlane/Fastlane.html">
+            
+                    
+                    Fastlane
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../../Fastlane/Fastlane问题记录.html">
+            
+                <a href="../../Fastlane/Fastlane问题记录.html">
+            
+                    
+                    Fastlane问题记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../Git/Git.html">
+            
+                <a href="../../Git/Git.html">
+            
+                    
+                    Git
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../../Git/rebase.html">
+            
+                <a href="../../Git/rebase.html">
+            
+                    
+                    rebase
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../../Git/reset.html">
+            
+                <a href="../../Git/reset.html">
+            
+                    
+                    reset
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../../Git/submodule.html">
+            
+                <a href="../../Git/submodule.html">
+            
+                    
+                    submodule
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../Markdown/Markdown.html">
+            
+                <a href="../../Markdown/Markdown.html">
+            
+                    
+                    Markdown
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../../Markdown/Flow.html">
+            
+                <a href="../../Markdown/Flow.html">
+            
+                    
+                    Flow
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../../Markdown/Mermaid.html">
+            
+                <a href="../../Markdown/Mermaid.html">
+            
+                    
+                    Mermaid
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../../Markdown/PlantUML.html">
+            
+                <a href="../../Markdown/PlantUML.html">
+            
+                    
+                    PlantUML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="../../Markdown/UML.html">
+            
+                <a href="../../Markdown/UML.html">
+            
+                    
+                    UML
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../Shell.html">
+            
+                <a href="../Shell.html">
+            
+                    
+                    Shell
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="命令.html">
+            
+                <a href="命令.html">
+            
+                    
+                    命令
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1.1" data-path="array.html">
+            
+                <a href="array.html">
+            
+                    
+                    array
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.1.2" data-path="cp.html">
+            
+                <a href="cp.html">
+            
+                    
+                    cp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.1.3" data-path="echo.html">
+            
+                <a href="echo.html">
+            
+                    
+                    echo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.1.4" data-path="find.html">
+            
+                <a href="find.html">
+            
+                    
+                    find
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.1.5" data-path="for.html">
+            
+                <a href="for.html">
+            
+                    
+                    for
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.4.1.6" data-path="grep.html">
+            
+                <a href="grep.html">
+            
+                    
+                    grep
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.1.7" data-path="iconv.html">
+            
+                <a href="iconv.html">
+            
+                    
+                    iconv
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.1.8" data-path="if.html">
+            
+                <a href="if.html">
+            
+                    
+                    if
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.1.9" data-path="ln.html">
+            
+                <a href="ln.html">
+            
+                    
+                    ln
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.1.10" data-path="mv.html">
+            
+                <a href="mv.html">
+            
+                    
+                    mv
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.1.11" data-path="read.html">
+            
+                <a href="read.html">
+            
+                    
+                    read
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.1.12" data-path="rm.html">
+            
+                <a href="rm.html">
+            
+                    
+                    rm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.1.13" data-path="sed.html">
+            
+                <a href="sed.html">
+            
+                    
+                    sed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.1.14" data-path="unzip.html">
+            
+                <a href="unzip.html">
+            
+                    
+                    unzip
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.1.15" data-path="xargs.html">
+            
+                <a href="xargs.html">
+            
+                    
+                    xargs
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="../用例.html">
+            
+                <a href="../用例.html">
+            
+                    
+                    用例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="../基本语法.html">
+            
+                <a href="../基本语法.html">
+            
+                    
+                    基本语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.4" data-path="../组合命令.html">
+            
+                <a href="../组合命令.html">
+            
+                    
+                    组合命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../../博客搭建/博客搭建.html">
+            
+                <a href="../../博客搭建/博客搭建.html">
+            
+                    
+                    博客搭建
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.5.1" data-path="../../博客搭建/GitBook/GitBook.html">
+            
+                <a href="../../博客搭建/GitBook/GitBook.html">
+            
+                    
+                    GitBook
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.5.1.1" data-path="../../博客搭建/GitBook/plugins.html">
+            
+                <a href="../../博客搭建/GitBook/plugins.html">
+            
+                    
+                    plugins
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.2" data-path="../../博客搭建/Hexo/Hexo.html">
+            
+                <a href="../../博客搭建/Hexo/Hexo.html">
+            
+                    
+                    Hexo
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.5.2.1" data-path="../../博客搭建/Hexo/基础.html">
+            
+                <a href="../../博客搭建/Hexo/基础.html">
+            
+                    
+                    基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.2.2" data-path="../../博客搭建/Hexo/进阶.html">
+            
+                <a href="../../博客搭建/Hexo/进阶.html">
+            
+                    
+                    进阶
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../../工具软件/工具软件.html">
+            
+                <a href="../../工具软件/工具软件.html">
+            
+                    
+                    工具软件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.6.1" data-path="../../工具软件/VSCode/VSCode.html">
+            
+                <a href="../../工具软件/VSCode/VSCode.html">
+            
+                    
+                    VSCode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6.2" data-path="../../工具软件/zsh.html">
+            
+                <a href="../../工具软件/zsh.html">
+            
+                    
+                    zsh
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../../高效学习/高效学习.html">
+            
+                <a href="../../高效学习/高效学习.html">
+            
+                    
+                    高效学习
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.7.1" data-path="../../高效学习/费曼学习法.html">
+            
+                <a href="../../高效学习/费曼学习法.html">
+            
+                    
+                    费曼学习法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../../Trader/Trader.html">
+            
+                <a href="../../../Trader/Trader.html">
+            
+                    
+                    Trader
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../../Trader/Python/Python.html">
+            
+                <a href="../../../Trader/Python/Python.html">
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../../Trader/期货/期货.html">
+            
+                <a href="../../../Trader/期货/期货.html">
+            
+                    
+                    期货
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../../Trader/量化/量化.html">
+            
+                <a href="../../../Trader/量化/量化.html">
+            
+                    
+                    量化
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.3.1" data-path="../../../Trader/量化/CCXT.html">
+            
+                <a href="../../../Trader/量化/CCXT.html">
+            
+                    
+                    CCXT
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../../Trader/区块链/区块链.html">
+            
+                <a href="../../../Trader/区块链/区块链.html">
+            
+                    
+                    区块链
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.4.1" data-path="../../../Trader/区块链/BTC.html">
+            
+                <a href="../../../Trader/区块链/BTC.html">
+            
+                    
+                    BTC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.2" data-path="../../../Trader/区块链/DeFi.html">
+            
+                <a href="../../../Trader/区块链/DeFi.html">
+            
+                    
+                    DeFi
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.3" data-path="../../../Trader/区块链/术语.html">
+            
+                <a href="../../../Trader/区块链/术语.html">
+            
+                    
+                    术语
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.4" data-path="../../../Trader/区块链/主链侧链.html">
+            
+                <a href="../../../Trader/区块链/主链侧链.html">
+            
+                    
+                    主链侧链
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../../Trader/股票基金/股票基金.html">
+            
+                <a href="../../../Trader/股票基金/股票基金.html">
+            
+                    
+                    股票基金
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.5.1" data-path="../../../Trader/股票基金/ETF基金.html">
+            
+                <a href="../../../Trader/股票基金/ETF基金.html">
+            
+                    
+                    ETF基金
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.2" data-path="../../../Trader/股票基金/指标.html">
+            
+                <a href="../../../Trader/股票基金/指标.html">
+            
+                    
+                    指标
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../../iOS/iOS.html">
+            
+                <a href="../../../iOS/iOS.html">
+            
+                    
+                    iOS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../../../iOS/Allocations.html">
+            
+                <a href="../../../iOS/Allocations.html">
+            
+                    
+                    Allocations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../../../iOS/CocoaPods之Profile.html">
+            
+                <a href="../../../iOS/CocoaPods之Profile.html">
+            
+                    
+                    CocoaPods之Profile
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../../../iOS/CocoaPods之podspec.html">
+            
+                <a href="../../../iOS/CocoaPods之podspec.html">
+            
+                    
+                    CocoaPods之podspec
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../../../iOS/CocoaPods安装.html">
+            
+                <a href="../../../iOS/CocoaPods安装.html">
+            
+                    
+                    CocoaPods安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../../../iOS/Flutter/Flutter.html">
+            
+                <a href="../../../iOS/Flutter/Flutter.html">
+            
+                    
+                    Flutter
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.5.1" data-path="../../../iOS/Flutter/Channel.html">
+            
+                <a href="../../../iOS/Flutter/Channel.html">
+            
+                    
+                    Channel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5.2" data-path="../../../iOS/Flutter/Widget.html">
+            
+                <a href="../../../iOS/Flutter/Widget.html">
+            
+                    
+                    Widget
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5.3" data-path="../../../iOS/Flutter/树.html">
+            
+                <a href="../../../iOS/Flutter/树.html">
+            
+                    
+                    树
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5.4" data-path="../../../iOS/Flutter/课程/课程.html">
+            
+                <a href="../../../iOS/Flutter/课程/课程.html">
+            
+                    
+                    课程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.5.4.1" data-path="../../../iOS/Flutter/课程/Flutter核心技术与实战.html">
+            
+                <a href="../../../iOS/Flutter/课程/Flutter核心技术与实战.html">
+            
+                    
+                    Flutter核心技术与实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5.5" data-path="../../../iOS/Flutter/实例.html">
+            
+                <a href="../../../iOS/Flutter/实例.html">
+            
+                    
+                    实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5.6" data-path="../../../iOS/Flutter/问题集.html">
+            
+                <a href="../../../iOS/Flutter/问题集.html">
+            
+                    
+                    问题集
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="../../../iOS/MVC、MVP、MVVM.html">
+            
+                <a href="../../../iOS/MVC、MVP、MVVM.html">
+            
+                    
+                    MVC、MVP、MVVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="../../../iOS/Mac开发.html">
+            
+                <a href="../../../iOS/Mac开发.html">
+            
+                    
+                    Mac开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.8" data-path="../../../iOS/Modules.html">
+            
+                <a href="../../../iOS/Modules.html">
+            
+                    
+                    Modules
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.9" data-path="../../../iOS/Notification.html">
+            
+                <a href="../../../iOS/Notification.html">
+            
+                    
+                    Notification
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.10" data-path="../../../iOS/Swift/Swift.html">
+            
+                <a href="../../../iOS/Swift/Swift.html">
+            
+                    
+                    Swift
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.10.1" data-path="../../../iOS/Swift/ABI稳定、模块稳定.html">
+            
+                <a href="../../../iOS/Swift/ABI稳定、模块稳定.html">
+            
+                    
+                    ABI稳定、模块稳定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.10.2" data-path="../../../iOS/Swift/as as! as?.html">
+            
+                <a href="../../../iOS/Swift/as as! as?.html">
+            
+                    
+                    as as! as?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.10.3" data-path="../../../iOS/Swift/访问权限修饰符.html">
+            
+                <a href="../../../iOS/Swift/访问权限修饰符.html">
+            
+                    
+                    访问权限修饰符
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.11" data-path="../../../iOS/WebAssembly/WebAssembly.html">
+            
+                <a href="../../../iOS/WebAssembly/WebAssembly.html">
+            
+                    
+                    WebAssembly
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.12" data-path="../../../iOS/Xcode.html">
+            
+                <a href="../../../iOS/Xcode.html">
+            
+                    
+                    Xcode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.13" data-path="../../../iOS/iOS经验.html">
+            
+                <a href="../../../iOS/iOS经验.html">
+            
+                    
+                    iOS经验
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.14" data-path="../../../iOS/libffi探究.html">
+            
+                <a href="../../../iOS/libffi探究.html">
+            
+                    
+                    libffi探究
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.15" data-path="../../../iOS/property.html">
+            
+                <a href="../../../iOS/property.html">
+            
+                    
+                    property
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.16" data-path="../../../iOS/书籍/书籍.html">
+            
+                <a href="../../../iOS/书籍/书籍.html">
+            
+                    
+                    书籍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.16.1" data-path="../../../iOS/书籍/Effective Objective-C 2.0/Effective Objective-C 2.0.html">
+            
+                <a href="../../../iOS/书籍/Effective Objective-C 2.0/Effective Objective-C 2.0.html">
+            
+                    
+                    Effective Objective-C 2.0
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.16.1.1" data-path="../../../iOS/书籍/Effective Objective-C 2.0/Chapter 1-1.html">
+            
+                <a href="../../../iOS/书籍/Effective Objective-C 2.0/Chapter 1-1.html">
+            
+                    
+                    Chapter 1-1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.16.1.2" data-path="../../../iOS/书籍/Effective Objective-C 2.0/Chapter 2-1.html">
+            
+                <a href="../../../iOS/书籍/Effective Objective-C 2.0/Chapter 2-1.html">
+            
+                    
+                    Chapter 2-1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.16.1.3" data-path="../../../iOS/书籍/Effective Objective-C 2.0/Chapter 2-2.html">
+            
+                <a href="../../../iOS/书籍/Effective Objective-C 2.0/Chapter 2-2.html">
+            
+                    
+                    Chapter 2-2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.16.1.4" data-path="../../../iOS/书籍/Effective Objective-C 2.0/Chapter 2-3.html">
+            
+                <a href="../../../iOS/书籍/Effective Objective-C 2.0/Chapter 2-3.html">
+            
+                    
+                    Chapter 2-3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.16.1.5" data-path="../../../iOS/书籍/Effective Objective-C 2.0/Chapter 3-1.html">
+            
+                <a href="../../../iOS/书籍/Effective Objective-C 2.0/Chapter 3-1.html">
+            
+                    
+                    Chapter 3-1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.16.1.6" data-path="../../../iOS/书籍/Effective Objective-C 2.0/Chapter 4-1.html">
+            
+                <a href="../../../iOS/书籍/Effective Objective-C 2.0/Chapter 4-1.html">
+            
+                    
+                    Chapter 4-1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.16.1.7" data-path="../../../iOS/书籍/Effective Objective-C 2.0/Chapter 5-1.html">
+            
+                <a href="../../../iOS/书籍/Effective Objective-C 2.0/Chapter 5-1.html">
+            
+                    
+                    Chapter 5-1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.16.1.8" data-path="../../../iOS/书籍/Effective Objective-C 2.0/Chapter 5-2.html">
+            
+                <a href="../../../iOS/书籍/Effective Objective-C 2.0/Chapter 5-2.html">
+            
+                    
+                    Chapter 5-2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.16.1.9" data-path="../../../iOS/书籍/Effective Objective-C 2.0/Chapter 5-3.html">
+            
+                <a href="../../../iOS/书籍/Effective Objective-C 2.0/Chapter 5-3.html">
+            
+                    
+                    Chapter 5-3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.16.1.10" data-path="../../../iOS/书籍/Effective Objective-C 2.0/Chapter 6-1.html">
+            
+                <a href="../../../iOS/书籍/Effective Objective-C 2.0/Chapter 6-1.html">
+            
+                    
+                    Chapter 6-1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.16.1.11" data-path="../../../iOS/书籍/Effective Objective-C 2.0/Chapter 6-2.html">
+            
+                <a href="../../../iOS/书籍/Effective Objective-C 2.0/Chapter 6-2.html">
+            
+                    
+                    Chapter 6-2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.16.1.12" data-path="../../../iOS/书籍/Effective Objective-C 2.0/Chapter 6-3.html">
+            
+                <a href="../../../iOS/书籍/Effective Objective-C 2.0/Chapter 6-3.html">
+            
+                    
+                    Chapter 6-3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.16.1.13" data-path="../../../iOS/书籍/Effective Objective-C 2.0/Chapter 7-1.html">
+            
+                <a href="../../../iOS/书籍/Effective Objective-C 2.0/Chapter 7-1.html">
+            
+                    
+                    Chapter 7-1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.16.1.14" data-path="../../../iOS/书籍/Effective Objective-C 2.0/Chapter 7-2.html">
+            
+                <a href="../../../iOS/书籍/Effective Objective-C 2.0/Chapter 7-2.html">
+            
+                    
+                    Chapter 7-2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.17" data-path="../../../iOS/模块/模块.html">
+            
+                <a href="../../../iOS/模块/模块.html">
+            
+                    
+                    模块
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.17.1" data-path="../../../iOS/模块/一键登录.html">
+            
+                <a href="../../../iOS/模块/一键登录.html">
+            
+                    
+                    一键登录
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.18" data-path="../../../iOS/重构/重构.html">
+            
+                <a href="../../../iOS/重构/重构.html">
+            
+                    
+                    重构
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.18.1" data-path="../../../iOS/重构/下拉刷新逻辑重构.html">
+            
+                <a href="../../../iOS/重构/下拉刷新逻辑重构.html">
+            
+                    
+                    下拉刷新逻辑重构
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.19" data-path="../../../iOS/一个Workspace多个Project.html">
+            
+                <a href="../../../iOS/一个Workspace多个Project.html">
+            
+                    
+                    一个Workspace多个Project
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.20" data-path="../../../iOS/多线程/多线程.html">
+            
+                <a href="../../../iOS/多线程/多线程.html">
+            
+                    
+                    多线程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.20.1" data-path="../../../iOS/多线程/GCD.html">
+            
+                <a href="../../../iOS/多线程/GCD.html">
+            
+                    
+                    GCD
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.21" data-path="../../../iOS/系统类/系统类.html">
+            
+                <a href="../../../iOS/系统类/系统类.html">
+            
+                    
+                    系统类
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.21.1" data-path="../../../iOS/系统类/NSKeyedArchiver.html">
+            
+                <a href="../../../iOS/系统类/NSKeyedArchiver.html">
+            
+                    
+                    NSKeyedArchiver
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.21.2" data-path="../../../iOS/系统类/NSUserDefaults.html">
+            
+                <a href="../../../iOS/系统类/NSUserDefaults.html">
+            
+                    
+                    NSUserDefaults
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.21.3" data-path="../../../iOS/系统类/UIGestureRecognizer.html">
+            
+                <a href="../../../iOS/系统类/UIGestureRecognizer.html">
+            
+                    
+                    UIGestureRecognizer
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.22" data-path="../../../iOS/音视频/音视频.html">
+            
+                <a href="../../../iOS/音视频/音视频.html">
+            
+                    
+                    音视频
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.22.1" data-path="../../../iOS/音视频/AAC.html">
+            
+                <a href="../../../iOS/音视频/AAC.html">
+            
+                    
+                    AAC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.22.2" data-path="../../../iOS/音视频/FFmpeg/FFmpeg.html">
+            
+                <a href="../../../iOS/音视频/FFmpeg/FFmpeg.html">
+            
+                    
+                    FFmpeg
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.22.2.1" data-path="../../../iOS/音视频/FFmpeg/源码解读.html">
+            
+                <a href="../../../iOS/音视频/FFmpeg/源码解读.html">
+            
+                    
+                    源码解读
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.22.3" data-path="../../../iOS/音视频/FLV.html">
+            
+                <a href="../../../iOS/音视频/FLV.html">
+            
+                    
+                    FLV
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.22.4" data-path="../../../iOS/音视频/H264.html">
+            
+                <a href="../../../iOS/音视频/H264.html">
+            
+                    
+                    H264
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.22.5" data-path="../../../iOS/音视频/MP4.html">
+            
+                <a href="../../../iOS/音视频/MP4.html">
+            
+                    
+                    MP4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.22.6" data-path="../../../iOS/音视频/PCM.html">
+            
+                <a href="../../../iOS/音视频/PCM.html">
+            
+                    
+                    PCM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.22.7" data-path="../../../iOS/音视频/TS.html">
+            
+                <a href="../../../iOS/音视频/TS.html">
+            
+                    
+                    TS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.22.8" data-path="../../../iOS/音视频/WAV.html">
+            
+                <a href="../../../iOS/音视频/WAV.html">
+            
+                    
+                    WAV
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.22.9" data-path="../../../iOS/音视频/WebRTC/WebRTC.html">
+            
+                <a href="../../../iOS/音视频/WebRTC/WebRTC.html">
+            
+                    
+                    WebRTC
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.22.9.1" data-path="../../../iOS/音视频/WebRTC/CritScope锁.html">
+            
+                <a href="../../../iOS/音视频/WebRTC/CritScope锁.html">
+            
+                    
+                    CritScope锁
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.22.9.2" data-path="../../../iOS/音视频/WebRTC/从0打造音视频直播系统.html">
+            
+                <a href="../../../iOS/音视频/WebRTC/从0打造音视频直播系统.html">
+            
+                    
+                    从0打造音视频直播系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.22.10" data-path="../../../iOS/音视频/YUV.html">
+            
+                <a href="../../../iOS/音视频/YUV.html">
+            
+                    
+                    YUV
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.22.11" data-path="../../../iOS/音视频/课程/课程.html">
+            
+                <a href="../../../iOS/音视频/课程/课程.html">
+            
+                    
+                    课程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.22.11.1" data-path="../../../iOS/音视频/课程/音视频小白系统入门课.html">
+            
+                <a href="../../../iOS/音视频/课程/音视频小白系统入门课.html">
+            
+                    
+                    音视频小白系统入门课
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.22.12" data-path="../../../iOS/音视频/流媒体/流媒体.html">
+            
+                <a href="../../../iOS/音视频/流媒体/流媒体.html">
+            
+                    
+                    流媒体
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.22.12.1" data-path="../../../iOS/音视频/流媒体/HLS.html">
+            
+                <a href="../../../iOS/音视频/流媒体/HLS.html">
+            
+                    
+                    HLS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.22.12.2" data-path="../../../iOS/音视频/流媒体/HTTP-FLV.html">
+            
+                <a href="../../../iOS/音视频/流媒体/HTTP-FLV.html">
+            
+                    
+                    HTTP-FLV
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.22.12.3" data-path="../../../iOS/音视频/流媒体/RTMP.html">
+            
+                <a href="../../../iOS/音视频/流媒体/RTMP.html">
+            
+                    
+                    RTMP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.22.12.4" data-path="../../../iOS/音视频/流媒体/RTP-RTCP-RTSP.html">
+            
+                <a href="../../../iOS/音视频/流媒体/RTP-RTCP-RTSP.html">
+            
+                    
+                    RTP-RTCP-RTSP
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.22.13" data-path="../../../iOS/音视频/音视频同步.html">
+            
+                <a href="../../../iOS/音视频/音视频同步.html">
+            
+                    
+                    音视频同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.23" data-path="../../../iOS/问题集.html">
+            
+                <a href="../../../iOS/问题集.html">
+            
+                    
+                    问题集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.24" data-path="../../../iOS/第三方库/第三方库.html">
+            
+                <a href="../../../iOS/第三方库/第三方库.html">
+            
+                    
+                    第三方库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.24.1" data-path="../../../iOS/第三方库/AFNetWorking.html">
+            
+                <a href="../../../iOS/第三方库/AFNetWorking.html">
+            
+                    
+                    AFNetWorking
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.25" data-path="../../../iOS/系统组件/系统组件.html">
+            
+                <a href="../../../iOS/系统组件/系统组件.html">
+            
+                    
+                    系统组件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.25.1" data-path="../../../iOS/系统组件/UIButton.html">
+            
+                <a href="../../../iOS/系统组件/UIButton.html">
+            
+                    
+                    UIButton
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.25.2" data-path="../../../iOS/系统组件/UICollectionView.html">
+            
+                <a href="../../../iOS/系统组件/UICollectionView.html">
+            
+                    
+                    UICollectionView
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.25.3" data-path="../../../iOS/系统组件/UINavigationController.html">
+            
+                <a href="../../../iOS/系统组件/UINavigationController.html">
+            
+                    
+                    UINavigationController
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.25.4" data-path="../../../iOS/系统组件/UISearchController.html">
+            
+                <a href="../../../iOS/系统组件/UISearchController.html">
+            
+                    
+                    UISearchController
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.25.5" data-path="../../../iOS/系统组件/UISheetPresentationController.html">
+            
+                <a href="../../../iOS/系统组件/UISheetPresentationController.html">
+            
+                    
+                    UISheetPresentationController
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.25.6" data-path="../../../iOS/系统组件/UIStatusBar.html">
+            
+                <a href="../../../iOS/系统组件/UIStatusBar.html">
+            
+                    
+                    UIStatusBar
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.25.7" data-path="../../../iOS/系统组件/UITextField.html">
+            
+                <a href="../../../iOS/系统组件/UITextField.html">
+            
+                    
+                    UITextField
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.25.8" data-path="../../../iOS/系统组件/UITextView.html">
+            
+                <a href="../../../iOS/系统组件/UITextView.html">
+            
+                    
+                    UITextView
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.25.9" data-path="../../../iOS/系统组件/UIView.html">
+            
+                <a href="../../../iOS/系统组件/UIView.html">
+            
+                    
+                    UIView
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.25.10" data-path="../../../iOS/系统组件/UIViewController.html">
+            
+                <a href="../../../iOS/系统组件/UIViewController.html">
+            
+                    
+                    UIViewController
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.25.11" data-path="../../../iOS/系统组件/WKWebview.html">
+            
+                <a href="../../../iOS/系统组件/WKWebview.html">
+            
+                    
+                    WKWebview
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.26" data-path="../../../iOS/内存相关.html">
+            
+                <a href="../../../iOS/内存相关.html">
+            
+                    
+                    内存相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.27" data-path="../../../iOS/地图坐标系.html">
+            
+                <a href="../../../iOS/地图坐标系.html">
+            
+                    
+                    地图坐标系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.28" data-path="../../../iOS/自定义转场.html">
+            
+                <a href="../../../iOS/自定义转场.html">
+            
+                    
+                    自定义转场
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.29" data-path="../../../iOS/内存管理机制.html">
+            
+                <a href="../../../iOS/内存管理机制.html">
+            
+                    
+                    内存管理机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.30" data-path="../../../iOS/单例完整写法.html">
+            
+                <a href="../../../iOS/单例完整写法.html">
+            
+                    
+                    单例完整写法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.31" data-path="../../../iOS/检测未使用的类.html">
+            
+                <a href="../../../iOS/检测未使用的类.html">
+            
+                    
+                    检测未使用的类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.32" data-path="../../../iOS/自定义对象去重.html">
+            
+                <a href="../../../iOS/自定义对象去重.html">
+            
+                    
+                    自定义对象去重
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.33" data-path="../../../iOS/对象什么时候加入自动释放池.html">
+            
+                <a href="../../../iOS/对象什么时候加入自动释放池.html">
+            
+                    
+                    对象什么时候加入自动释放池
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >grep</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="grep">grep</h1>
+<p>&#x6B63;&#x5219;&#x5339;&#x914D;</p>
+<pre><code># grep &quot;&#x5B57;&#x7B26;&#x4E32;&quot; &#x53C2;&#x6570; &#x5339;&#x914D;&#x76EE;&#x5F55;
+grep &quot;&#x5B57;&#x7B26;&#x4E32;&quot; -rl ./
+</code></pre><pre><code>-R -r &#xFF1A;&#x8868;&#x793A;&#x9012;&#x5F52;
+-l : &#x53EA;&#x5217;&#x51FA;&#x5339;&#x914D;&#x7684;&#x6587;&#x4EF6;&#x540D;
+-L : &#x53EA;&#x5217;&#x51FA;&#x4E0D;&#x5339;&#x914D;&#x7684;&#x6587;&#x4EF6;&#x540D;
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="for.html" class="navigation navigation-prev " aria-label="Previous page: for">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="iconv.html" class="navigation navigation-next " aria-label="Next page: iconv">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"grep","level":"1.3.4.1.6","depth":4,"next":{"title":"iconv","level":"1.3.4.1.7","depth":4,"path":"Tool/Shell/命令/iconv.md","ref":"Tool/Shell/命令/iconv.md","articles":[]},"previous":{"title":"for","level":"1.3.4.1.5","depth":4,"path":"Tool/Shell/命令/for.md","ref":"Tool/Shell/命令/for.md","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"vhuichen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NoteBook","language":"zh-hans","gitbook":"*","description":"笔记、分享"},"file":{"path":"Tool/Shell/命令/grep.md","mtime":"2023-02-19T11:21:57.144Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-10-21T11:57:41.753Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
