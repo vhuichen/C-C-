@@ -3610,7 +3610,7 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x539F;&#x751F;&#x4E0E;-webview-&#x4EA4;&#x4E92;">&#x539F;&#x751F;&#x4E0E; WebView &#x4EA4;&#x4E92;</h1>
-<h4 id="&#x65B9;&#x6CD5;&#x4E00;&#xFF1A;&#x534F;&#x8BAE;&#x62E6;&#x622A;">&#x65B9;&#x6CD5;&#x4E00;&#xFF1A;&#x534F;&#x8BAE;&#x62E6;&#x622A;</h4>
+<h3 id="&#x65B9;&#x6848;&#x4E00;&#xFF1A;&#x534F;&#x8BAE;&#x62E6;&#x622A;">&#x65B9;&#x6848;&#x4E00;&#xFF1A;&#x534F;&#x8BAE;&#x62E6;&#x622A;</h3>
 <p>JS &#x7AEF;&#x52A0;&#x8F7D;&#x7EA6;&#x5B9A;&#x683C;&#x5F0F;&#x7684;URL&#xFF0C;WebView&#x786E;&#x8BA4;&#x662F;&#x5426;&#x5141;&#x8BB8;&#x52A0;&#x8F7D;&#xFF0C;&#x5982;&#x679C;&#x5224;&#x65AD;&#x662F;&#x7EA6;&#x5B9A;&#x7684; scheme URL&#xFF0C;&#x5219;&#x5355;&#x72EC;&#x5904;&#x7406;</p>
 <pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">jsToOc</span>(<span class="hljs-params">action, params</span>) </span>{
     <span class="hljs-keyword">var</span> url = <span class="hljs-string">&quot;jsToOc://&quot;</span> + action + <span class="hljs-string">&quot;?&quot;</span> + params;
@@ -3630,7 +3630,7 @@
     <span class="hljs-keyword">return</span> <span class="hljs-literal">YES</span>;
 }
 
-<span class="hljs-comment">// OC&#x8C03;JS</span>
+<span class="hljs-comment">// OC &#x8C03;&#x7528; JS</span>
 <span class="hljs-built_in">NSString</span> *jsString = [<span class="hljs-built_in">NSString</span> stringWithFormat:<span class="hljs-string">@&quot;ocToJs(&apos;login&apos;, &apos;token_value_123&apos;)&quot;</span>];
 [<span class="hljs-keyword">self</span>.webView stringByEvaluatingJavaScriptFromString:jsString];
 </code></pre>
@@ -3644,10 +3644,164 @@
     }
 }
 
-<span class="hljs-comment">// OC&#x8C03;JS</span>
+<span class="hljs-comment">// OC &#x8C03;&#x7528; JS</span>
 [<span class="hljs-keyword">self</span>.webView evaluateJavaScript:<span class="hljs-string">@&quot;ocToJs(&apos;login&apos;, &apos;token_value_123&apos;)&quot;</span> completionHandler:^(<span class="hljs-keyword">id</span> response, <span class="hljs-built_in">NSError</span> *error) {
 }];
 </code></pre>
+<h3 id="&#x65B9;&#x6848;&#x4E8C;&#xFF1A;javascriptcore">&#x65B9;&#x6848;&#x4E8C;&#xFF1A;JavaScriptCore</h3>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">jsToOc</span>(<span class="hljs-params">action, params</span>) </span>{
+    <span class="hljs-keyword">var</span> url = <span class="hljs-string">&quot;jsToOc://&quot;</span> + action + <span class="hljs-string">&quot;?&quot;</span> + params;
+    <span class="hljs-built_in">window</span>.location.href = url;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ocToJs</span>(<span class="hljs-params">action, params</span>) </span>{
+
+}
+</code></pre>
+<pre><code class="lang-objc"><span class="hljs-meta">#import <span class="hljs-meta-string">&lt;JavaScriptCore/JavaScriptCore.h&gt;</span></span>
+
+<span class="hljs-meta">#pragma mark - UIWebViewDelegate</span>
+- (<span class="hljs-keyword">void</span>)webViewDidFinishLoad:(<span class="hljs-built_in">UIWebView</span> *)webView {
+    <span class="hljs-comment">// &#x83B7;&#x53D6;&#x6267;&#x884C;&#x73AF;&#x5883;/&#x4E0A;&#x4E0B;&#x6587;/&#x4F5C;&#x7528;&#x57DF;</span>
+    JSContext *context = [webView valueForKeyPath:<span class="hljs-string">@&quot;documentView.webView.mainFrame.javaScriptContext&quot;</span>];
+
+    <span class="hljs-comment">// &#x76D1;&#x542C;jsToOc&#x65B9;&#x6CD5;&#xFF08;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x6210;&#x91CD;&#x5199;&#x4E86;JS&#x7684;jsToOc&#x65B9;&#x6CD5;&#xFF09;</span>
+    context[<span class="hljs-string">@&quot;jsToOc&quot;</span>] = ^(<span class="hljs-built_in">NSString</span> *action, <span class="hljs-built_in">NSString</span> *params) {
+        <span class="hljs-built_in">dispatch_async</span>(dispatch_get_main_queue(), ^{
+            <span class="hljs-comment">// do something</span>
+        });
+    };
+}
+
+<span class="hljs-comment">// OC &#x8C03;&#x7528; JS</span>
+JSContext *context = [<span class="hljs-keyword">self</span>.webView valueForKeyPath:<span class="hljs-string">@&quot;documentView.webView.mainFrame.javaScriptContext&quot;</span>];
+[context evaluateScript:[<span class="hljs-built_in">NSString</span> stringWithFormat:<span class="hljs-string">@&quot;ocToJs(&apos;login&apos;, &apos;token_value_123&apos;)&quot;</span>]];
+<span class="hljs-comment">// [context[@&quot;ocToJs&quot;] callWithArguments:@[@&quot;login&quot;, @&quot;token_value_123&quot;]];</span>
+</code></pre>
+<h3 id="&#x65B9;&#x6848;&#x4E09;&#xFF1A;jsexport-&#x534F;&#x8BAE;">&#x65B9;&#x6848;&#x4E09;&#xFF1A;JSExport &#x534F;&#x8BAE;</h3>
+<p>&#x6CE8;&#x518C; OCJSBridge &#x5BF9;&#x8C61;</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">jsToOc</span>(<span class="hljs-params">action, params</span>) </span>{
+    OCJSBridge.jsToOc(action, params)
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ocToJs</span>(<span class="hljs-params">action, params</span>) </span>{
+
+}
+</code></pre>
+<pre><code class="lang-objc"><span class="hljs-meta">#import <span class="hljs-meta-string">&lt;JavaScriptCore/JavaScriptCore.h&gt;</span></span>
+
+<span class="hljs-class"><span class="hljs-keyword">@protocol</span> <span class="hljs-title">OCJSExport</span> &lt;<span class="hljs-title">JSExport</span>&gt;</span>
+<span class="hljs-comment">// -jsToOC:params:&#x65B9;&#x6CD5;&#x8D77;&#x4E2A;JS&#x8BA4;&#x8BC6;&#x7684;&#x522B;&#x540D;jsToOc</span>
+JSExportAs(jsToOc, - (<span class="hljs-keyword">void</span>)jsToOc:(<span class="hljs-built_in">NSString</span> *)action params:(<span class="hljs-built_in">NSString</span> *)params);
+<span class="hljs-keyword">@end</span>
+
+<span class="hljs-comment">// UIWebViewJSExportController&#x9075;&#x5B88; OCJSExport &#x534F;&#x8BAE;</span>
+<span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">UIWebViewJSExportController</span> () &lt;<span class="hljs-title">UIWebViewDelegate</span>, <span class="hljs-title">OCJSExport</span>&gt;</span>
+
+<span class="hljs-meta">#pragma mark - JSExport functions</span>
+<span class="hljs-comment">// &#x5B9E;&#x73B0;OCJSExport&#x534F;&#x8BAE;&#x7684;&#x65B9;&#x6CD5;</span>
+- (<span class="hljs-keyword">void</span>)jsToOc:(<span class="hljs-built_in">NSString</span> *)action params:(<span class="hljs-built_in">NSString</span> *)params {
+    <span class="hljs-built_in">dispatch_async</span>(dispatch_get_main_queue(), ^{
+        <span class="hljs-comment">// do something</span>
+    });
+}
+
+<span class="hljs-meta">#pragma mark - UIWebViewDelegate</span>
+- (<span class="hljs-keyword">void</span>)webViewDidFinishLoad:(<span class="hljs-built_in">UIWebView</span> *)webView {
+    <span class="hljs-comment">// &#x83B7;&#x53D6;&#x6267;&#x884C;&#x73AF;&#x5883;/&#x4E0A;&#x4E0B;&#x6587;/&#x4F5C;&#x7528;&#x57DF;</span>
+    JSContext *context = [webView valueForKeyPath:<span class="hljs-string">@&quot;documentView.webView.mainFrame.javaScriptContext&quot;</span>];
+      <span class="hljs-comment">// &#x6CE8;&#x518C; OCJSBridge &#x5BF9;&#x8C61;</span>
+    context[<span class="hljs-string">@&quot;OCJSBridge&quot;</span>] = weakself;<span class="hljs-comment">// &#x6709;&#x5FAA;&#x73AF;&#x5F15;&#x7528;&#x95EE;&#x9898;</span>
+}
+
+<span class="hljs-comment">// OC &#x8C03;&#x7528; JS</span>
+JSContext *context = [<span class="hljs-keyword">self</span>.webView valueForKeyPath:<span class="hljs-string">@&quot;documentView.webView.mainFrame.javaScriptContext&quot;</span>];
+[context evaluateScript:[<span class="hljs-built_in">NSString</span> stringWithFormat:<span class="hljs-string">@&quot;ocToJs(&apos;login&apos;, &apos;token_value_123&apos;)&quot;</span>]];
+<span class="hljs-comment">// [context[@&quot;ocToJs&quot;] callWithArguments:@[@&quot;login&quot;, @&quot;token_value_123&quot;]];</span>
+</code></pre>
+<h3 id="&#x65B9;&#x6848;&#x56DB;&#xFF1A;wkscriptmessagehandler">&#x65B9;&#x6848;&#x56DB;&#xFF1A;WKScriptMessageHandler</h3>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">jsToOc</span>(<span class="hljs-params">action, params</span>) </span>{
+  <span class="hljs-built_in">window</span>.webkit.messageHandlers.jsToOc.postMessage(action, token);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ocToJs</span>(<span class="hljs-params">action, params</span>) </span>{
+
+}
+</code></pre>
+<pre><code class="lang-objc"><span class="hljs-meta">#import <span class="hljs-meta-string">&lt;WebKit/WebKit.h&gt;</span></span>
+
+<span class="hljs-comment">// WKWebViewWKScriptMessageHandlerController &#x9075;&#x5B88; WKScriptMessageHandler &#x534F;&#x8BAE;</span>
+<span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">WKWebViewWKScriptMessageHandlerController</span> () &lt;<span class="hljs-title">WKScriptMessageHandler</span>&gt;</span>
+<span class="hljs-comment">// &#x4E3A; userContentController &#x6DFB;&#x52A0; ScriptMessageHandler&#xFF0C;&#x5E76;&#x6307;&#x660E;name</span>
+WKUserContentController *userContentController = [[WKUserContentController alloc] init];
+[userContentController addScriptMessageHandler:weakSelf name:<span class="hljs-string">@&quot;jsToOc&quot;</span>];<span class="hljs-comment">//&#x4F1A;&#x6709;&#x5FAA;&#x73AF;&#x5F15;&#x7528;</span>
+
+<span class="hljs-comment">// &#x4F7F;&#x7528;&#x6DFB;&#x52A0;&#x4E86; ScriptMessageHandler&#x7684;userContentController &#x914D;&#x7F6E; configuration</span>
+WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
+configuration.userContentController = userContentController;
+
+<span class="hljs-comment">// &#x4F7F;&#x7528; configuration &#x5BF9;&#x8C61;&#x521D;&#x59CB;&#x5316; webView</span>
+<span class="hljs-keyword">self</span>.webView = [[WKWebView alloc] initWithFrame:<span class="hljs-keyword">self</span>.view.bounds configuration:configuration];
+
+<span class="hljs-meta">#pragma mark - WKScriptMessageHandler</span>
+<span class="hljs-comment">// WKWebView &#x6536;&#x5230; ScriptMessage &#x65F6;&#x56DE;&#x8C03;&#x6B64;&#x65B9;&#x6CD5;</span>
+- (<span class="hljs-keyword">void</span>)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
+    <span class="hljs-keyword">if</span> ([message.name caseInsensitiveCompare:<span class="hljs-string">@&quot;jsToOc&quot;</span>] == <span class="hljs-built_in">NSOrderedSame</span>) {
+        <span class="hljs-comment">//do something</span>
+    }
+}
+
+<span class="hljs-comment">//[self.webView.configuration.userContentController addScriptMessageHandler:self name:@&quot;jsToOc&quot;];</span>
+<span class="hljs-comment">//[self.webView.configuration.userContentController removeScriptMessageHandlerForName:@&quot;jsToOc&quot;];</span>
+
+<span class="hljs-comment">// OC &#x8C03;&#x7528; JS</span>
+JSContext *context = [<span class="hljs-keyword">self</span>.webView valueForKeyPath:<span class="hljs-string">@&quot;documentView.webView.mainFrame.javaScriptContext&quot;</span>];
+[context evaluateScript:[<span class="hljs-built_in">NSString</span> stringWithFormat:<span class="hljs-string">@&quot;ocToJs(&apos;login&apos;, &apos;token_value_123&apos;)&quot;</span>]];
+<span class="hljs-comment">// [context[@&quot;ocToJs&quot;] callWithArguments:@[@&quot;login&quot;, @&quot;token_value_123&quot;]];</span>
+</code></pre>
+<h3 id="&#x65B9;&#x6848;&#x4E94;&#xFF1A;&#x62E6;&#x622A;-wkuidelegate-&#x534F;&#x8BAE;">&#x65B9;&#x6848;&#x4E94;&#xFF1A;&#x62E6;&#x622A; WKUIDelegate &#x534F;&#x8BAE;</h3>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">jsToOc</span>(<span class="hljs-params">action, params</span>) </span>{
+  <span class="hljs-comment">// &#x5BF9;&#x5E94;&#xFF1A;-webView: runJavaScriptAlertPanelWithMessage: initiatedByFrame:completionHandler:</span>
+    alert(message)
+  <span class="hljs-comment">// &#x5BF9;&#x5E94;&#xFF1A;-webView:runJavaScriptConfirmPanelWithMessage:initiatedByFrame:completionHandler:</span>
+  <span class="hljs-comment">// confirm(message)</span>
+  <span class="hljs-comment">// &#x5BF9;&#x5E94;&#xFF1A;-webView:runJavaScriptTextInputPanelWithPrompt:defaultText:initiatedByFrame:completionHandler:</span>
+  <span class="hljs-comment">// prompt(prompt, defaultText)    </span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ocToJs</span>(<span class="hljs-params">action, params</span>) </span>{
+
+}
+</code></pre>
+<pre><code class="lang-objc"><span class="hljs-meta">#import <span class="hljs-meta-string">&lt;WebKit/WebKit.h&gt;</span></span>
+
+<span class="hljs-comment">// WKWebViewWKUIDelegateController &#x9075;&#x5B88; WKUIDelegate &#x534F;&#x8BAE;</span>
+<span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">WKWebViewWKUIDelegateController</span> () &lt;<span class="hljs-title">WKUIDelegate</span>&gt;</span>
+
+<span class="hljs-meta">#pragma mark - WKUIDelegate</span>
+<span class="hljs-comment">// alert(message)</span>
+- (<span class="hljs-keyword">void</span>)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(<span class="hljs-built_in">NSString</span> *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(<span class="hljs-keyword">void</span> (^)(<span class="hljs-keyword">void</span>))completionHandler {
+    <span class="hljs-comment">// do something</span>
+}
+
+<span class="hljs-comment">// confirm(message)</span>
+- (<span class="hljs-keyword">void</span>)webView:(WKWebView *)webView runJavaScriptConfirmPanelWithMessage:(<span class="hljs-built_in">NSString</span> *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(<span class="hljs-keyword">void</span> (^)(<span class="hljs-built_in">BOOL</span>))completionHandler {
+    <span class="hljs-comment">// do something</span>
+}
+
+<span class="hljs-comment">// prompt(prompt, defaultText)</span>
+- (<span class="hljs-keyword">void</span>)webView:(WKWebView *)webView runJavaScriptTextInputPanelWithPrompt:(<span class="hljs-built_in">NSString</span> *)prompt defaultText:(<span class="hljs-built_in">NSString</span> *)defaultText initiatedByFrame:(WKFrameInfo *)frame completionHandler:(<span class="hljs-keyword">void</span> (^)(<span class="hljs-built_in">NSString</span> *))completionHandler {
+    <span class="hljs-comment">// do something</span>
+}
+
+
+<span class="hljs-comment">// OC &#x8C03;&#x7528; JS</span>
+JSContext *context = [<span class="hljs-keyword">self</span>.webView valueForKeyPath:<span class="hljs-string">@&quot;documentView.webView.mainFrame.javaScriptContext&quot;</span>];
+[context evaluateScript:[<span class="hljs-built_in">NSString</span> stringWithFormat:<span class="hljs-string">@&quot;ocToJs(&apos;login&apos;, &apos;token_value_123&apos;)&quot;</span>]];
+<span class="hljs-comment">// [context[@&quot;ocToJs&quot;] callWithArguments:@[@&quot;login&quot;, @&quot;token_value_123&quot;]];</span>
+</code></pre>
+<h3 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h3>
+<p><a href="https://www.cnblogs.com/lxlx1798/articles/10939487.html" target="_blank">https://www.cnblogs.com/lxlx1798/articles/10939487.html</a></p>
 
                                 
                                 </section>
@@ -3691,7 +3845,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"原生与WebView交互","level":"1.12.11.1","depth":3,"next":{"title":"Xcode","level":"1.12.12","depth":2,"path":"iOS/Xcode.md","ref":"iOS/Xcode.md","articles":[]},"previous":{"title":"WebView","level":"1.12.11","depth":2,"path":"iOS/WebView/WebView.md","ref":"iOS/WebView/WebView.md","articles":[{"title":"原生与WebView交互","level":"1.12.11.1","depth":3,"path":"iOS/WebView/原生与WebView交互.md","ref":"iOS/WebView/原生与WebView交互.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"vhuichen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NoteBook","language":"zh-hans","gitbook":"*","description":"笔记、分享"},"file":{"path":"iOS/WebView/原生与WebView交互.md","mtime":"2024-06-01T10:23:59.939Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-06-01T10:24:20.532Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"原生与WebView交互","level":"1.12.11.1","depth":3,"next":{"title":"Xcode","level":"1.12.12","depth":2,"path":"iOS/Xcode.md","ref":"iOS/Xcode.md","articles":[]},"previous":{"title":"WebView","level":"1.12.11","depth":2,"path":"iOS/WebView/WebView.md","ref":"iOS/WebView/WebView.md","articles":[{"title":"原生与WebView交互","level":"1.12.11.1","depth":3,"path":"iOS/WebView/原生与WebView交互.md","ref":"iOS/WebView/原生与WebView交互.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","-lunr","-search","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"vhuichen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NoteBook","language":"zh-hans","gitbook":"*","description":"笔记、分享"},"file":{"path":"iOS/WebView/原生与WebView交互.md","mtime":"2024-06-02T06:51:11.386Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-06-02T08:23:28.488Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
