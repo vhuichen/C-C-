@@ -3451,8 +3451,7 @@
                                 <h1 id="css">CSS</h1>
 <p>CSS&#x8BED;&#x6CD5;&#x89C4;&#x5219;&#x53EF;&#x5F52;&#x7EB3;&#x4E3A;&#xFF1A;&#x9009;&#x62E9;&#x5668; + &#x82E5;&#x5E72;&#x5C5E;&#x6027;&#x58F0;&#x660E;&#xFF1B;</p>
 <h3 id="&#x5F15;&#x5165;&#x65B9;&#x5F0F;">&#x5F15;&#x5165;&#x65B9;&#x5F0F;</h3>
-<h5 id="&#x5185;&#x90E8;&#x6837;&#x5F0F;">&#x5185;&#x90E8;&#x6837;&#x5F0F;</h5>
-<pre><code class="lang-css"># &#x5185;&#x90E8;&#x6837;&#x5F0F;
+<pre><code class="lang-css">/* &#x5185;&#x90E8;&#x6837;&#x5F0F; */
 &lt;style&gt;
     p {
         font-size: 28px;
@@ -3460,16 +3459,93 @@
     }
 &lt;/style&gt;
 
-# &#x5185;&#x8054;&#x6837;&#x5F0F;
+/* &#x5185;&#x8054;&#x6837;&#x5F0F;&#xFF1B;&#x4F18;&#x5148;&#x7EA7;&#x6700;&#x9AD8; */
 &lt;body&gt;
     &lt;p style=&quot;color: blue;&quot;&gt;hello world!&lt;/p&gt;
 &lt;/body&gt;
 
-# &#x5916;&#x90E8;&#x6837;&#x5F0F;
-# rel&#xFF1A;&#x5B9A;&#x4E49;&#x5F53;&#x524D;&#x6587;&#x6863;&#x4E0E;&#x94FE;&#x63A5;&#x8D44;&#x6E90;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#xFF1B;stylesheet &#x8868;&#x793A;&#x94FE;&#x63A5;&#x4E00;&#x4E2A;&#x6837;&#x5F0F;&#x8868;&#xFF0C;icon &#x8868;&#x793A;&#x5B9A;&#x4E49;&#x9875;&#x9762;&#x56FE;&#x6807;&#x3002;
-# href&#xFF1A;&#x94FE;&#x63A5;&#x8D44;&#x6E90;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x5176;&#x503C;&#x662F;&#x4E00;&#x4E2A; URL
-# type&#xFF1A;&#x5BF9;&#x4E8E;&#x6837;&#x5F0F;&#x8868;&#xFF0C;&#x5176;&#x503C;&#x901A;&#x5E38;&#x662F; text/css&#x3002;&#x6307;&#x5B9A;&#x94FE;&#x63A5;&#x8D44;&#x6E90;&#x7684; MIME &#x7C7B;&#x578B;&#x3002;
+/* &#x5916;&#x90E8;&#x6837;&#x5F0F;
+rel&#xFF1A;&#x5B9A;&#x4E49;&#x5F53;&#x524D;&#x6587;&#x6863;&#x4E0E;&#x94FE;&#x63A5;&#x8D44;&#x6E90;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#xFF1B;stylesheet &#x8868;&#x793A;&#x94FE;&#x63A5;&#x4E00;&#x4E2A;&#x6837;&#x5F0F;&#x8868;&#xFF0C;icon &#x8868;&#x793A;&#x5B9A;&#x4E49;&#x9875;&#x9762;&#x56FE;&#x6807;&#x3002;
+href&#xFF1A;&#x94FE;&#x63A5;&#x8D44;&#x6E90;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x5176;&#x503C;&#x662F;&#x4E00;&#x4E2A; URL
+type&#xFF1A;&#x5BF9;&#x4E8E;&#x6837;&#x5F0F;&#x8868;&#xFF0C;&#x5176;&#x503C;&#x901A;&#x5E38;&#x662F; text/css&#x3002;&#x6307;&#x5B9A;&#x94FE;&#x63A5;&#x8D44;&#x6E90;&#x7684; MIME &#x7C7B;&#x578B;&#x3002;*/
 &lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot; type=&quot;text/css&quot;&gt;
+</code></pre>
+<h3 id="&#x57FA;&#x7840;&#x9009;&#x62E9;&#x5668;">&#x57FA;&#x7840;&#x9009;&#x62E9;&#x5668;</h3>
+<pre><code class="lang-css">/* &#x6807;&#x7B7E;&#x9009;&#x62E9;&#x5668;;&#x5FEB;&#x901F;&#x4E3A;&#x5BF9;&#x5E94;&#x6807;&#x7B7E;&#x5B9E;&#x73B0;&#x7EDF;&#x4E00;&#x6837;&#x5F0F; */
+p {
+  color: blue;
+  font-size: 16px;
+}
+
+/* &#x7C7B;&#x9009;&#x62E9;&#x5668;&#xFF1B;.&#x5F00;&#x5934;&#xFF0C;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;&#x7EAF;&#x6570;&#x5B57;&#x3001;&#x4E2D;&#x6587;&#x4EE5;&#x53CA;&#x6807;&#x7B7E;&#x540D;&#x6765;&#x8FDB;&#x884C;&#x547D;&#x540D;&#xFF0C;&#x82E5;&#x7C7B;&#x540D;&#x8FC7;&#x957F;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;-&#x5206;&#x5272; */
+.example {
+  color: red;
+  font-size: 14px;
+}
+.test {
+  color: red;
+  font-size: 14px;
+}
+&lt;div class=&quot;example test&quot;&gt;&lt;/div&gt;
+
+/* &#x6307;&#x5B9A;p&#x6807;&#x7B7E;&#x7C7B;&#x578B;&#xFF0C;&#x7C7B;&#x540D;&#x4E3A;&#xFF1A;example&#x7684;&#x6807;&#x7B7E;&#x751F;&#x6548;*/
+p.example {
+  font-style: italic;
+}
+
+/* id&#x9009;&#x62E9;&#x5668; */
+#uniqueElement {
+  color: green;
+  font-size: 20px;
+}
+
+/* &#x53EA;&#x5F71;&#x54CD;&#x5728;ID&#x4E3A;uniqueElement&#x7684;&#x5143;&#x7D20;&#x5185;&#x7684;&lt;p&gt;&#x5143;&#x7D20; */
+#uniqueElement p {
+  font-weight: bold;
+}
+
+/* &#x901A;&#x914D;&#x7B26;&#x9009;&#x62E9;&#x5668; */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* &#x9009;&#x62E9;&#x6240;&#x6709;&#x7C7B;&#x540D;&#x4E3A;warning&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x65E0;&#x8BBA;&#x662F;&#x4EC0;&#x4E48;&#x7C7B;&#x578B;&#x7684;&#x6807;&#x7B7E; */
+*.warning {
+  color: red;
+}
+
+/* &#x6240;&#x6709;&#x5143;&#x7D20;&#x5728;&#x9F20;&#x6807;&#x60AC;&#x505C;&#x65F6;&#x6539;&#x53D8;&#x80CC;&#x666F;&#x989C;&#x8272; */
+*:hover {
+  background-color: yellow;
+}
+
+/* &#x6240;&#x6709;&#x5177;&#x6709;disabled&#x5C5E;&#x6027;&#x7684;&#x5143;&#x7D20;&#x8BBE;&#x7F6E;&#x534A;&#x900F;&#x660E;&#x6548;&#x679C; */
+*[disabled] {
+  opacity: 0.5;
+}
+
+/* &#x6240;&#x6709;&#x5143;&#x7D20;&#x7684;&#x5185;&#x5BB9;&#x524D;&#x9762;&#x6DFB;&#x52A0;&#x6587;&#x672C;&#xFF0C;&#x5E76;&#x8BBE;&#x7F6E;&#x4E3A;&#x7EA2;&#x8272; */
+*::before {
+  content: &quot;Warning: &quot;;
+  color: red;
+}
+</code></pre>
+<h3 id="&#x590D;&#x5408;&#x9009;&#x62E9;&#x5668;">&#x590D;&#x5408;&#x9009;&#x62E9;&#x5668;</h3>
+<pre><code class="lang-css"><span class="hljs-comment">/* &#x540E;&#x4EE3;&#x9009;&#x62E9;&#x5668;; &#x9009;&#x62E9;&#x7236;&#x7C7B;&#x662F; parent &#x7684;&#x7C7B;&#xFF0C;&#x5E76;&#x4E14;&#x5B50;&#x7C7B;&#x662F; child &#x7684;&#x5143;&#x7D20; */</span>
+<span class="hljs-selector-class">.parent</span> <span class="hljs-selector-class">.child</span> {
+  <span class="hljs-attribute">color</span>: blue;
+}
+
+<span class="hljs-comment">/* &#x9009;&#x62E9;&#x7236;&#x7C7B;&#x662F; parent &#x7684;&#x7C7B;&#xFF0C;&#x5E76;&#x4E14;&#x9009;&#x62E9;&#x5177;&#x6709;&#x7279;&#x5B9A;&#x5C5E;&#x6027;&#x7684;&#x540E;&#x4EE3;&#x5143;&#x7D20; */</span>
+<span class="hljs-selector-class">.parent</span> <span class="hljs-selector-attr">[attribute=&quot;value&quot;]</span> {
+  <span class="hljs-attribute">color</span>: green;
+}
+
+<span class="hljs-comment">/* &#x9009;&#x62E9;&#x7C7B;&#x540D;&#x4E3A; example &#x7684; div &#x6807;&#x7B7E;&#x4E2D;&#x7684; p&#x6807;&#x7B7E;&#x5143;&#x7D20; */</span>
+<span class="hljs-selector-tag">div</span><span class="hljs-selector-class">.example</span> <span class="hljs-selector-tag">p</span> {
+  <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">20px</span>;
+}
 </code></pre>
 
                                 
@@ -3514,7 +3590,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"CSS","level":"1.5.1","depth":2,"next":{"title":"HTML","level":"1.5.2","depth":2,"path":"Web/HTML/HTML.md","ref":"Web/HTML/HTML.md","articles":[]},"previous":{"title":"Web","level":"1.5","depth":1,"path":"Web/Web.md","ref":"Web/Web.md","articles":[{"title":"CSS","level":"1.5.1","depth":2,"path":"Web/CSS/CSS.md","ref":"Web/CSS/CSS.md","articles":[]},{"title":"HTML","level":"1.5.2","depth":2,"path":"Web/HTML/HTML.md","ref":"Web/HTML/HTML.md","articles":[]},{"title":"JavaScript","level":"1.5.3","depth":2,"path":"Web/JavaScript/JavaScript.md","ref":"Web/JavaScript/JavaScript.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","expandable-chapters","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"vhuichen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NoteBook","language":"zh-hans","gitbook":"*","description":"笔记、分享"},"file":{"path":"Web/CSS/CSS.md","mtime":"2024-07-20T08:23:46.564Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-07-20T10:55:03.848Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"CSS","level":"1.5.1","depth":2,"next":{"title":"HTML","level":"1.5.2","depth":2,"path":"Web/HTML/HTML.md","ref":"Web/HTML/HTML.md","articles":[]},"previous":{"title":"Web","level":"1.5","depth":1,"path":"Web/Web.md","ref":"Web/Web.md","articles":[{"title":"CSS","level":"1.5.1","depth":2,"path":"Web/CSS/CSS.md","ref":"Web/CSS/CSS.md","articles":[]},{"title":"HTML","level":"1.5.2","depth":2,"path":"Web/HTML/HTML.md","ref":"Web/HTML/HTML.md","articles":[]},{"title":"JavaScript","level":"1.5.3","depth":2,"path":"Web/JavaScript/JavaScript.md","ref":"Web/JavaScript/JavaScript.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","expandable-chapters","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"vhuichen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NoteBook","language":"zh-hans","gitbook":"*","description":"笔记、分享"},"file":{"path":"Web/CSS/CSS.md","mtime":"2024-07-20T18:18:52.490Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-07-20T18:19:03.415Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
