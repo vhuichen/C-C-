@@ -3559,19 +3559,32 @@
                                 
                                 <h1 id="taro">Taro</h1>
 <p>&#x5C0F;&#x7A0B;&#x5E8F;&#x8DE8;&#x7AEF;&#x8DE8;&#x6846;&#x67B6;&#x89E3;&#x51B3;&#x65B9;&#x6848;</p>
-<h3 id="mac&#x73AF;&#x5883;">Mac&#x73AF;&#x5883;</h3>
+<h3 id="mac&#x73AF;&#x5883;&#x5B89;&#x88C5;">Mac&#x73AF;&#x5883;&#x5B89;&#x88C5;</h3>
 <p>Taro &#x9879;&#x76EE;&#x57FA;&#x4E8E; node&#xFF08;&gt;=18.17.0&#xFF09;</p>
 <pre><code class="lang-shell"># &#x5168;&#x5C40;&#x5B89;&#x88C5; tarojs/cli
 npm install -g @tarojs/cli
+# &#x67E5;&#x770B;&#x5177;&#x4F53;&#x4FE1;&#x606F;
+npm info @tarojs/cli
 
 # &#x521B;&#x5EFA;&#x6A21;&#x677F;&#x9879;&#x76EE;
 taro init myApp
+
+# &#x2714; &#x5B89;&#x88C5;&#x9879;&#x76EE;&#x4F9D;&#x8D56;&#x6210;&#x529F;
+# &#x521B;&#x5EFA;&#x9879;&#x76EE; myApp &#x6210;&#x529F;&#xFF01;
+# &#x8BF7;&#x8FDB;&#x5165;&#x9879;&#x76EE;&#x76EE;&#x5F55; myApp &#x5F00;&#x59CB;&#x5DE5;&#x4F5C;&#x5427;&#xFF01;&#x1F61D;
 </code></pre>
-<p><strong>&#x5361;&#x6B7B;&#x5728;&#xFF1A;Error: Cannot find module &apos;@swc/core&apos;</strong></p>
-<h3 id="&#x62A5;&#x9519;">&#x62A5;&#x9519;</h3>
-<pre><code class="lang-shell"># Error: Cannot find module &apos;@swc/types&apos;
-&#x89E3;&#x51B3;&#x65B9;&#x5F0F;&#xFF1A;
-npm install -g @swc/types@0.1.9
+<h3 id="&#x7F16;&#x8BD1;&#x8FD0;&#x884C;">&#x7F16;&#x8BD1;&#x8FD0;&#x884C;</h3>
+<pre><code class="lang-shell"># &#x5FAE;&#x4FE1;&#x5C0F;&#x7A0B;&#x5E8F;&#x7F16;&#x8BD1;&#xFF1B;&#x968F;&#x540E;&#x6253;&#x5F00;&#x5FAE;&#x4FE1;&#x5F00;&#x53D1;&#x5DE5;&#x5177;&#xFF0C;&#x5E76;&#x5BFC;&#x5165;&#x9879;&#x76EE;&#x5373;&#x53EF;
+npm run dev:weapp --watch
+</code></pre>
+<h3 id="&#x5B89;&#x88C5;&#x62A5;&#x9519;">&#x5B89;&#x88C5;&#x62A5;&#x9519;</h3>
+<pre><code class="lang-shell">Error: Cannot find module &apos;@swc/core&apos;
+Require stack:
+- /usr/local/lib/node_modules/@tarojs/cli/node_modules/@tarojs/helper/dist/index.js
+# &#x89E3;&#x51B3;&#x65B9;&#x5F0F;&#xFF1A;
+# cd&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x76EE;&#x5F55;&#x5904;
+cd /usr/local/lib/node_modules/@tarojs/cli/node_modules
+npm install @swc/core
 </code></pre>
 
                                 
@@ -3616,7 +3629,7 @@ npm install -g @swc/types@0.1.9
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Taro","level":"1.11.1","depth":2,"next":{"title":"Node","level":"1.12","depth":1,"path":"Node/Node.md","ref":"Node/Node.md","articles":[{"title":"npm","level":"1.12.1","depth":2,"path":"Node/npm.md","ref":"Node/npm.md","articles":[]},{"title":"nvm","level":"1.12.2","depth":2,"path":"Node/nvm.md","ref":"Node/nvm.md","articles":[]}]},"previous":{"title":"MiniProgram","level":"1.11","depth":1,"path":"MiniProgram/MiniProgram.md","ref":"MiniProgram/MiniProgram.md","articles":[{"title":"Taro","level":"1.11.1","depth":2,"path":"MiniProgram/Taro.md","ref":"MiniProgram/Taro.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","expandable-chapters","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"vhuichen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NoteBook","language":"zh-hans","gitbook":"*","description":"笔记、分享"},"file":{"path":"MiniProgram/Taro.md","mtime":"2024-07-21T15:27:36.084Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-07-21T15:27:59.085Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Taro","level":"1.11.1","depth":2,"next":{"title":"Node","level":"1.12","depth":1,"path":"Node/Node.md","ref":"Node/Node.md","articles":[{"title":"npm","level":"1.12.1","depth":2,"path":"Node/npm.md","ref":"Node/npm.md","articles":[]},{"title":"nvm","level":"1.12.2","depth":2,"path":"Node/nvm.md","ref":"Node/nvm.md","articles":[]}]},"previous":{"title":"MiniProgram","level":"1.11","depth":1,"path":"MiniProgram/MiniProgram.md","ref":"MiniProgram/MiniProgram.md","articles":[{"title":"Taro","level":"1.11.1","depth":2,"path":"MiniProgram/Taro.md","ref":"MiniProgram/Taro.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","expandable-chapters","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"vhuichen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NoteBook","language":"zh-hans","gitbook":"*","description":"笔记、分享"},"file":{"path":"MiniProgram/Taro.md","mtime":"2024-07-22T17:08:10.086Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-07-22T17:08:43.027Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
