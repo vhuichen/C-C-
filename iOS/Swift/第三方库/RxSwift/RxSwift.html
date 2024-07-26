@@ -1071,7 +1071,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4.5" data-path="../第三方库.html">
+        <li class="chapter " data-level="1.2.4.5" data-path="../../问题集.html">
+            
+                <a href="../../问题集.html">
+            
+                    
+                    问题集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.6" data-path="../第三方库.html">
             
                 <a href="../第三方库.html">
             
@@ -1085,7 +1098,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.4.5.1" data-path="../Alamofire.html">
+        <li class="chapter " data-level="1.2.4.6.1" data-path="../Alamofire.html">
             
                 <a href="../Alamofire.html">
             
@@ -1098,7 +1111,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4.5.2" data-path="../PromiseKit.html">
+        <li class="chapter " data-level="1.2.4.6.2" data-path="../PromiseKit.html">
             
                 <a href="../PromiseKit.html">
             
@@ -1111,7 +1124,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.4.5.3" data-path="RxSwift.html">
+        <li class="chapter active" data-level="1.2.4.6.3" data-path="RxSwift.html">
             
                 <a href="RxSwift.html">
             
@@ -1125,7 +1138,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.4.5.3.1" data-path="Relay.html">
+        <li class="chapter " data-level="1.2.4.6.3.1" data-path="Relay.html">
             
                 <a href="Relay.html">
             
@@ -1138,7 +1151,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4.5.3.2" data-path="Subject.html">
+        <li class="chapter " data-level="1.2.4.6.3.2" data-path="Subject.html">
             
                 <a href="Subject.html">
             
@@ -1161,7 +1174,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4.6" data-path="../../经验集合/经验集合.html">
+        <li class="chapter " data-level="1.2.4.7" data-path="../../经验集合/经验集合.html">
             
                 <a href="../../经验集合/经验集合.html">
             
@@ -1175,7 +1188,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.4.6.1" data-path="../../经验集合/CABasicAnimation.html">
+        <li class="chapter " data-level="1.2.4.7.1" data-path="../../经验集合/CABasicAnimation.html">
             
                 <a href="../../经验集合/CABasicAnimation.html">
             
@@ -1188,7 +1201,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4.6.2" data-path="../../经验集合/系统类.html">
+        <li class="chapter " data-level="1.2.4.7.2" data-path="../../经验集合/系统类.html">
             
                 <a href="../../经验集合/系统类.html">
             
@@ -3596,15 +3609,28 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="rxswift">RxSwift</h1>
+<h3 id="merge">merge</h3>
+<pre><code class="lang-swift"><span class="hljs-comment">// &#x4EFB;&#x610F;&#x4E00;&#x4E2A;&#x6309;&#x94AE;&#x70B9;&#x51FB;&#xFF0C;&#x90FD;&#x4F1A;&#x89E6;&#x53D1;&#x4E8B;&#x4EF6;&#x3002;&#x6CE8;&#x610F;&#x533A;&#x522B;&#xFF1A;combineLatest</span>
+<span class="hljs-type">Observable</span>.merge(aButton.rx.tap.asObservable(), bButton.rx.tap.asObservable()).subscribe(onNext: { <span class="hljs-number">_</span> <span class="hljs-keyword">in</span>
+    <span class="hljs-comment">//...</span>
+}).disposed(by: disposeBag)
+</code></pre>
+<h3 id="combinelatest">combineLatest</h3>
 <pre><code class="lang-swift"><span class="hljs-comment">// &#x5C06;&#x591A;&#x4E2A; Observables &#x7EC4;&#x5408;&#x8D77;&#x6765;,&#x7EDF;&#x4E00;&#x63D0;&#x4F9B;&#x8BA2;&#x9605;</span>
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x7684; Observable&#xFF0C;&#x5F53;&#x4EFB;&#x610F;&#x4E00;&#x4E2A;&#x6E90; Observable &#x53D1;&#x5C04;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5143;&#x7D20;&#x65F6;&#xFF0C;&#x65B0; Observable &#x4F1A;&#x53D1;&#x5C04;&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x6240;&#x6709;&#x6E90; Observable &#x6700;&#x65B0;&#x5143;&#x7D20;&#x7684;&#x5143;&#x7EC4;</span>
+<span class="hljs-comment">// &#x5F53;&#x4EFB;&#x610F;&#x4E00;&#x4E2A;&#x6E90; Observable &#x53D1;&#x5C04;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x5143;&#x7D20;&#x65F6;&#xFF0C;&#x65B0; Observable &#x4F1A;&#x53D1;&#x5C04;&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x6240;&#x6709;&#x6E90; Observable &#x6700;&#x65B0;&#x5143;&#x7D20;&#x7684;&#x5143;&#x7EC4;</span>
 <span class="hljs-type">Observable</span>.combineLatest(
     rxAdInfo,
     rxTopList,
     rxIsLogin
-)
-.subscribe(onNext: { [<span class="hljs-keyword">weak</span> <span class="hljs-keyword">self</span>] <span class="hljs-number">_</span> <span class="hljs-keyword">in</span>
+).subscribe(onNext: { [<span class="hljs-keyword">weak</span> <span class="hljs-keyword">self</span>] <span class="hljs-number">_</span> <span class="hljs-keyword">in</span>
     <span class="hljs-keyword">self</span>?.dosomething()
+}).disposed(by: disposeBag)
+
+<span class="hljs-comment">// &#x5FC5;&#x987B;&#x6240;&#x6709;&#x5143;&#x7D20;&#x90FD;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x4E8B;&#x4EF6;&#xFF0C;&#x4E0D;&#x7136;&#x4E0D;&#x4F1A;&#x89E6;&#x53D1;</span>
+<span class="hljs-comment">// &#x6BD4;&#x5982;&#x4E0B;&#x9762;&#x4E00;&#x76F4;&#x70B9;&#x51FB;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x6309;&#x94AE;&#xFF0C;&#x4E0D;&#x4F1A;&#x89E6;&#x53D1;&#x4E8B;&#x4EF6;&#xFF0C;&#x53EA;&#x6709;&#x4E24;&#x4E2A;&#x6309;&#x94AE;&#x90FD;&#x70B9;&#x51FB;&#x8FC7;&#x4E00;&#x6B21;&#xFF0C;&#x540E;&#x9762;&#x4EFB;&#x610F;&#x70B9;&#x51FB;&#x624D;&#x4F1A;&#x89E6;&#x53D1;&#x4E8B;&#x4EF6;&#x3002;</span>
+<span class="hljs-comment">// &#x5982;&#x679C;&#x70B9;&#x51FB;&#x5355;&#x4E2A;&#x9700;&#x8981;&#x51FA;&#x53D1;&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x8003; merge</span>
+<span class="hljs-type">Observable</span>.combineLatest(aButton.rx.tap, bButton.rx.tap).subscribe(onNext: { <span class="hljs-number">_</span> <span class="hljs-keyword">in</span>
+    <span class="hljs-comment">//...</span>
 }).disposed(by: disposeBag)
 </code></pre>
 <h3 id="observable">Observable<t></t></h3>
@@ -3698,7 +3724,7 @@ observable.bind(to: label.rx.fontSize).disposed(by: disposeBag)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"RxSwift","level":"1.2.4.5.3","depth":4,"next":{"title":"Relay","level":"1.2.4.5.3.1","depth":5,"path":"iOS/Swift/第三方库/RxSwift/Relay.md","ref":"iOS/Swift/第三方库/RxSwift/Relay.md","articles":[]},"previous":{"title":"PromiseKit","level":"1.2.4.5.2","depth":4,"path":"iOS/Swift/第三方库/PromiseKit.md","ref":"iOS/Swift/第三方库/PromiseKit.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","expandable-chapters","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"vhuichen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NoteBook","language":"zh-hans","gitbook":"*","description":"笔记、分享"},"file":{"path":"iOS/Swift/第三方库/RxSwift/RxSwift.md","mtime":"2024-07-13T08:14:42.315Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-07-24T17:34:14.584Z"},"basePath":"../../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"RxSwift","level":"1.2.4.6.3","depth":4,"next":{"title":"Relay","level":"1.2.4.6.3.1","depth":5,"path":"iOS/Swift/第三方库/RxSwift/Relay.md","ref":"iOS/Swift/第三方库/RxSwift/Relay.md","articles":[]},"previous":{"title":"PromiseKit","level":"1.2.4.6.2","depth":4,"path":"iOS/Swift/第三方库/PromiseKit.md","ref":"iOS/Swift/第三方库/PromiseKit.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","expandable-chapters","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"vhuichen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NoteBook","language":"zh-hans","gitbook":"*","description":"笔记、分享"},"file":{"path":"iOS/Swift/第三方库/RxSwift/RxSwift.md","mtime":"2024-07-26T17:17:50.232Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-07-26T17:18:48.031Z"},"basePath":"../../../..","book":{"language":""}});
         });
     </script>
 </div>
