@@ -3650,8 +3650,8 @@ install! &apos;cocoapods&apos;,
 <h2 id="0x01-&#x5173;&#x952E;&#x5B57;">0x01 &#x5173;&#x952E;&#x5B57;</h2>
 <h4 id="pod">pod</h4>
 <p>&#x6307;&#x5B9A;&#x9879;&#x76EE;&#x7684;&#x4F9D;&#x8D56;&#x9879;&#x3002;&#x4F9D;&#x8D56;&#x9879;&#x9700;&#x6C42;&#x7531;Pod&#x7684;&#x540D;&#x79F0;&#x548C;&#x7248;&#x672C;&#x9700;&#x6C42;&#x5217;&#x8868;(&#x53EF;&#x9009;)&#x5B9A;&#x4E49;&#x3002;</p>
-<pre><code>pod &apos;Objection&apos;, &apos;0.9&apos;
-//
+<pre><code class="lang-ruby">pod &apos;Objection&apos;, &apos;0.9&apos;
+/*
 = 0.1&#xFF0C;&#x7248;&#x672C;0.1&#x3002;  
 &gt; 0.1&#xFF0C;&#x4EFB;&#x4F55;&#x9AD8;&#x4E8E;0.1&#x7684;&#x7248;&#x672C;&#x3002;
 &gt;= 0.1&#xFF0C;&#x7248;&#x672C;0.1&#x548C;&#x4EFB;&#x4F55;&#x66F4;&#x9AD8;&#x7248;&#x672C;&#x3002;
@@ -3659,47 +3659,60 @@ install! &apos;cocoapods&apos;,
 &lt;= 0.1&#xFF0C;&#x7248;&#x672C;0.1&#x548C;&#x4EFB;&#x4F55;&#x8F83;&#x4F4E;&#x7248;&#x672C;&#x3002;
 ~&gt; 0.1.2&#xFF0C;&#x7248;&#x672C;0.1.2&#x53CA;&#x4EE5;&#x4E0A;&#x5230;&#x7248;&#x672C;0.2&#xFF0C;&#x4E0D;&#x542B;0.2&#x3002;&#x8BE5;&#x64CD;&#x4F5C;&#x7B26;&#x57FA;&#x4E8E;&#x4F60;&#x5728;&#x7248;&#x672C;&#x9700;&#x6C42;&#x4E2D;&#x6307;&#x5B9A;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x5DE5;&#x4F5C;&#x3002;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x7B49;&#x4E8E;&gt;= 0.1.2&#x4E0E;&lt; 0.2.0&#x76F8;&#x7ED3;&#x5408;&#xFF0C;&#x5E76;&#x4E14;&#x603B;&#x662F;&#x5339;&#x914D;&#x4E0E;&#x4F60;&#x7684;&#x9700;&#x6C42;&#x76F8;&#x5339;&#x914D;&#x7684;&#x6700;&#x65B0;&#x5DF2;&#x77E5;&#x7248;&#x672C;&#x3002;
 ~ &gt; 0.1.3-beta.0&#xFF0C;Beta&#x7248;&#x548C;release&#x53D1;&#x884C;&#x7248;&#x672C;&#x4E3A;0.1.3&#xFF0C;&#x53D1;&#x884C;&#x7248;&#x672C;&#x4E3A;0.2(&#x4E0D;&#x5305;&#x62EC;0.2)&#x3002;&#x7528;&#x7834;&#x6298;&#x53F7;(-)&#x5206;&#x9694;&#x7684;&#x7EC4;&#x4EF6;&#x5C06;&#x4E0D;&#x8003;&#x8651;&#x7248;&#x672C;&#x8981;&#x6C42;&#x3002;
-</code></pre><h4 id="configurations">configurations</h4>
-<pre><code>pod &apos;AFNetworking&apos;, :configurations =&gt; [&apos;Debug&apos;, &apos;Beta&apos;]
-pod &apos;AFNetworking&apos;, :configuration =&gt; &apos;Debug&apos;
-</code></pre><h4 id="modularheaders">modular_headers</h4>
-<p>&#x6A21;&#x5757;&#x5316;&#xFF0C;&#x5F53;&#x4F60;&#x4F7F;&#x7528; use_modular_headers! &#x5C5E;&#x6027;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x4ECE;&#x6A21;&#x5757;&#x5934;&#x4E2D;&#x6392;&#x9664;&#x7279;&#x5B9A;&#x7684;Pod</p>
-<pre><code>pod &apos;SSZipArchive&apos;, :modular_headers =&gt; false
-</code></pre><h4 id="source-path">source path</h4>
-<p>&#x6E90;&#xFF0C;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5728;&#x5168;&#x5C40;&#x7EA7;&#x522B;&#x6307;&#x5B9A;&#x7684;&#x6E90;&#x6309;&#x7167;&#x6307;&#x5B9A;&#x4F9D;&#x8D56;&#x9879;&#x5339;&#x914D;&#x7684;&#x987A;&#x5E8F;&#x8FDB;&#x884C;&#x641C;&#x7D22;&#x3002;&#x8FD9;&#x79CD;&#x884C;&#x4E3A;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6307;&#x5B9A;&#x4F9D;&#x8D56;&#x9879;&#x7684;&#x6765;&#x6E90;&#x6765;&#x6539;&#x53D8;&#x7279;&#x5B9A;&#x7684;&#x4F9D;&#x8D56;&#x9879;</p>
-<pre><code>pod &apos;AFNetworking&apos;, :source =&gt; &apos;https://github.com/CocoaPods/Specs.git&apos;
-pod &apos;AFNetworking&apos;, :path =&gt; &apos;~/Documents/AFNetworking&apos;
-pod &apos;AFNetworking&apos;, :git =&gt; &apos;https://github.com/gowalla/AFNetworking.git&apos;, :branch =&gt; &apos;dev&apos;
-pod &apos;AFNetworking&apos;, :git =&gt; &apos;https://github.com/gowalla/AFNetworking.git&apos;, :tag =&gt; &apos;0.7.0&apos;
-pod &apos;AFNetworking&apos;, :git =&gt; &apos;https://github.com/gowalla/AFNetworking.git&apos;, :commit =&gt; &apos;082f8319af&apos;
-pod &apos;JSONKit&apos;, :podspec =&gt; &apos;https://example.com/JSONKit.podspec&apos;
-</code></pre><h4 id="subspecs">Subspecs</h4>
-<p>&#x5F53;&#x901A;&#x8FC7;&#x5B83;&#x7684;&#x540D;&#x5B57;&#x5B89;&#x88C5;Pod&#x65F6;&#xFF0C;&#x5B83;&#x5C06;&#x5B89;&#x88C5;podspec&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x6240;&#x6709;&#x9ED8;&#x8BA4;&#x7684;&#x5B50;&#x89C4;&#x8303;&#x3002;</p>
-<pre><code>pod &apos;QueryKit/Attribute&apos;
-pod &apos;QueryKit&apos;, :subspecs =&gt; [&apos;Attribute&apos;, &apos;QuerySet&apos;]
-</code></pre><h4 id="testspecs">testspecs</h4>
-<pre><code>pod &apos;AFNetworking&apos;, :testspecs =&gt; [&apos;UnitTests&apos;, &apos;SomeOtherTests&apos;]
-</code></pre><h4 id="abstracttarget">abstract_target</h4>
-<p>&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x62BD;&#x8C61;&#x76EE;&#x6807;&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x65B9;&#x4FBF;&#x7684;&#x76EE;&#x6807;&#x4F9D;&#x8D56;&#x9879;&#x7EE7;&#x627F;&#x3002;</p>
-<pre><code>abstract_target &apos;Networking&apos; do
-  pod &apos;AlamoFire&apos;
-
-  target &apos;ShowsiOS&apos; do
-    pod &apos;ShowWebAuth&apos;
-  end
-
-  target &apos;ShowsTV&apos; do
-    pod &apos;ShowTVAuth&apos;
-  end
-
-end
-</code></pre><h4 id="def">def</h4>
-<p>&#x9884;&#x5B9A;&#x4E49;&#x6A21;&#x5757;</p>
-<pre><code>def debug_pods
-  pod &apos;LookinServer&apos;, :configurations =&gt; [&apos;Debug&apos;]
-  pod &apos;MLeaksFinder&apos;, :configurations =&gt; [&apos;Debug&apos;]
-end
+*/
 </code></pre>
+<h4 id="configurations">configurations</h4>
+<pre><code class="lang-ruby">pod <span class="hljs-string">&apos;AFNetworking&apos;</span>, <span class="hljs-symbol">:configurations</span> =&gt; [<span class="hljs-string">&apos;Debug&apos;</span>, <span class="hljs-string">&apos;Beta&apos;</span>]
+pod <span class="hljs-string">&apos;AFNetworking&apos;</span>, <span class="hljs-symbol">:configuration</span> =&gt; <span class="hljs-string">&apos;Debug&apos;</span>
+</code></pre>
+<h4 id="modularheaders">modular_headers</h4>
+<p>&#x6A21;&#x5757;&#x5316;&#xFF0C;&#x5F53;&#x4F60;&#x4F7F;&#x7528; use_modular_headers! &#x5C5E;&#x6027;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x4ECE;&#x6A21;&#x5757;&#x5934;&#x4E2D;&#x6392;&#x9664;&#x7279;&#x5B9A;&#x7684;Pod</p>
+<pre><code class="lang-ruby">pod <span class="hljs-string">&apos;SSZipArchive&apos;</span>, <span class="hljs-symbol">:modular_headers</span> =&gt; <span class="hljs-keyword">false</span>
+</code></pre>
+<h4 id="source-path">source path</h4>
+<p>&#x6E90;&#xFF0C;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5728;&#x5168;&#x5C40;&#x7EA7;&#x522B;&#x6307;&#x5B9A;&#x7684;&#x6E90;&#x6309;&#x7167;&#x6307;&#x5B9A;&#x4F9D;&#x8D56;&#x9879;&#x5339;&#x914D;&#x7684;&#x987A;&#x5E8F;&#x8FDB;&#x884C;&#x641C;&#x7D22;&#x3002;&#x8FD9;&#x79CD;&#x884C;&#x4E3A;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6307;&#x5B9A;&#x4F9D;&#x8D56;&#x9879;&#x7684;&#x6765;&#x6E90;&#x6765;&#x6539;&#x53D8;&#x7279;&#x5B9A;&#x7684;&#x4F9D;&#x8D56;&#x9879;</p>
+<pre><code class="lang-ruby">pod <span class="hljs-string">&apos;AFNetworking&apos;</span>, <span class="hljs-symbol">:source</span> =&gt; <span class="hljs-string">&apos;https://github.com/CocoaPods/Specs.git&apos;</span>
+pod <span class="hljs-string">&apos;AFNetworking&apos;</span>, <span class="hljs-symbol">:path</span> =&gt; <span class="hljs-string">&apos;~/Documents/AFNetworking&apos;</span>
+pod <span class="hljs-string">&apos;AFNetworking&apos;</span>, <span class="hljs-symbol">:git</span> =&gt; <span class="hljs-string">&apos;https://github.com/gowalla/AFNetworking.git&apos;</span>, <span class="hljs-symbol">:branch</span> =&gt; <span class="hljs-string">&apos;dev&apos;</span>
+pod <span class="hljs-string">&apos;AFNetworking&apos;</span>, <span class="hljs-symbol">:git</span> =&gt; <span class="hljs-string">&apos;https://github.com/gowalla/AFNetworking.git&apos;</span>, <span class="hljs-symbol">:tag</span> =&gt; <span class="hljs-string">&apos;0.7.0&apos;</span>
+pod <span class="hljs-string">&apos;AFNetworking&apos;</span>, <span class="hljs-symbol">:git</span> =&gt; <span class="hljs-string">&apos;https://github.com/gowalla/AFNetworking.git&apos;</span>, <span class="hljs-symbol">:commit</span> =&gt; <span class="hljs-string">&apos;082f8319af&apos;</span>
+pod <span class="hljs-string">&apos;JSONKit&apos;</span>, <span class="hljs-symbol">:podspec</span> =&gt; <span class="hljs-string">&apos;https://example.com/JSONKit.podspec&apos;</span>
+</code></pre>
+<h4 id="subspecs">Subspecs</h4>
+<p>&#x5F53;&#x901A;&#x8FC7;&#x5B83;&#x7684;&#x540D;&#x5B57;&#x5B89;&#x88C5;Pod&#x65F6;&#xFF0C;&#x5B83;&#x5C06;&#x5B89;&#x88C5;podspec&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x6240;&#x6709;&#x9ED8;&#x8BA4;&#x7684;&#x5B50;&#x89C4;&#x8303;&#x3002;</p>
+<pre><code class="lang-ruby">pod <span class="hljs-string">&apos;QueryKit/Attribute&apos;</span>
+pod <span class="hljs-string">&apos;QueryKit&apos;</span>, <span class="hljs-symbol">:subspecs</span> =&gt; [<span class="hljs-string">&apos;Attribute&apos;</span>, <span class="hljs-string">&apos;QuerySet&apos;</span>]
+</code></pre>
+<h4 id="testspecs">testspecs</h4>
+<pre><code class="lang-ruby">pod <span class="hljs-string">&apos;AFNetworking&apos;</span>, <span class="hljs-symbol">:testspecs</span> =&gt; [<span class="hljs-string">&apos;UnitTests&apos;</span>, <span class="hljs-string">&apos;SomeOtherTests&apos;</span>]
+</code></pre>
+<h4 id="abstracttarget">abstract_target</h4>
+<p>&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x62BD;&#x8C61;&#x76EE;&#x6807;&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x65B9;&#x4FBF;&#x7684;&#x76EE;&#x6807;&#x4F9D;&#x8D56;&#x9879;&#x7EE7;&#x627F;&#x3002;</p>
+<pre><code class="lang-ruby">abstract_target <span class="hljs-string">&apos;Networking&apos;</span> <span class="hljs-keyword">do</span>
+  pod <span class="hljs-string">&apos;AlamoFire&apos;</span>
+
+  target <span class="hljs-string">&apos;ShowsiOS&apos;</span> <span class="hljs-keyword">do</span>
+    pod <span class="hljs-string">&apos;ShowWebAuth&apos;</span>
+  <span class="hljs-keyword">end</span>
+
+  target <span class="hljs-string">&apos;ShowsTV&apos;</span> <span class="hljs-keyword">do</span>
+    pod <span class="hljs-string">&apos;ShowTVAuth&apos;</span>
+  <span class="hljs-keyword">end</span>
+
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h4 id="def">def</h4>
+<p>&#x5B9A;&#x4E49;&#x6A21;&#x5757;</p>
+<pre><code class="lang-ruby"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">debug_pods</span></span>
+  pod <span class="hljs-string">&apos;LookinServer&apos;</span>, <span class="hljs-symbol">:configurations</span> =&gt; [<span class="hljs-string">&apos;Debug&apos;</span>]
+  pod <span class="hljs-string">&apos;MLeaksFinder&apos;</span>, <span class="hljs-symbol">:configurations</span> =&gt; [<span class="hljs-string">&apos;Debug&apos;</span>]
+<span class="hljs-keyword">end</span>
+
+target <span class="hljs-string">&apos;Demo&apos;</span> <span class="hljs-keyword">do</span>
+  debug_pods
+<span class="hljs-keyword">end</span>
+</code></pre>
+
                                 
                                 </section>
                             
@@ -3742,7 +3755,7 @@ end
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"CocoaPods之Profile","level":"1.2.3.2.2","depth":4,"next":{"title":"CocoaPods之podspec","level":"1.2.3.2.3","depth":4,"path":"iOS/Objective-C/经验/CocoaPods之podspec.md","ref":"iOS/Objective-C/经验/CocoaPods之podspec.md","articles":[]},"previous":{"title":"Allocations","level":"1.2.3.2.1","depth":4,"path":"iOS/Objective-C/经验/Allocations.md","ref":"iOS/Objective-C/经验/Allocations.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","expandable-chapters","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"vhuichen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NoteBook","language":"zh-hans","gitbook":"*","description":"笔记、分享"},"file":{"path":"iOS/Objective-C/经验/CocoaPods之Profile.md","mtime":"2023-11-25T02:24:13.054Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-07-27T11:22:51.916Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"CocoaPods之Profile","level":"1.2.3.2.2","depth":4,"next":{"title":"CocoaPods之podspec","level":"1.2.3.2.3","depth":4,"path":"iOS/Objective-C/经验/CocoaPods之podspec.md","ref":"iOS/Objective-C/经验/CocoaPods之podspec.md","articles":[]},"previous":{"title":"Allocations","level":"1.2.3.2.1","depth":4,"path":"iOS/Objective-C/经验/Allocations.md","ref":"iOS/Objective-C/经验/Allocations.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","expandable-chapters","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"vhuichen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NoteBook","language":"zh-hans","gitbook":"*","description":"笔记、分享"},"file":{"path":"iOS/Objective-C/经验/CocoaPods之Profile.md","mtime":"2024-07-28T08:01:42.417Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-07-28T17:14:26.879Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
