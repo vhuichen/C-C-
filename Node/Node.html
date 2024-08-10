@@ -3118,6 +3118,25 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.19.5.1" data-path="../Tool/VSCode/Shortcut.html">
+            
+                <a href="../Tool/VSCode/Shortcut.html">
+            
+                    
+                    Shortcut
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter " data-level="1.19.6" data-path="../Tool/博客搭建/博客搭建.html">
@@ -3848,6 +3867,32 @@ fs.readFile(<span class="hljs-string">&apos;input.txt&apos;</span>, <span class=
 });
 <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;&#x5F02;&#x6B65;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#xFF1A;&#x7A0B;&#x5E8F;&#x6267;&#x884C;&#x7ED3;&#x675F;!&quot;</span>);
 </code></pre>
+<h3 id="&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#xFF08;&#x89C2;&#x5BDF;&#x8005;&#x6A21;&#x5F0F;&#xFF09;">&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#xFF08;&#x89C2;&#x5BDF;&#x8005;&#x6A21;&#x5F0F;&#xFF09;</h3>
+<p>Node.js &#x662F;&#x5355;&#x8FDB;&#x7A0B;&#x3001;&#x5355;&#x7EBF;&#x7A0B;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF0C;&#x4F46; V8 &#x5F15;&#x64CE;&#x63D0;&#x4F9B;&#x4E86;&#x5F02;&#x6B65;&#x6267;&#x884C;&#x56DE;&#x8C03;&#x63A5;&#x53E3;&#xFF0C;&#x901A;&#x8FC7;&#x8FD9;&#x4E9B;&#x63A5;&#x53E3;&#x5C31;&#x53EF;&#x4EE5;&#x5904;&#x7406;&#x5927;&#x91CF;&#x7684;&#x5E76;&#x53D1;&#x3002;</p>
+<h3 id="eventemitter">EventEmitter</h3>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> events = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;events&apos;</span>);
+<span class="hljs-keyword">var</span> eventsEmitter = <span class="hljs-keyword">new</span> events.EventEmitter();
+eventsEmitter.on(<span class="hljs-string">&apos;event1&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;event1 emitted with data:&apos;</span>+ data);
+});
+setTimeout(() =&gt; {
+    eventsEmitter.emit(<span class="hljs-string">&apos;event1&apos;</span>, <span class="hljs-string">&apos;Hello World&apos;</span>);
+}, <span class="hljs-number">1000</span>);
+</code></pre>
+<h3 id="buffer&#x7F13;&#x51B2;&#x533A;">Buffer(&#x7F13;&#x51B2;&#x533A;)</h3>
+<p>JavaScript &#x8BED;&#x8A00;&#x81EA;&#x8EAB;&#x53EA;&#x6709;&#x5B57;&#x7B26;&#x4E32;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x6CA1;&#x6709;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x3002;&#x4F46;&#x5728;&#x5904;&#x7406; TCP &#x6D41;&#x6216;&#x6587;&#x4EF6;&#x6D41;&#x65F6;&#xFF0C;&#x8981;&#x7528;&#x5230;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;&#x3002;&#x56E0;&#x6B64;&#x5728; Node.js &#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A; Buffer &#x7C7B;&#xFF0C;&#x8BE5;&#x7C7B;&#x7528;&#x6765;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4E13;&#x95E8;&#x5B58;&#x653E;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;&#x7684;&#x7F13;&#x5B58;&#x533A;&#x3002;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> buf = Buffer.from([<span class="hljs-number">0x1</span>, <span class="hljs-number">0x2</span>, <span class="hljs-number">0x3</span>, <span class="hljs-number">0x4</span>, <span class="hljs-number">0x5</span>]);
+<span class="hljs-keyword">const</span> json = <span class="hljs-built_in">JSON</span>.stringify(buf);
+<span class="hljs-comment">// &#x8F93;&#x51FA;: {&quot;type&quot;:&quot;Buffer&quot;,&quot;data&quot;:[1,2,3,4,5]}</span>
+<span class="hljs-built_in">console</span>.log(json);
+<span class="hljs-keyword">const</span> jsonData = <span class="hljs-built_in">JSON</span>.parse(json, (key, value) =&gt; {
+  <span class="hljs-keyword">return</span> value &amp;&amp; value.type === <span class="hljs-string">&apos;Buffer&apos;</span> ?
+    Buffer.from(value.data) :
+    value;
+});
+<span class="hljs-comment">// &#x8F93;&#x51FA;: &lt;Buffer 01 02 03 04 05&gt;</span>
+<span class="hljs-built_in">console</span>.log(jsonData);
+</code></pre>
 
                                 
                                 </section>
@@ -3891,7 +3936,7 @@ fs.readFile(<span class="hljs-string">&apos;input.txt&apos;</span>, <span class=
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Node","level":"1.16","depth":1,"next":{"title":"npm","level":"1.16.1","depth":2,"path":"Node/npm.md","ref":"Node/npm.md","articles":[]},"previous":{"title":"Taro","level":"1.15.1","depth":2,"path":"MiniProgram/Taro.md","ref":"MiniProgram/Taro.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","expandable-chapters","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"vhuichen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NoteBook","language":"zh-hans","gitbook":"*","description":"笔记、分享"},"file":{"path":"Node/Node.md","mtime":"2024-08-09T16:04:35.464Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-08-09T17:31:25.474Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Node","level":"1.16","depth":1,"next":{"title":"npm","level":"1.16.1","depth":2,"path":"Node/npm.md","ref":"Node/npm.md","articles":[]},"previous":{"title":"Taro","level":"1.15.1","depth":2,"path":"MiniProgram/Taro.md","ref":"MiniProgram/Taro.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","expandable-chapters","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"vhuichen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NoteBook","language":"zh-hans","gitbook":"*","description":"笔记、分享"},"file":{"path":"Node/Node.md","mtime":"2024-08-10T06:41:09.039Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-08-10T17:13:32.178Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
