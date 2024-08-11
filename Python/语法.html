@@ -1708,7 +1708,39 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.5" data-path="基础/基础.html">
+        <li class="chapter " data-level="1.4.5" data-path="VNPY/VNPY.html">
+            
+                <a href="VNPY/VNPY.html">
+            
+                    
+                    VNPY
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.5.1" data-path="VNPY/EventEngine.html">
+            
+                <a href="VNPY/EventEngine.html">
+            
+                    
+                    EventEngine
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="基础/基础.html">
             
                 <a href="基础/基础.html">
             
@@ -1722,7 +1754,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.5.1" data-path="基础/init_py.html">
+        <li class="chapter " data-level="1.4.6.1" data-path="基础/init_py.html">
             
                 <a href="基础/init_py.html">
             
@@ -1735,25 +1767,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.5.2" data-path="基础/setup_py.html">
-            
-                <a href="基础/setup_py.html">
-            
-                    
-                    setup_py
-            
-                </a>
-            
-
-            
-        </li>
-    
 
             </ul>
             
         </li>
     
-        <li class="chapter " data-level="1.4.6" >
+        <li class="chapter " data-level="1.4.7" >
             
                 <span>
             
@@ -1767,7 +1786,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.6.1" data-path="实例/Rename.html">
+        <li class="chapter " data-level="1.4.7.1" data-path="实例/Rename.html">
             
                 <a href="实例/Rename.html">
             
@@ -1785,7 +1804,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.7" data-path="方案/方案.html">
+        <li class="chapter " data-level="1.4.8" data-path="方案/方案.html">
             
                 <a href="方案/方案.html">
             
@@ -1798,7 +1817,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4.8" data-path="语法.html">
+        <li class="chapter active" data-level="1.4.9" data-path="语法.html">
             
                 <a href="语法.html">
             
@@ -1811,7 +1830,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.9" data-path="第三方库/第三方库.html">
+        <li class="chapter " data-level="1.4.10" data-path="第三方库/第三方库.html">
             
                 <a href="第三方库/第三方库.html">
             
@@ -1825,7 +1844,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.9.1" data-path="第三方库/pandas.html">
+        <li class="chapter " data-level="1.4.10.1" data-path="第三方库/pandas.html">
             
                 <a href="第三方库/pandas.html">
             
@@ -1838,12 +1857,25 @@
             
         </li>
     
+        <li class="chapter " data-level="1.4.10.2" data-path="第三方库/setuptools.html">
+            
+                <a href="第三方库/setuptools.html">
+            
+                    
+                    setuptools
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
         </li>
     
-        <li class="chapter " data-level="1.4.10" data-path="包管理器.html">
+        <li class="chapter " data-level="1.4.11" data-path="包管理器.html">
             
                 <a href="包管理器.html">
             
@@ -1856,7 +1888,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.11" data-path="基本命令.html">
+        <li class="chapter " data-level="1.4.12" data-path="基本命令.html">
             
                 <a href="基本命令.html">
             
@@ -3834,6 +3866,43 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x8BED;&#x6CD5;">&#x8BED;&#x6CD5;</h1>
+<h3 id="callable">Callable</h3>
+<p><code>Callable</code>&#x662F;&#x4E00;&#x4E2A;&#x7279;&#x6B8A;&#x7684;&#x7C7B;&#x578B;&#x6CE8;&#x89E3;&#xFF0C;&#x7528;&#x4E8E;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x662F;&#x53EF;&#x4EE5;&#x50CF;&#x51FD;&#x6570;&#x4E00;&#x6837;&#x88AB;&#x8C03;&#x7528;&#x3002;</p>
+<p><code>Callable</code>&#x7C7B;&#x578B;&#x6CE8;&#x89E3;&#x7684;&#x4E00;&#x822C;&#x5F62;&#x5F0F;&#x662F;<code>Callable[[argtypes], return_type]</code>&#xFF0C;&#x5176;&#x4E2D;&#xFF1A;</p>
+<ul>
+<li><code>argtypes</code>&#x662F;&#x4E00;&#x4E2A;&#x5143;&#x7EC4;&#xFF0C;&#x8868;&#x793A;&#x51FD;&#x6570;&#x63A5;&#x53D7;&#x7684;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x3002;&#x5982;&#x679C;&#x51FD;&#x6570;&#x63A5;&#x53D7;&#x4EFB;&#x610F;&#x6570;&#x91CF;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>*args</code>&#x8868;&#x793A;&#x4E0D;&#x5B9A;&#x6570;&#x91CF;&#x7684;&#x4F4D;&#x7F6E;&#x53C2;&#x6570;&#xFF0C;&#x4F7F;&#x7528;<code>**kwargs</code>&#x8868;&#x793A;&#x4E0D;&#x5B9A;&#x6570;&#x91CF;&#x7684;&#x5173;&#x952E;&#x5B57;&#x53C2;&#x6570;&#x3002;</li>
+<li><code>return_type</code>&#x8868;&#x793A;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x503C;&#x7684;&#x7C7B;&#x578B;&#x3002;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> typing <span class="hljs-keyword">import</span> Callable
+<span class="hljs-keyword">from</span> typing <span class="hljs-keyword">import</span> Any
+
+<span class="hljs-comment"># &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x63A5;&#x53D7;&#x6574;&#x6570;&#x5E76;&#x8FD4;&#x56DE;&#x6574;&#x6570;&#x7684;&#x51FD;&#x6570;&#x7C7B;&#x578B;</span>
+add: Callable[[int, int], int] = <span class="hljs-keyword">lambda</span> x, y: x + y
+<span class="hljs-comment"># &#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;</span>
+result = add(<span class="hljs-number">3</span>, <span class="hljs-number">5</span>)  <span class="hljs-comment"># &#x8F93;&#x51FA; 8</span>
+
+<span class="hljs-comment"># &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x63A5;&#x53D7;&#x4EFB;&#x610F;&#x6570;&#x91CF;&#x6574;&#x6570;&#x5E76;&#x8FD4;&#x56DE;&#x5176;&#x603B;&#x548C;&#x7684;&#x51FD;&#x6570;&#x7C7B;&#x578B;</span>
+sum_all: Callable[[Any], int] = <span class="hljs-keyword">lambda</span> *args: sum(args)
+<span class="hljs-comment"># &#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;</span>
+total = sum_all(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>)  <span class="hljs-comment"># &#x8F93;&#x51FA; 10</span>
+
+<span class="hljs-comment"># &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x63A5;&#x53D7;&#x4EFB;&#x610F;&#x6570;&#x91CF;&#x5173;&#x952E;&#x5B57;&#x53C2;&#x6570;&#x5E76;&#x6253;&#x5370;&#x5B83;&#x4EEC;&#x7684;&#x51FD;&#x6570;&#x7C7B;&#x578B;</span>
+print_kwargs: Callable[[Any], <span class="hljs-keyword">None</span>] = <span class="hljs-keyword">lambda</span> **kwargs: print(kwargs)
+<span class="hljs-comment"># &#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;</span>
+print_kwargs(a=<span class="hljs-number">1</span>, b=<span class="hljs-number">2</span>)  <span class="hljs-comment"># &#x8F93;&#x51FA; {&apos;a&apos;: 1, &apos;b&apos;: 2}</span>
+
+<span class="hljs-comment"># &#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#x53C2;&#x6570;&#x548C;&#x4E00;&#x4E2A;&#x5173;&#x952E;&#x5B57;&#x53C2;&#x6570;&#x7684;&#x51FD;&#x6570;&#x7C7B;&#x578B;</span>
+process: Callable[[int, Any], str] = <span class="hljs-keyword">lambda</span> x, **kwargs: f<span class="hljs-string">&quot;Value: {x}, Kwargs: {kwargs}&quot;</span>
+<span class="hljs-comment"># &#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x51FD;&#x6570;</span>
+info = process(<span class="hljs-number">10</span>, key=<span class="hljs-string">&apos;value&apos;</span>)  <span class="hljs-comment"># &#x8F93;&#x51FA; &apos;Value: 10, Kwargs: {&quot;key&quot;: &quot;value&quot;}&apos;</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Adder</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__call__</span><span class="hljs-params">(self, x: int, y: int)</span> -&gt; int:</span>
+        <span class="hljs-keyword">return</span> x + y
+<span class="hljs-comment"># &#x521B;&#x5EFA;&#x4E00;&#x4E2A;Adder&#x5B9E;&#x4F8B;&#x5E76;&#x5C06;&#x5176;&#x7528;&#x4F5C;Callable</span>
+adder_instance = Adder()
+result = adder_instance(<span class="hljs-number">3</span>, <span class="hljs-number">5</span>)  <span class="hljs-comment"># &#x8F93;&#x51FA; 8</span>
+</code></pre>
 <h3 id="lambda">lambda</h3>
 <pre><code class="lang-python"><span class="hljs-comment"># &#x65E0;&#x53C2;&#x6570;,&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x56FA;&#x5B9A;&#x503C;</span>
 say_hello = <span class="hljs-keyword">lambda</span>: <span class="hljs-string">&quot;Hello!&quot;</span>
@@ -3910,7 +3979,7 @@ print(evens)  <span class="hljs-comment"># &#x8F93;&#x51FA;: [2, 4, 6, 8, 10]</s
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"语法","level":"1.4.8","depth":2,"next":{"title":"第三方库","level":"1.4.9","depth":2,"path":"Python/第三方库/第三方库.md","ref":"Python/第三方库/第三方库.md","articles":[{"title":"pandas","level":"1.4.9.1","depth":3,"path":"Python/第三方库/pandas.md","ref":"Python/第三方库/pandas.md","articles":[]}]},"previous":{"title":"方案","level":"1.4.7","depth":2,"path":"Python/方案/方案.md","ref":"Python/方案/方案.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","expandable-chapters","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"vhuichen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NoteBook","language":"zh-hans","gitbook":"*","description":"笔记、分享"},"file":{"path":"Python/语法.md","mtime":"2024-08-06T16:01:51.118Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-08-10T17:13:32.178Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"语法","level":"1.4.9","depth":2,"next":{"title":"第三方库","level":"1.4.10","depth":2,"path":"Python/第三方库/第三方库.md","ref":"Python/第三方库/第三方库.md","articles":[{"title":"pandas","level":"1.4.10.1","depth":3,"path":"Python/第三方库/pandas.md","ref":"Python/第三方库/pandas.md","articles":[]},{"title":"setuptools","level":"1.4.10.2","depth":3,"path":"Python/第三方库/setuptools.md","ref":"Python/第三方库/setuptools.md","articles":[]}]},"previous":{"title":"方案","level":"1.4.8","depth":2,"path":"Python/方案/方案.md","ref":"Python/方案/方案.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","expandable-chapters","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"vhuichen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NoteBook","language":"zh-hans","gitbook":"*","description":"笔记、分享"},"file":{"path":"Python/语法.md","mtime":"2024-08-11T05:26:28.211Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-08-11T17:33:55.509Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>setup_py · NoteBook</title>
+        <title>VNPY · NoteBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -61,8 +61,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="EventEngine.html" />
     
-    <link rel="prev" href="init_py.html" />
+    
+    <link rel="prev" href="../Modules.html" />
     
 
     </head>
@@ -1706,12 +1708,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.5" data-path="基础.html">
+        <li class="chapter active" data-level="1.4.5" data-path="VNPY.html">
             
-                <a href="基础.html">
+                <a href="VNPY.html">
             
                     
-                    基础
+                    VNPY
             
                 </a>
             
@@ -1720,25 +1722,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.5.1" data-path="init_py.html">
+        <li class="chapter " data-level="1.4.5.1" data-path="EventEngine.html">
             
-                <a href="init_py.html">
-            
-                    
-                    init_py
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter active" data-level="1.4.5.2" data-path="setup_py.html">
-            
-                <a href="setup_py.html">
+                <a href="EventEngine.html">
             
                     
-                    setup_py
+                    EventEngine
             
                 </a>
             
@@ -1751,7 +1740,39 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.6" >
+        <li class="chapter " data-level="1.4.6" data-path="../基础/基础.html">
+            
+                <a href="../基础/基础.html">
+            
+                    
+                    基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1" data-path="../基础/init_py.html">
+            
+                <a href="../基础/init_py.html">
+            
+                    
+                    init_py
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" >
             
                 <span>
             
@@ -1765,7 +1786,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.6.1" data-path="../实例/Rename.html">
+        <li class="chapter " data-level="1.4.7.1" data-path="../实例/Rename.html">
             
                 <a href="../实例/Rename.html">
             
@@ -1783,7 +1804,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.7" data-path="../方案/方案.html">
+        <li class="chapter " data-level="1.4.8" data-path="../方案/方案.html">
             
                 <a href="../方案/方案.html">
             
@@ -1796,7 +1817,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.8" data-path="../语法.html">
+        <li class="chapter " data-level="1.4.9" data-path="../语法.html">
             
                 <a href="../语法.html">
             
@@ -1809,7 +1830,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.9" data-path="../第三方库/第三方库.html">
+        <li class="chapter " data-level="1.4.10" data-path="../第三方库/第三方库.html">
             
                 <a href="../第三方库/第三方库.html">
             
@@ -1823,7 +1844,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.9.1" data-path="../第三方库/pandas.html">
+        <li class="chapter " data-level="1.4.10.1" data-path="../第三方库/pandas.html">
             
                 <a href="../第三方库/pandas.html">
             
@@ -1836,12 +1857,25 @@
             
         </li>
     
+        <li class="chapter " data-level="1.4.10.2" data-path="../第三方库/setuptools.html">
+            
+                <a href="../第三方库/setuptools.html">
+            
+                    
+                    setuptools
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
         </li>
     
-        <li class="chapter " data-level="1.4.10" data-path="../包管理器.html">
+        <li class="chapter " data-level="1.4.11" data-path="../包管理器.html">
             
                 <a href="../包管理器.html">
             
@@ -1854,7 +1888,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.11" data-path="../基本命令.html">
+        <li class="chapter " data-level="1.4.12" data-path="../基本命令.html">
             
                 <a href="../基本命令.html">
             
@@ -3816,7 +3850,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >setup_py</a>
+        <a href="../.." >VNPY</a>
     </h1>
 </div>
 
@@ -3831,41 +3865,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="setuppy">setup.py</h1>
-<p>setup.py &#x901A;&#x5E38;&#x5B58;&#x653E;&#x5728;&#x5728;&#x5305;&#x7684;&#x6839;&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x7528;&#x4E8E;&#x5B9A;&#x4E49; Python &#x5305;&#x7684;&#x5143;&#x6570;&#x636E;&#x548C;&#x914D;&#x7F6E;&#x4FE1;&#x606F;&#x3002;&#xFF08;&#x4ECE; Python 3.6 &#x5F00;&#x59CB;&#xFF0C;<code>setuptools</code> &#x4E0D;&#x518D;&#x662F; Python &#x6807;&#x51C6;&#x5E93;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>pip install setuptools</code> &#x547D;&#x4EE4;&#x6765;&#x5B89;&#x88C5;&#xFF09;</p>
-<p>&#x5185;&#x5BB9;&#x901A;&#x5E38;&#x5982;&#x4E0B;:</p>
-<pre><code class="lang-python"><span class="hljs-keyword">from</span> setuptools <span class="hljs-keyword">import</span> setup
-
-setup(
-    name=<span class="hljs-string">&apos;your_package_name&apos;</span>,  <span class="hljs-comment"># &#x5305;&#x540D;</span>
-    version=<span class="hljs-string">&apos;0.1&apos;</span>,  <span class="hljs-comment"># &#x7248;&#x672C;&#x53F7;</span>
-    author=<span class="hljs-string">&apos;Your Name&apos;</span>,  <span class="hljs-comment"># &#x4F5C;&#x8005;&#x540D;</span>
-    author_email=<span class="hljs-string">&apos;your.email@example.com&apos;</span>,  <span class="hljs-comment"># &#x4F5C;&#x8005;&#x90AE;&#x7BB1;</span>
-    description=<span class="hljs-string">&apos;A small example package&apos;</span>,  <span class="hljs-comment"># &#x7B80;&#x77ED;&#x63CF;&#x8FF0;</span>
-    long_description=open(<span class="hljs-string">&apos;README.md&apos;</span>).read(),  <span class="hljs-comment"># &#x957F;&#x63CF;&#x8FF0;&#xFF0C;&#x901A;&#x5E38;&#x662F;README&#x6587;&#x4EF6;&#x7684;&#x5185;&#x5BB9;</span>
-    long_description_content_type=<span class="hljs-string">&apos;text/markdown&apos;</span>,  <span class="hljs-comment"># &#x957F;&#x63CF;&#x8FF0;&#x5185;&#x5BB9;&#x7684;&#x7C7B;&#x578B;</span>
-    url=<span class="hljs-string">&apos;https://github.com/yourusername/your_package_name&apos;</span>,  <span class="hljs-comment"># &#x9879;&#x76EE;&#x4E3B;&#x9875;</span>
-    packages=[<span class="hljs-string">&apos;your_package&apos;</span>],  <span class="hljs-comment"># &#x5305;&#x542B;&#x7684;&#x5305;</span>
-    install_requires=[  <span class="hljs-comment"># &#x4F9D;&#x8D56;&#x5217;&#x8868;</span>
-        <span class="hljs-string">&apos;numpy&apos;</span>,
-        <span class="hljs-string">&apos;pandas&apos;</span>,
-    ],
-    classifiers=[  <span class="hljs-comment"># &#x5206;&#x7C7B;&#x5668;&#xFF0C;&#x7528;&#x4E8E;&#x63CF;&#x8FF0;&#x5305;&#x7684;&#x5143;&#x6570;&#x636E;</span>
-        <span class="hljs-string">&apos;Programming Language :: Python :: 3&apos;</span>,
-        <span class="hljs-string">&apos;License :: OSI Approved :: MIT License&apos;</span>,
-        <span class="hljs-string">&apos;Operating System :: OS Independent&apos;</span>,
-    ],
-    <span class="hljs-comment"># &#x5176;&#x4ED6;&#x53C2;&#x6570;...</span>
-)
-</code></pre>
-<p>&#x5982;&#x4E0A;&#xFF1A;</p>
-<p><code>setup</code> &#x51FD;&#x6570;&#x5305;&#x542B;&#x4E86;&#x6784;&#x5EFA;&#x548C;&#x5206;&#x53D1; Python &#x5305;&#x6240;&#x9700;&#x7684;&#x4E00;&#x4E9B;&#x57FA;&#x672C;&#x4FE1;&#x606F;&#xFF0C;&#x8FD9;&#x4E9B;&#x4FE1;&#x606F;&#x544A;&#x8BC9; <code>setuptools</code> &#x5982;&#x4F55;&#x5B89;&#x88C5;&#x5305;&#x3001;&#x5305;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x4EE5;&#x53CA;&#x5982;&#x4F55;&#x5411;&#x5305;&#x7D22;&#x5F15;&#xFF08;&#x5982;PyPI&#xFF09;&#x63CF;&#x8FF0;&#x5305;&#x3002;</p>
-<p>&#x8981;&#x8FD0;&#x884C; <code>setup.py</code> &#x811A;&#x672C;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x547D;&#x4EE4;&#x884C;&#x4E2D;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x547D;&#x4EE4;&#xFF1A;</p>
-<ul>
-<li><code>python setup.py sdist</code>&#xFF1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6E90;&#x4EE3;&#x7801;&#x5206;&#x53D1;&#x5305;&#x3002;</li>
-<li><code>python setup.py bdist_wheel</code>&#xFF1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;wheel&#x5206;&#x53D1;&#x5305;&#x3002;</li>
-<li><code>python setup.py install</code>&#xFF1A;&#x5B89;&#x88C5;&#x5305;&#x5230;&#x5F53;&#x524D;Python&#x73AF;&#x5883;&#x3002;</li>
-</ul>
+                                <h1 id="vnpy">VNPY</h1>
 
                                 
                                 </section>
@@ -3893,10 +3893,14 @@ setup(
 
             
                 
-                <a href="init_py.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: init_py">
+                <a href="../Modules.html" class="navigation navigation-prev " aria-label="Previous page: Modules">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="EventEngine.html" class="navigation navigation-next " aria-label="Next page: EventEngine">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -3905,7 +3909,7 @@ setup(
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"setup_py","level":"1.4.5.2","depth":3,"next":{"title":"实例","level":"1.4.6","depth":2,"ref":"","articles":[{"title":"Rename","level":"1.4.6.1","depth":3,"path":"Python/实例/Rename.md","ref":"Python/实例/Rename.md","articles":[]}]},"previous":{"title":"init_py","level":"1.4.5.1","depth":3,"path":"Python/基础/init_py.md","ref":"Python/基础/init_py.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","expandable-chapters","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"vhuichen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NoteBook","language":"zh-hans","gitbook":"*","description":"笔记、分享"},"file":{"path":"Python/基础/setup_py.md","mtime":"2024-08-08T17:43:05.387Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-08-10T17:13:32.178Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"VNPY","level":"1.4.5","depth":2,"next":{"title":"EventEngine","level":"1.4.5.1","depth":3,"path":"Python/VNPY/EventEngine.md","ref":"Python/VNPY/EventEngine.md","articles":[]},"previous":{"title":"Modules","level":"1.4.4","depth":2,"path":"Python/Modules.md","ref":"Python/Modules.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","expandable-chapters","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"vhuichen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NoteBook","language":"zh-hans","gitbook":"*","description":"笔记、分享"},"file":{"path":"Python/VNPY/VNPY.md","mtime":"2024-08-11T16:48:42.952Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-08-11T17:33:55.509Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
