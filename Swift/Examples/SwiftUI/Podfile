@@ -1,0 +1,21 @@
+platform :ios, "12.0"
+source 'https://cdn.cocoapods.org/'
+
+inhibit_all_warnings!
+
+workspace 'Swift.xcworkspace'
+
+def common
+#  pod 'SwiftLint', '0.54.0'
+  pod 'SwiftFormat/CLI', '~> 0.54'
+end
+
+target 'SwiftDemo' do
+  project 'SwiftDemo/SwiftDemo.xcodeproj'
+  common
+end
+
+target 'SwiftUIDemo' do
+  project 'SwiftUIDemo/SwiftUIDemo.xcodeproj'
+  common
+end

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>vvloadpresent</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/// load直接弹出测试界面
++ (void)load {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        UIViewController *root = UIApplication.sharedApplication.keyWindow.rootViewController;
+        UIViewController *ctrl = [[self alloc] init];
+        ctrl.modalPresentationStyle = UIModalPresentationFullScreen;
+        [root presentViewController:ctrl animated:YES completion:nil];
+    });
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B886A7A9-D80B-4269-BAB8-120292E8C07E</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>load presentViewController</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC - load方法弹出测试界面</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

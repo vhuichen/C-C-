@@ -1,0 +1,11 @@
+numpy==1.26.4
+ta-lib==0.4.32
+importlib-metadata==7.0.2
+PySide6==6.3.0
+requests==2.32.3
+
+vnpy_ctp==6.6.9.1
+vnpy_rest==1.0.7
+vnpy_websocket==1.0.6
+vnpy_sqlite==1.0.1
+zigzag

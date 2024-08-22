@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>vvtouchesBegan</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>CGPoint point0 = [touches.anyObject locationInView:self.view];
+CGPoint point = [self.containView.layer convertPoint:point0 fromLayer:self.view.layer];
+if (![self.containView.layer containsPoint:point]) {
+    
+}
+//
+if (CGRectContainsPoint(self.containView.frame, point0)) {
+    
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>19337FDB-76DA-40FE-9A99-76E6088AAEDA</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>touchesBegan</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC - touch 计算点击位置</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

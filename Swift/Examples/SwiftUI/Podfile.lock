@@ -1,0 +1,16 @@
+PODS:
+  - SwiftFormat/CLI (0.54.2)
+
+DEPENDENCIES:
+  - SwiftFormat/CLI (~> 0.54)
+
+SPEC REPOS:
+  trunk:
+    - SwiftFormat
+
+SPEC CHECKSUMS:
+  SwiftFormat: 738e660a5faebfba9a6d7af62f7ed7af2f163001
+
+PODFILE CHECKSUM: 3d0249f30a8d46fa40a569dfb4c8a26c9f909c3e
+
+COCOAPODS: 1.15.2

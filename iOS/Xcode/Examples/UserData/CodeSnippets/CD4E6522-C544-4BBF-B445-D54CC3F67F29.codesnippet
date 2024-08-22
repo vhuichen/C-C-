@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>vvLazyImageView</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>lazy var &lt;#icon#&gt;ImageView = {
+    let imageView = UIImageView(image: UIImage(named: ""))
+    imageView.contentMode = .scaleAspectFit
+    imageView.backgroundColor = .clear
+    return imageView
+}()</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>CD4E6522-C544-4BBF-B445-D54CC3F67F29</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>懒加载Imageview</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>S - lazy imageview</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

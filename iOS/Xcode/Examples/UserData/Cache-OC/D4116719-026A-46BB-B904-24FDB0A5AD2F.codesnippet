@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string></string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>NSString *content = @"";
+UIFont *font = [UIFont systemFontOfSize:15];
+UIColor *textColor = UIColor.redColor;
+
+UILabel *contentLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+contentLabel.numberOfLines = 0;
+NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:content];
+NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+[paragraphStyle setParagraphSpacing:10];
+[attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, content.length)];
+[attributedString addAttribute:NSForegroundColorAttributeName value:textColor range:NSMakeRange(0, content.length)];
+[attributedString addAttribute:NSFontAttributeName value:font range:NSMakeRange(0, content.length)];
+[contentLabel setAttributedText:attributedString];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>D4116719-026A-46BB-B904-24FDB0A5AD2F</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>Label 行间距</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC - vvlabelattr</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

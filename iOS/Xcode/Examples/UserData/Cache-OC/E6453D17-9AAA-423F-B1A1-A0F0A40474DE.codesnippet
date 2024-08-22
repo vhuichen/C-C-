@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>vvmasmake</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    [self.listContentView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.view.mas_bottom).offset(0);
+        make.left.equalTo(@(0));
+        make.right.equalTo(@(-0));
+        make.bottom.equalTo(self.view.mas_top).offset(0);
+        make.size.equalTo(@(CGSizeMake(0, 0)));
+        make.centerX.equalTo(self.view);
+        make.centerY.equalTo(self.view);
+        make.center.equalTo(self.view);
+        make.width.equalTo(@(0));
+        make.height.equalTo(@(0));
+    }];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>E6453D17-9AAA-423F-B1A1-A0F0A40474DE</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetPlatformFamily</key>
+	<string>iphoneos</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>OC - 布局</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
