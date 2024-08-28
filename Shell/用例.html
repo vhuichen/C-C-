@@ -612,7 +612,33 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.8.2" data-path="../iOS/经验/布局经验.html">
+        <li class="chapter " data-level="1.2.8.2" data-path="../iOS/经验/性能优化.html">
+            
+                <a href="../iOS/经验/性能优化.html">
+            
+                    
+                    性能优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.3" data-path="../iOS/经验/开发建议.html">
+            
+                <a href="../iOS/经验/开发建议.html">
+            
+                    
+                    开发建议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.4" data-path="../iOS/经验/布局经验.html">
             
                 <a href="../iOS/经验/布局经验.html">
             
@@ -1515,7 +1541,91 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.3" data-path="../Python/语法.html">
+        <li class="chapter " data-level="1.4.3" data-path="../Python/pyenv.html">
+            
+                <a href="../Python/pyenv.html">
+            
+                    
+                    pyenv
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../Python/包管理器/">
+            
+                <a href="../Python/包管理器/">
+            
+                    
+                    包管理器
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.4.1" data-path="../Python/包管理器/pipenv.html">
+            
+                <a href="../Python/包管理器/pipenv.html">
+            
+                    
+                    pipenv
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.2" data-path="../Python/包管理器/venv.html">
+            
+                <a href="../Python/包管理器/venv.html">
+            
+                    
+                    venv
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.3" data-path="../Python/包管理器/conda.html">
+            
+                <a href="../Python/包管理器/conda.html">
+            
+                    
+                    conda
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.4" data-path="../Python/包管理器/poetry.html">
+            
+                <a href="../Python/包管理器/poetry.html">
+            
+                    
+                    poetry
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../Python/语法.html">
             
                 <a href="../Python/语法.html">
             
@@ -1528,7 +1638,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.4" data-path="../Python/Modules.html">
+        <li class="chapter " data-level="1.4.6" data-path="../Python/Modules.html">
             
                 <a href="../Python/Modules.html">
             
@@ -1541,20 +1651,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.5" data-path="../Python/包管理器.html">
-            
-                <a href="../Python/包管理器.html">
-            
-                    
-                    包管理器
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.6" data-path="../Python/Jupyter/">
+        <li class="chapter " data-level="1.4.7" data-path="../Python/Jupyter/">
             
                 <a href="../Python/Jupyter/">
             
@@ -1567,25 +1664,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.7" data-path="../Python/基本命令.html">
+        <li class="chapter " data-level="1.4.8" data-path="../Python/基本命令.html">
             
                 <a href="../Python/基本命令.html">
             
                     
                     基本命令
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.8" data-path="../Python/poetry.html">
-            
-                <a href="../Python/poetry.html">
-            
-                    
-                    poetry
             
                 </a>
             
@@ -3340,6 +3424,50 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x7528;&#x4F8B;">&#x7528;&#x4F8B;</h1>
+<h3 id="mac-&#x81EA;&#x52A8;&#x6253;&#x5F00;app">Mac &#x81EA;&#x52A8;&#x6253;&#x5F00;APP</h3>
+<pre><code class="lang-shell"># &#x89E3;&#x51B3;&#x95EE;&#x9898;&#xFF1A;Mac &#x7CFB;&#x7EDF;&#x5F00;&#x673A;&#x542F;&#x52A8;&#x7A0B;&#x5E8F;&#xFF0C;&#x4F46;&#x6B64;&#x65F6;&#x6CA1;&#x6709;&#x7F51;&#x7EDC;&#xFF0C;&#x5BFC;&#x81F4;APP&#x81EA;&#x52A8;&#x767B;&#x5F55;&#x5931;&#x8D25;
+# open &#x4E2D;&#x6587;&#x540D;&#x79F0;&#x5E94;&#x7528;&#x53EF;&#x80FD;&#x4F1A;&#x5931;&#x8D25;&#xFF0C;&#x6B64;&#x65F6;&#x53EF;&#x4EE5;&#x5C06; APP &#x540D;&#x79F0;&#x6539;&#x4E3A;&#x5B57;&#x6BCD;&#x7C7B;&#x578B;
+!/bin/bash
+
+open_app() {
+    open -a &quot;AAA&quot;
+    sleep 1
+    open -a &quot;BBB&quot;
+}
+
+url=&quot;http://www.baidu.com&quot; # &#x76EE;&#x6807;URL
+max_retries=5 # &#x6700;&#x5927;&#x91CD;&#x8BD5;&#x6B21;&#x6570;
+retries=0 # &#x5F53;&#x524D;&#x91CD;&#x8BD5;&#x6B21;&#x6570;
+
+# &#x51FD;&#x6570;&#xFF1A;&#x6267;&#x884C;curl&#x547D;&#x4EE4;&#x5E76;&#x68C0;&#x67E5;&#x72B6;&#x6001;
+fetch_url() {
+    curl -s --head -m 3 $url | grep &quot;HTTP/&quot;
+}
+
+# &#x5FAA;&#x73AF;&#x76F4;&#x5230;&#x6210;&#x529F;&#x6216;&#x8005;&#x8FBE;&#x5230;&#x6700;&#x5927;&#x91CD;&#x8BD5;&#x6B21;&#x6570;
+while [ $retries -lt $max_retries ]; do
+    fetch_url &gt; /dev/null 2&gt;&amp;1
+    # &#x68C0;&#x67E5;&#x4E0A;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x7684;&#x9000;&#x51FA;&#x72B6;&#x6001;
+    if [ $? -eq 0 ]; then
+        echo &quot;&#x6210;&#x529F;&#x83B7;&#x53D6; $url&quot;
+        break
+    else
+        echo &quot;&#x83B7;&#x53D6; $url &#x5931;&#x8D25;(&#x91CD;&#x8BD5;&#x6B21;&#x6570;: $((retries+1))) &#x5C06;&#x5728;1&#x79D2;&#x540E;&#x91CD;&#x8BD5;...&quot;
+        sleep 1
+        ((retries++))
+    fi
+done
+
+# &#x5982;&#x679C;&#x8FBE;&#x5230;&#x6700;&#x5927;&#x91CD;&#x8BD5;&#x6B21;&#x6570;&#x4ECD;&#x7136;&#x5931;&#x8D25;
+if [ $retries -eq $max_retries ]; then
+    echo &quot;&#x5728;&#x5C1D;&#x8BD5;&#x4E86; $max_retries &#x6B21;&#x4E4B;&#x540E;&#xFF0C;&#x4ECD;&#x7136;&#x65E0;&#x6CD5;&#x83B7;&#x53D6; $url&quot;
+else
+    open_app
+    #
+    sleep 1
+    osascript -e &apos;tell application &quot;Terminal&quot; to close (every window whose name contains &quot;login.command&quot;)&apos; &amp; exit
+fi
+</code></pre>
 <h3 id="&#x8BBE;&#x7F6E;&#x4EE3;&#x7406;">&#x8BBE;&#x7F6E;&#x4EE3;&#x7406;</h3>
 <pre><code class="lang-shell">export all_proxy=192.168.1.2:8080
 # do something
@@ -3415,7 +3543,7 @@ rename &quot;s/small/large/&quot; image*small.png
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"用例","level":"1.13.5","depth":2,"next":{"title":"Taro","level":"1.14","depth":1,"path":"Taro/README.md","ref":"Taro/README.md","articles":[]},"previous":{"title":"mv","level":"1.13.4.15","depth":3,"path":"Shell/命令/mv.md","ref":"Shell/命令/mv.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","expandable-chapters","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"vhuichen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NoteBook","language":"zh-hans","gitbook":"*","description":"笔记、分享"},"file":{"path":"Shell/用例.md","mtime":"2024-08-07T14:57:01.872Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-08-26T17:04:59.521Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"用例","level":"1.13.5","depth":2,"next":{"title":"Taro","level":"1.14","depth":1,"path":"Taro/README.md","ref":"Taro/README.md","articles":[]},"previous":{"title":"mv","level":"1.13.4.15","depth":3,"path":"Shell/命令/mv.md","ref":"Shell/命令/mv.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","expandable-chapters","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"vhuichen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NoteBook","language":"zh-hans","gitbook":"*","description":"笔记、分享"},"file":{"path":"Shell/用例.md","mtime":"2024-08-27T14:47:16.977Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-08-28T17:57:07.313Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
