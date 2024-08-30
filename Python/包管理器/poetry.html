@@ -1651,7 +1651,161 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.7" data-path="../Jupyter/">
+        <li class="chapter " data-level="1.4.7" data-path="../基础/">
+            
+                <a href="../基础/">
+            
+                    
+                    基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.7.1" data-path="../基础/init_py.html">
+            
+                <a href="../基础/init_py.html">
+            
+                    
+                    init_py
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../第三方库/">
+            
+                <a href="../第三方库/">
+            
+                    
+                    第三方库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.8.1" data-path="../第三方库/pandas.html">
+            
+                <a href="../第三方库/pandas.html">
+            
+                    
+                    pandas
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8.2" data-path="../第三方库/setuptools.html">
+            
+                <a href="../第三方库/setuptools.html">
+            
+                    
+                    setuptools
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../GUI/">
+            
+                <a href="../GUI/">
+            
+                    
+                    GUI
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.9.1" data-path="../GUI/PySide6.html">
+            
+                <a href="../GUI/PySide6.html">
+            
+                    
+                    PySide6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9.2" data-path="../GUI/PyAutoGUI.html">
+            
+                <a href="../GUI/PyAutoGUI.html">
+            
+                    
+                    PyAutoGUI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../VNPY/">
+            
+                <a href="../VNPY/">
+            
+                    
+                    VNPY
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.10.1" data-path="../VNPY/EventEngine.html">
+            
+                <a href="../VNPY/EventEngine.html">
+            
+                    
+                    EventEngine
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../Jupyter/">
             
                 <a href="../Jupyter/">
             
@@ -1664,7 +1818,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.8" data-path="../基本命令.html">
+        <li class="chapter " data-level="1.4.12" data-path="../方案/">
+            
+                <a href="../方案/">
+            
+                    
+                    方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="../基本命令.html">
             
                 <a href="../基本命令.html">
             
@@ -3426,22 +3593,40 @@
                                 <h1 id="poetry">poetry</h1>
 <p>&#x63D0;&#x4F9B;&#x4E86;&#x4F9D;&#x8D56;&#x7BA1;&#x7406;&#x548C;&#x6253;&#x5305;&#x529F;&#x80FD;</p>
 <h3 id="&#x5B89;&#x88C5;">&#x5B89;&#x88C5;</h3>
-<h5 id="&#x65B9;&#x5F0F;&#x4E00;">&#x65B9;&#x5F0F;&#x4E00;</h5>
-<pre><code class="lang-shell"># &#x9ED8;&#x8BA4;&#x5B89;&#x88C5;&#x4F4D;&#x7F6E;&#xFF1A;~/.local/bin
+<pre><code class="lang-shell"># &#x65B9;&#x5F0F;&#x4E00;
+# &#x9ED8;&#x8BA4;&#x5B89;&#x88C5;&#x4F4D;&#x7F6E;&#xFF1A;~/.local/bin/poetry
 curl -sSL https://install.python-poetry.org | python3 -
 export PATH=&quot;~/.local/bin:$PATH&quot;
+
+# &#x65B9;&#x5F0F;&#x4E8C;
+# &#x76F4;&#x63A5; pip &#x5B89;&#x88C5;
+pip install poetry
+
+#
 poetry --version
 </code></pre>
-<h5 id="&#x65B9;&#x5F0F;&#x4E8C;">&#x65B9;&#x5F0F;&#x4E8C;</h5>
-<pre><code class="lang-shell"># &#x5148;&#x5728;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x4E0B;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x865A;&#x62DF;&#x73AF;&#x5883;
-python3 -m venv myenv
-source myenv/bin/activate
-
-# &#x5728;&#x5E72;&#x51C0;&#x7684;&#x73AF;&#x5883;&#x4E0B;&#x5B89;&#x88C5;poetry
-pip install poetry
-poetry --version
-# &#x5B89;&#x88C5;&#x4F9D;&#x8D56;
-poetry install
+<p>poetry &#x9ED8;&#x8BA4;&#x4F1A;&#x5C06;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x7EDF;&#x4E00;&#x653E;&#x5728;&#x6307;&#x5B9A;&#x76EE;&#x5F55;&#xFF0C;&#x5177;&#x4F53;&#x4FE1;&#x606F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <strong>poetry config --list</strong> &#x67E5;&#x770B;</p>
+<pre><code class="lang-shell">cache-dir = &quot;~/Library/Caches/pypoetry&quot;
+experimental.system-git-client = false
+installer.max-workers = null
+installer.modern-installation = true
+installer.no-binary = null
+installer.parallel = true
+keyring.enabled = true
+solver.lazy-wheel = true
+virtualenvs.create = true
+virtualenvs.in-project = null
+virtualenvs.options.always-copy = false
+virtualenvs.options.no-pip = false
+virtualenvs.options.no-setuptools = false
+virtualenvs.options.system-site-packages = false
+virtualenvs.path = &quot;{cache-dir}/virtualenvs&quot;  # ~/Library/Caches/pypoetry/virtualenvs
+virtualenvs.prefer-active-python = false
+virtualenvs.prompt = &quot;{project_name}-py{python_version}&quot;
+warnings.export = true
+</code></pre>
+<p>&#x5982;&#x679C;&#x8981;&#x5C06;&#x865A;&#x62DF;&#x9879;&#x76EE;&#x5B58;&#x653E;&#x5728;&#x5F53;&#x524D;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x5462;&#xFF1F;&#x53EF;&#x4EE5;&#x7528;&#x4E00;&#x4E0B;&#x547D;&#x4EE4;</p>
+<pre><code class="lang-shell">poetry config virtualenvs.in-project true
 </code></pre>
 <h3 id="&#x547D;&#x4EE4;">&#x547D;&#x4EE4;</h3>
 <pre><code class="lang-shell"># &#x5217;&#x51FA;&#x76F8;&#x5173;&#x914D;&#x7F6E;&#x4FE1;&#x606F;
@@ -3449,22 +3634,105 @@ poetry config --list
 # &#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4F7F;&#x7528;&#x7684; Python &#x7248;&#x672C;
 # &#x547D;&#x4EE4;&#x4F1A;&#x6839;&#x636E;&#x6307;&#x5B9A;&#x7684;&#x7248;&#x672C;&#x5728;&#x9879;&#x76EE;&#x4E2D;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x865A;&#x62DF;&#x73AF;&#x5883;&#xFF08;&#x5982;&#x679C;&#x5C1A;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x8BDD;&#xFF09;&#xFF0C;&#x6216;&#x8005;&#x5207;&#x6362;&#x5230;&#x4E00;&#x4E2A;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x7684;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x3002;&#x8FD9;&#x4E2A;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x5C06;&#x4F7F;&#x7528;&#x4F60;&#x6307;&#x5B9A;&#x7684; Python &#x7248;&#x672C;&#x3002;
 poetry env use 3.10.14
-# &#x6FC0;&#x6D3B;&#x9879;&#x76EE;
+# &#x6FC0;&#x6D3B;&#x9879;&#x76EE;(&#x8FDB;&#x5165;&#x865A;&#x62DF;&#x73AF;&#x5883;)
 poetry shell
+# &#x9000;&#x51FA;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x53D8;&#x91CF;
+exit
 # poetry install &#x5F02;&#x5E38;&#x65F6;&#x4F7F;&#x7528;
 poetry lock --no-update
-
 # &#x751F;&#x6210; whl &#x6587;&#x4EF6;
 poetry build
 </code></pre>
+<table>
+<thead>
+<tr>
+<th>&#x529F;&#x80FD;</th>
+<th>&#x793A;&#x4F8B;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x6DFB;&#x52A0;&#x4F9D;&#x8D56;</td>
+<td>poetry add xxxx</td>
+</tr>
+<tr>
+<td>&#x79FB;&#x9664;&#x4F9D;&#x8D56;</td>
+<td>poetry remove</td>
+</tr>
+<tr>
+<td>&#x5BFC;&#x51FA;&#x4F9D;&#x8D56;</td>
+<td>poetry export -f requirements.txt</td>
+</tr>
+<tr>
+<td>&#x5217;&#x51FA;&#x9879;&#x76EE;&#x4F9D;&#x8D56;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;</td>
+<td>poetry show xxx</td>
+</tr>
+<tr>
+<td>&#x6307;&#x5B9A; Python &#x89E3;&#x91CA;&#x5668;</td>
+<td>poetry env use python3.10  /  poetry env use 3.10.14</td>
+</tr>
+<tr>
+<td>&#x542F;&#x52A8;&#x865A;&#x62DF;&#x73AF;&#x5883;</td>
+<td>poetry shell</td>
+</tr>
+<tr>
+<td>&#x521D;&#x59CB;&#x5316;</td>
+<td>poetry init</td>
+</tr>
+<tr>
+<td>&#x5B89;&#x88C5;&#x4F9D;&#x8D56;</td>
+<td>poetry install</td>
+</tr>
+<tr>
+<td>&#x521B;&#x5EFA;&#x65B0;&#x7684; Poetry &#x9879;&#x76EE;</td>
+<td>poetry new xxxx</td>
+</tr>
+<tr>
+<td>&#x6253;&#x5305;&#x9879;&#x76EE;</td>
+<td>poetry build</td>
+</tr>
+<tr>
+<td>&#x53D1;&#x5E03;&#x9879;&#x76EE;&#x5230;PyPI</td>
+<td>poetry publish --username <your-username> --password <your-password></your-password></your-username></td>
+</tr>
+<tr>
+<td>&#x4FEE;&#x6539;&#x6E90;</td>
+<td>poetry source add tsinghua <a href="https://pypi.tuna.tsinghua.edu.cn/simple" target="_blank">https://pypi.tuna.tsinghua.edu.cn/simple</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&#x66F4;&#x65B0;&#x7248;&#x672C;</td>
+<td>poetry self update</td>
+</tr>
+</tbody>
+</table>
+<h3 id="&#x9879;&#x76EE;&#x6587;&#x4EF6;">&#x9879;&#x76EE;&#x6587;&#x4EF6;</h3>
+<ul>
+<li>pyproject.toml&#xFF1B;&#x7528;&#x4E8E;&#x914D;&#x7F6E;&#x548C;&#x7BA1;&#x7406;&#x4E00;&#x4E2A;Python&#x9879;&#x76EE;</li>
+<li>poetry.lock&#xFF1B;&#x8BE6;&#x7EC6;&#x8BB0;&#x5F55;&#x4E86;&#x6240;&#x6709;&#x5B89;&#x88C5;&#x7684;&#x6A21;&#x5757;&#x4E0E;&#x7248;&#x672C;</li>
+</ul>
 <h3 id="pyprojecttoml">pyproject.toml</h3>
-<pre><code class="lang-shell">[tool.poetry.dependencies]
-python = &quot;3.10.14&quot;
-numpy = &quot;&gt;=1.21.1&quot;
-Cython = &quot;^0.29&quot;
+<pre><code class="lang-shell">[tool.poetry]
+name = &quot;poetry-demo&quot;
+version = &quot;0.1.0&quot;
+description = &quot;&quot;
+authors = [&quot;wangss &lt;913292836@qq.com&gt;&quot;]
+readme = &quot;README.md&quot;
+
+[tool.poetry.dependencies]
+python = &quot;3.10.14&quot; # &#x56FA;&#x5B9A;&#x7248;&#x672C;
+numpy = &quot;&gt;=1.21.1&quot; # &#x5FC5;&#x987B;&#x5927;&#x4E8E;&#x7B49;&#x4E8E; 1.21.1 &#x7248;&#x672C;
+Cython = &quot;^0.29&quot; # &#x5FC5;&#x987B;&#x5927;&#x4E8E;&#x7B49;&#x4E8E; 0.29 &#x7248;&#x672C;&#xFF0C;&#x5E76;&#x5FC5;&#x987B;&#x8981;&#x4E0E; 0.29 &#x517C;&#x5BB9;
+my_pack = { path = &quot;./xxx/my_pack-0.1.0-py3-none-any.whl&quot; } # &#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x672C;&#x5730;&#x5305;&#x4F9D;&#x8D56;
+
+[build-system]
+requires = [&quot;poetry-core&quot;]
+build-backend = &quot;poetry.core.masonry.api&quot;
 </code></pre>
 <h3 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h3>
-<p><a href="https://blog.csdn.net/ssw_1990/article/details/140739556" target="_blank">https://blog.csdn.net/ssw_1990/article/details/140739556</a></p>
 <p><a href="https://github.com/GeekFong/how_to_use_poetry" target="_blank">https://github.com/GeekFong/how_to_use_poetry</a></p>
 
                                 
@@ -3509,7 +3777,7 @@ Cython = &quot;^0.29&quot;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"poetry","level":"1.4.4.4","depth":3,"next":{"title":"语法","level":"1.4.5","depth":2,"path":"Python/语法.md","ref":"Python/语法.md","articles":[]},"previous":{"title":"conda","level":"1.4.4.3","depth":3,"path":"Python/包管理器/conda.md","ref":"Python/包管理器/conda.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","expandable-chapters","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"vhuichen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NoteBook","language":"zh-hans","gitbook":"*","description":"笔记、分享"},"file":{"path":"Python/包管理器/poetry.md","mtime":"2024-08-28T17:36:55.996Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-08-28T17:57:07.313Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"poetry","level":"1.4.4.4","depth":3,"next":{"title":"语法","level":"1.4.5","depth":2,"path":"Python/语法.md","ref":"Python/语法.md","articles":[]},"previous":{"title":"conda","level":"1.4.4.3","depth":3,"path":"Python/包管理器/conda.md","ref":"Python/包管理器/conda.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","expandable-chapters","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"vhuichen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NoteBook","language":"zh-hans","gitbook":"*","description":"笔记、分享"},"file":{"path":"Python/包管理器/poetry.md","mtime":"2024-08-30T17:18:20.169Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-08-30T17:24:17.280Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
