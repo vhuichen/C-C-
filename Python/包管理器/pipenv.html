@@ -64,7 +64,7 @@
     <link rel="next" href="venv.html" />
     
     
-    <link rel="prev" href="./" />
+    <link rel="prev" href="pipx.html" />
     
 
     </head>
@@ -1515,7 +1515,39 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="../Debug.html">
+        <li class="chapter " data-level="1.4.1" data-path="../IDE/">
+            
+                <a href="../IDE/">
+            
+                    
+                    IDE
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="../IDE/PyCharm.html">
+            
+                <a href="../IDE/PyCharm.html">
+            
+                    
+                    PyCharm
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../Debug.html">
             
                 <a href="../Debug.html">
             
@@ -1528,33 +1560,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="../IDE.html">
-            
-                <a href="../IDE.html">
-            
-                    
-                    IDE
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.3" data-path="../pyenv.html">
-            
-                <a href="../pyenv.html">
-            
-                    
-                    pyenv
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.4" data-path="./">
+        <li class="chapter " data-level="1.4.3" data-path="./">
             
                 <a href="./">
             
@@ -1568,7 +1574,46 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.4.4.1" data-path="pipenv.html">
+        <li class="chapter " data-level="1.4.3.1" data-path="pyenv.html">
+            
+                <a href="pyenv.html">
+            
+                    
+                    pyenv
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.2" data-path="virtualenv.html">
+            
+                <a href="virtualenv.html">
+            
+                    
+                    virtualenv
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.3" data-path="pipx.html">
+            
+                <a href="pipx.html">
+            
+                    
+                    pipx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.3.4" data-path="pipenv.html">
             
                 <a href="pipenv.html">
             
@@ -1581,7 +1626,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.4.2" data-path="venv.html">
+        <li class="chapter " data-level="1.4.3.5" data-path="venv.html">
             
                 <a href="venv.html">
             
@@ -1594,7 +1639,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.4.3" data-path="conda.html">
+        <li class="chapter " data-level="1.4.3.6" data-path="conda.html">
             
                 <a href="conda.html">
             
@@ -1607,7 +1652,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.4.4" data-path="poetry.html">
+        <li class="chapter " data-level="1.4.3.7" data-path="poetry.html">
             
                 <a href="poetry.html">
             
@@ -1625,12 +1670,25 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.5" data-path="../语法.html">
+        <li class="chapter " data-level="1.4.4" data-path="../语法.html">
             
                 <a href="../语法.html">
             
                     
                     语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../Cython/">
+            
+                <a href="../Cython/">
+            
+                    
+                    Cython
             
                 </a>
             
@@ -1665,7 +1723,20 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.7.1" data-path="../基础/init_py.html">
+        <li class="chapter " data-level="1.4.7.1" data-path="../基础/语法.html">
+            
+                <a href="../基础/语法.html">
+            
+                    
+                    语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.2" data-path="../基础/init_py.html">
             
                 <a href="../基础/init_py.html">
             
@@ -3592,14 +3663,28 @@
                                 
                                 <h1 id="pipenv">pipenv</h1>
 <p><a href="https://github.com/pypa/pipenv" target="_blank">https://github.com/pypa/pipenv</a></p>
-<p>&#x96C6;&#x6210;&#x4E86; virtualenv&#x3001;pyenv &#x548C; pip &#x4E09;&#x8005;&#x7684;&#x529F;&#x80FD;&#x4E8E;&#x4E00;&#x8EAB;</p>
-<h3 id="&#x5B89;&#x88C5;">&#x5B89;&#x88C5;</h3>
+<p>&#x96C6;&#x6210;&#x4E86; virtualenv&#x3001;pyenv &#x548C; pip &#x4E09;&#x8005;&#x7684;&#x529F;&#x80FD;&#x4E8E;&#x4E00;&#x8EAB;&#xFF1B;&#x751F;&#x6210;<code>Pipfile.lock</code>&#x6765;&#x9501;&#x5B9A;&#x9879;&#x76EE;&#x4F9D;&#x8D56;&#xFF0C;&#x786E;&#x4FDD;&#x4F9D;&#x8D56;&#x7684;&#x786E;&#x5B9A;&#x6027;&#x548C;&#x5B89;&#x5168;&#x6027;</p>
+<h3 id="&#x547D;&#x4EE4;">&#x547D;&#x4EE4;</h3>
 <pre><code class="lang-shell"># &#x5B89;&#x88C5;&#x5728;&#x7528;&#x6237;&#x76EE;&#x5F55;
 pip install --user pipenv
-</code></pre>
-<h3 id="&#x547D;&#x4EE4;">&#x547D;&#x4EE4;</h3>
-<pre><code class="lang-shell"># Python &#x8DEF;&#x5F84;
-python3 -m site --user-base
+# &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x865A;&#x62DF;&#x73AF;&#x5883;&#xFF0C;&#x5E76;&#x6307;&#x5B9A; Python &#x7248;&#x672C;
+pipenv --python 3.8
+# &#x5B89;&#x88C5;&#x4E00;&#x4E2A;&#x5305;&#xFF0C;&#x4F1A;&#x81EA;&#x52A8;&#x6DFB;&#x52A0;&#x5230; Pipfile &#x6587;&#x4EF6;
+pipenv install xxx
+# &#x5B89;&#x88C5;&#x5F00;&#x53D1;&#x624D;&#x9700;&#x8981;&#x7684;&#x5305;
+pipenv install pytest --dev
+# &#x6FC0;&#x6D3B;&#x73AF;&#x5883;
+pipenv shell
+# &#x9000;&#x51FA;&#x73AF;&#x5883;
+exit
+# &#x9501;&#x5B9A;&#x4F9D;&#x8D56;
+pipenv lock
+# &#x67E5;&#x770B;&#x4F9D;&#x8D56;
+pipenv graph
+# &#x6E05;&#x7406;&#x672A;&#x4F7F;&#x7528;&#x7684;&#x4F9D;&#x8D56;
+pipenv clean
+# &#x751F;&#x6210; requirements.txt &#x6587;&#x4EF6;
+pipenv lock --requirements &gt; requirements.txt
 </code></pre>
 
                                 
@@ -3628,7 +3713,7 @@ python3 -m site --user-base
 
             
                 
-                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 包管理器">
+                <a href="pipx.html" class="navigation navigation-prev " aria-label="Previous page: pipx">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -3644,7 +3729,7 @@ python3 -m site --user-base
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"pipenv","level":"1.4.4.1","depth":3,"next":{"title":"venv","level":"1.4.4.2","depth":3,"path":"Python/包管理器/venv.md","ref":"Python/包管理器/venv.md","articles":[]},"previous":{"title":"包管理器","level":"1.4.4","depth":2,"path":"Python/包管理器/README.md","ref":"Python/包管理器/README.md","articles":[{"title":"pipenv","level":"1.4.4.1","depth":3,"path":"Python/包管理器/pipenv.md","ref":"Python/包管理器/pipenv.md","articles":[]},{"title":"venv","level":"1.4.4.2","depth":3,"path":"Python/包管理器/venv.md","ref":"Python/包管理器/venv.md","articles":[]},{"title":"conda","level":"1.4.4.3","depth":3,"path":"Python/包管理器/conda.md","ref":"Python/包管理器/conda.md","articles":[]},{"title":"poetry","level":"1.4.4.4","depth":3,"path":"Python/包管理器/poetry.md","ref":"Python/包管理器/poetry.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","expandable-chapters","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"vhuichen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NoteBook","language":"zh-hans","gitbook":"*","description":"笔记、分享"},"file":{"path":"Python/包管理器/pipenv.md","mtime":"2024-08-28T16:06:09.523Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-08-30T17:24:17.280Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"pipenv","level":"1.4.3.4","depth":3,"next":{"title":"venv","level":"1.4.3.5","depth":3,"path":"Python/包管理器/venv.md","ref":"Python/包管理器/venv.md","articles":[]},"previous":{"title":"pipx","level":"1.4.3.3","depth":3,"path":"Python/包管理器/pipx.md","ref":"Python/包管理器/pipx.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","expandable-chapters","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"vhuichen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NoteBook","language":"zh-hans","gitbook":"*","description":"笔记、分享"},"file":{"path":"Python/包管理器/pipenv.md","mtime":"2024-08-31T10:44:01.142Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-09-03T17:15:36.816Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
