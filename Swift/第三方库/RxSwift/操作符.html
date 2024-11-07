@@ -1994,7 +1994,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.9.2" data-path="../../../Python/第三方库/matplotlib.html">
+        <li class="chapter " data-level="1.4.9.2" data-path="../../../Python/第三方库/talib.html">
+            
+                <a href="../../../Python/第三方库/talib.html">
+            
+                    
+                    talib
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9.3" data-path="../../../Python/第三方库/matplotlib.html">
             
                 <a href="../../../Python/第三方库/matplotlib.html">
             
@@ -2007,7 +2020,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.9.3" data-path="../../../Python/第三方库/pandas.html">
+        <li class="chapter " data-level="1.4.9.4" data-path="../../../Python/第三方库/pandas.html">
             
                 <a href="../../../Python/第三方库/pandas.html">
             
@@ -2020,7 +2033,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.9.4" data-path="../../../Python/第三方库/Reflex.html">
+        <li class="chapter " data-level="1.4.9.5" data-path="../../../Python/第三方库/Reflex.html">
             
                 <a href="../../../Python/第三方库/Reflex.html">
             
@@ -2033,7 +2046,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.9.5" data-path="../../../Python/第三方库/回测库/">
+        <li class="chapter " data-level="1.4.9.6" data-path="../../../Python/第三方库/回测库/">
             
                 <a href="../../../Python/第三方库/回测库/">
             
@@ -2047,7 +2060,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.9.5.1" data-path="../../../Python/第三方库/回测库/backtrader.html">
+        <li class="chapter " data-level="1.4.9.6.1" data-path="../../../Python/第三方库/回测库/backtrader.html">
             
                 <a href="../../../Python/第三方库/回测库/backtrader.html">
             
@@ -2065,7 +2078,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.9.6" data-path="../../../Python/第三方库/setuptools.html">
+        <li class="chapter " data-level="1.4.9.7" data-path="../../../Python/第三方库/setuptools.html">
             
                 <a href="../../../Python/第三方库/setuptools.html">
             
@@ -2078,7 +2091,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.9.7" data-path="../../../Python/第三方库/numpy.html">
+        <li class="chapter " data-level="1.4.9.8" data-path="../../../Python/第三方库/numpy.html">
             
                 <a href="../../../Python/第三方库/numpy.html">
             
@@ -4171,7 +4184,7 @@ next(&#x1F431;)
 next(&#x1F42D;)
 */</span>
 </code></pre>
-<h3 id="connect">connect</h3>
+<h3 id="connect--publish">connect &amp; publish</h3>
 <p><strong><code>ConnectableObservable</code></strong> &#x548C;&#x666E;&#x901A;&#x7684; <code>Observable</code> &#x5341;&#x5206;&#x76F8;&#x4F3C;&#xFF0C;&#x4E0D;&#x8FC7;&#x5728;&#x88AB;&#x8BA2;&#x9605;&#x540E;&#x4E0D;&#x4F1A;&#x53D1;&#x51FA;&#x5143;&#x7D20;&#xFF0C;&#x76F4;&#x5230; <strong>connect</strong> &#x64CD;&#x4F5C;&#x7B26;&#x88AB;&#x5E94;&#x7528;&#x4E3A;&#x6B62;&#x3002;&#x8FD9;&#x6837;&#x4E00;&#x6765;&#x4F60;&#x53EF;&#x4EE5;&#x7B49;&#x6240;&#x6709;&#x89C2;&#x5BDF;&#x8005;&#x5168;&#x90E8;&#x8BA2;&#x9605;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x624D;&#x53D1;&#x51FA;&#x5143;&#x7D20;&#x3002;</p>
 <pre><code class="lang-swift"><span class="hljs-keyword">let</span> intSequence = <span class="hljs-type">Observable</span>&lt;<span class="hljs-type">Int</span>&gt;.interval(<span class="hljs-number">1</span>, scheduler: <span class="hljs-type">MainScheduler</span>.instance)
     .publish()
@@ -4211,8 +4224,485 @@ Subscription 3:, Event: 5
 ...
 */</span>
 </code></pre>
+<h3 id="create">create</h3>
+<p><strong>create</strong> &#x64CD;&#x4F5C;&#x7B26;&#x5C06;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; <code>Observable</code>&#xFF0C;&#x9700;&#x8981;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x6784;&#x5EFA;&#x51FD;&#x6570;&#xFF0C;&#x5728;&#x6784;&#x5EFA;&#x51FD;&#x6570;&#x91CC;&#x9762;&#x63CF;&#x8FF0;&#x4E8B;&#x4EF6;&#xFF08;<code>next</code>&#xFF0C;<code>error</code>&#xFF0C;<code>completed</code>&#xFF09;&#x7684;&#x4EA7;&#x751F;&#x8FC7;&#x7A0B;&#x3002;</p>
+<p>&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#x4E00;&#x4E2A;&#x6709;&#x9650;&#x7684;&#x5E8F;&#x5217;&#xFF0C;&#x53EA;&#x4F1A;&#x8C03;&#x7528;&#x4E00;&#x6B21;<strong>&#x89C2;&#x5BDF;&#x8005;</strong>&#x7684; <code>onCompleted</code> &#x6216;&#x8005; <code>onError</code> &#x65B9;&#x6CD5;&#x3002;&#x5E76;&#x4E14;&#x5728;&#x8C03;&#x7528;&#x5B83;&#x4EEC;&#x540E;&#xFF0C;&#x4E0D;&#x4F1A;&#x518D;&#x53BB;&#x8C03;&#x7528;<strong>&#x89C2;&#x5BDF;&#x8005;</strong>&#x7684;&#x5176;&#x4ED6;&#x65B9;&#x6CD5;&#x3002;</p>
+<pre><code class="lang-swift"><span class="hljs-keyword">let</span> id = <span class="hljs-type">Observable</span>&lt;<span class="hljs-type">Int</span>&gt;.create { observer <span class="hljs-keyword">in</span>
+    observer.onNext(<span class="hljs-number">0</span>)
+    observer.onNext(<span class="hljs-number">1</span>)
+    observer.onNext(<span class="hljs-number">2</span>)
+    observer.onNext(<span class="hljs-number">3</span>)
+    observer.onCompleted()
+    <span class="hljs-keyword">return</span> <span class="hljs-type">Disposables</span>.create()
+}
+</code></pre>
+<h3 id="debounce">debounce</h3>
+<p><strong>debounce</strong> &#x64CD;&#x4F5C;&#x7B26;&#x5C06;&#x53D1;&#x51FA;&#x8FD9;&#x79CD;&#x5143;&#x7D20;&#xFF0C;&#x5728; <code>Observable</code> &#x4EA7;&#x751F;&#x8FD9;&#x79CD;&#x5143;&#x7D20;&#x540E;&#xFF0C;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x5185;&#x6CA1;&#x6709;&#x65B0;&#x5143;&#x7D20;&#x4EA7;&#x751F;&#x3002;</p>
+<p>&#x7ECF;&#x5178;&#x573A;&#x666F;&#xFF1A;&#x8F93;&#x5165;&#x6846;&#x505C;&#x6B62;&#x8F93;&#x5165;&#x540E;&#x518D;&#x53D1;&#x51FA;&#x4FE1;&#x53F7;&#x3002;</p>
+<h3 id="debug">debug</h3>
+<p>&#x6253;&#x5370;&#x6240;&#x6709;&#x7684;&#x8BA2;&#x9605;&#xFF0C;&#x4E8B;&#x4EF6;&#x4EE5;&#x53CA;&#x9500;&#x6BC1;&#x4FE1;&#x606F;</p>
+<pre><code class="lang-swift"><span class="hljs-keyword">let</span> disposeBag = <span class="hljs-type">DisposeBag</span>()
+
+<span class="hljs-keyword">let</span> sequence = <span class="hljs-type">Observable</span>&lt;<span class="hljs-type">String</span>&gt;.create { observer <span class="hljs-keyword">in</span>
+    observer.onNext(<span class="hljs-string">&quot;&#x1F34E;&quot;</span>)
+    observer.onNext(<span class="hljs-string">&quot;&#x1F350;&quot;</span>)
+    observer.onCompleted()
+    <span class="hljs-keyword">return</span> <span class="hljs-type">Disposables</span>.create()
+}
+
+sequence
+    .debug(<span class="hljs-string">&quot;Fruit&quot;</span>)
+    .subscribe()
+    .disposed(by: disposeBag)
+
+<span class="hljs-comment">/*
+2017-11-06 20:49:43.187: Fruit -&gt; subscribed
+2017-11-06 20:49:43.188: Fruit -&gt; Event next(&#x1F34E;)
+2017-11-06 20:49:43.188: Fruit -&gt; Event next(&#x1F350;)
+2017-11-06 20:49:43.188: Fruit -&gt; Event completed
+2017-11-06 20:49:43.189: Fruit -&gt; isDisposed
+*/</span>
+</code></pre>
+<h3 id="deferred">deferred</h3>
+<p><strong>deferred</strong> &#x64CD;&#x4F5C;&#x7B26;&#x5C06;&#x7B49;&#x5F85;&#x89C2;&#x5BDF;&#x8005;&#x8BA2;&#x9605;&#x5B83;&#xFF0C;&#x624D;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; <code>Observable</code>&#xFF0C;&#x5B83;&#x4F1A;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x6784;&#x5EFA;&#x51FD;&#x6570;&#x4E3A;&#x6BCF;&#x4E00;&#x4F4D;&#x8BA2;&#x9605;&#x8005;&#x521B;&#x5EFA;&#x65B0;&#x7684; <code>Observable</code>&#x3002;&#x770B;&#x4E0A;&#x53BB;&#x6BCF;&#x4F4D;&#x8BA2;&#x9605;&#x8005;&#x90FD;&#x662F;&#x5BF9;&#x540C;&#x4E00;&#x4E2A; <code>Observable</code> &#x4EA7;&#x751F;&#x8BA2;&#x9605;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x5B83;&#x4EEC;&#x90FD;&#x83B7;&#x5F97;&#x4E86;&#x72EC;&#x7ACB;&#x7684;&#x5E8F;&#x5217;&#x3002;</p>
+<p>&#x5728;&#x4E00;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x76F4;&#x5230;&#x8BA2;&#x9605;&#x65F6;&#x624D;&#x521B;&#x5EFA; <code>Observable</code> &#x662F;&#x53EF;&#x4EE5;&#x4FDD;&#x8BC1;&#x62FF;&#x5230;&#x7684;&#x6570;&#x636E;&#x90FD;&#x662F;&#x6700;&#x65B0;&#x7684;&#x3002;</p>
+<h3 id="delay">delay</h3>
+<p><strong>delay</strong> &#x64CD;&#x4F5C;&#x7B26;&#x5C06;&#x4FEE;&#x6539;&#x4E00;&#x4E2A; <code>Observable</code>&#xFF0C;&#x5B83;&#x4F1A;&#x5C06; <code>Observable</code> &#x7684;&#x6240;&#x6709;&#x5143;&#x7D20;&#x90FD;&#x62D6;&#x5EF6;&#x4E00;&#x6BB5;&#x8BBE;&#x5B9A;&#x597D;&#x7684;&#x65F6;&#x95F4;&#xFF0C; &#x7136;&#x540E;&#x624D;&#x5C06;&#x5B83;&#x4EEC;&#x53D1;&#x9001;&#x51FA;&#x6765;&#x3002;</p>
+<h3 id="delaysubscription">delaySubscription</h3>
+<p><strong>delaySubscription</strong> &#x64CD;&#x4F5C;&#x7B26;&#x5C06;&#x5728;&#x7ECF;&#x8FC7;&#x6240;&#x8BBE;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#x540E;&#xFF0C;&#x624D;&#x5BF9; <code>Observable</code> &#x8FDB;&#x884C;&#x8BA2;&#x9605;&#x64CD;&#x4F5C;&#x3002;</p>
+<h3 id="dematerialize">dematerialize</h3>
+<p>dematerialize &#x64CD;&#x4F5C;&#x7B26;&#x5C06; materialize &#x8F6C;&#x6362;&#x540E;&#x7684;&#x5143;&#x7D20;&#x8FD8;&#x539F;</p>
+<h3 id="distinctuntilchanged">distinctUntilChanged</h3>
+<p><strong>distinctUntilChanged</strong> &#x64CD;&#x4F5C;&#x7B26;&#x5C06;&#x963B;&#x6B62; <code>Observable</code> &#x53D1;&#x51FA;&#x76F8;&#x540C;&#x7684;&#x5143;&#x7D20;&#x3002;&#x5982;&#x679C;&#x540E;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x548C;&#x524D;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x662F;&#x76F8;&#x540C;&#x7684;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x5143;&#x7D20;&#x5C06;&#x4E0D;&#x4F1A;&#x88AB;&#x53D1;&#x51FA;&#x6765;&#x3002;&#x5982;&#x679C;&#x540E;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x548C;&#x524D;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x4E0D;&#x76F8;&#x540C;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x5143;&#x7D20;&#x624D;&#x4F1A;&#x88AB;&#x53D1;&#x51FA;&#x6765;&#x3002;</p>
+<h3 id="do">do</h3>
+<p>&#x5F53; <code>Observable</code> &#x7684;&#x67D0;&#x4E9B;&#x4E8B;&#x4EF6;&#x4EA7;&#x751F;&#x65F6;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <strong>do</strong> &#x64CD;&#x4F5C;&#x7B26;&#x6765;&#x6CE8;&#x518C;&#x4E00;&#x4E9B;&#x56DE;&#x8C03;&#x64CD;&#x4F5C;&#x3002;&#x8FD9;&#x4E9B;&#x56DE;&#x8C03;&#x4F1A;&#x88AB;&#x5355;&#x72EC;&#x8C03;&#x7528;&#xFF0C;&#x5B83;&#x4EEC;&#x4F1A;&#x548C; <code>Observable</code> &#x539F;&#x672C;&#x7684;&#x56DE;&#x8C03;&#x5206;&#x79BB;&#x3002;</p>
+<h3 id="elementat">elementAt</h3>
+<p><strong>elementAt</strong> &#x64CD;&#x4F5C;&#x7B26;&#x5C06;&#x62C9;&#x53D6; <code>Observable</code> &#x5E8F;&#x5217;&#x4E2D;&#x6307;&#x5B9A;&#x7D22;&#x5F15;&#x6570;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x5B83;&#x4F5C;&#x4E3A;&#x552F;&#x4E00;&#x7684;&#x5143;&#x7D20;&#x53D1;&#x51FA;&#x3002;</p>
+<pre><code class="lang-swift"><span class="hljs-type">Observable</span>.of(<span class="hljs-string">&quot;&#x1F431;&quot;</span>, <span class="hljs-string">&quot;&#x1F430;&quot;</span>, <span class="hljs-string">&quot;&#x1F436;&quot;</span>, <span class="hljs-string">&quot;&#x1F438;&quot;</span>, <span class="hljs-string">&quot;&#x1F437;&quot;</span>, <span class="hljs-string">&quot;&#x1F435;&quot;</span>)
+    .elementAt(<span class="hljs-number">3</span>)
+    .subscribe(onNext: { <span class="hljs-built_in">print</span>($<span class="hljs-number">0</span>) })
+    .disposed(by: disposeBag)
+<span class="hljs-comment">/*
+&#x1F438;
+*/</span>
+</code></pre>
+<h3 id="empty">empty</h3>
+<p><strong>empty</strong> &#x64CD;&#x4F5C;&#x7B26;&#x5C06;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; <code>Observable</code>&#xFF0C;&#x8FD9;&#x4E2A; <code>Observable</code> &#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x5B8C;&#x6210;&#x4E8B;&#x4EF6;&#x3002;</p>
+<pre><code class="lang-swift"><span class="hljs-keyword">let</span> id = <span class="hljs-type">Observable</span>&lt;<span class="hljs-type">Int</span>&gt;.empty()
+<span class="hljs-comment">// &#x7B49;&#x4EF7;&#x4E8E;</span>
+<span class="hljs-keyword">let</span> id = <span class="hljs-type">Observable</span>&lt;<span class="hljs-type">Int</span>&gt;.create { observer <span class="hljs-keyword">in</span>
+    observer.onCompleted()
+    <span class="hljs-keyword">return</span> <span class="hljs-type">Disposables</span>.create()
+}
+</code></pre>
+<h3 id="error">error</h3>
+<p><strong>error</strong> &#x64CD;&#x4F5C;&#x7B26;&#x5C06;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; <code>Observable</code>&#xFF0C;&#x8FD9;&#x4E2A; <code>Observable</code> &#x53EA;&#x4F1A;&#x4EA7;&#x751F;&#x4E00;&#x4E2A; <code>error</code> &#x4E8B;&#x4EF6;&#x3002;</p>
+<pre><code class="lang-swift"><span class="hljs-keyword">let</span> error: <span class="hljs-type">Error</span> = ...
+<span class="hljs-keyword">let</span> id = <span class="hljs-type">Observable</span>&lt;<span class="hljs-type">Int</span>&gt;.error(error)
+<span class="hljs-comment">// &#x7B49;&#x4EF7;&#x4E8E;</span>
+<span class="hljs-keyword">let</span> error: <span class="hljs-type">Error</span> = ...
+<span class="hljs-keyword">let</span> id = <span class="hljs-type">Observable</span>&lt;<span class="hljs-type">Int</span>&gt;.create { observer <span class="hljs-keyword">in</span>
+    observer.onError(error)
+    <span class="hljs-keyword">return</span> <span class="hljs-type">Disposables</span>.create()
+}
+</code></pre>
+<h3 id="filter">filter</h3>
+<p><strong>filter</strong> &#x64CD;&#x4F5C;&#x7B26;&#x5C06;&#x901A;&#x8FC7;&#x4F60;&#x63D0;&#x4F9B;&#x7684;&#x5224;&#x5B9A;&#x65B9;&#x6CD5;&#x8FC7;&#x6EE4;&#x4E00;&#x4E2A; <code>Observable</code>&#x3002;</p>
+<pre><code class="lang-swift"><span class="hljs-type">Observable</span>.of(<span class="hljs-number">2</span>, <span class="hljs-number">30</span>, <span class="hljs-number">22</span>, <span class="hljs-number">5</span>, <span class="hljs-number">60</span>, <span class="hljs-number">1</span>)
+          .<span class="hljs-built_in">filter</span> { $<span class="hljs-number">0</span> &gt; <span class="hljs-number">10</span> }
+          .subscribe(onNext: { <span class="hljs-built_in">print</span>($<span class="hljs-number">0</span>) })
+          .disposed(by: disposeBag)
+<span class="hljs-comment">/*
+30
+22
+60
+*/</span>
+</code></pre>
+<h3 id="flatmap">flatMap</h3>
+<p><strong>flatMap</strong> &#x64CD;&#x4F5C;&#x7B26;&#x5C06;&#x6E90; <code>Observable</code> &#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x5E94;&#x7528;&#x4E00;&#x4E2A;&#x8F6C;&#x6362;&#x65B9;&#x6CD5;&#xFF0C;&#x5C06;&#x4ED6;&#x4EEC;&#x8F6C;&#x6362;&#x6210; <code>Observables</code>&#x3002; &#x7136;&#x540E;&#x5C06;&#x8FD9;&#x4E9B; <code>Observables</code> &#x7684;&#x5143;&#x7D20;&#x5408;&#x5E76;&#x4E4B;&#x540E;&#x518D;&#x53D1;&#x9001;&#x51FA;&#x6765;&#x3002;</p>
+<p>&#x5F53; <code>Observable</code> &#x7684;&#x5143;&#x7D20;&#x672C;&#x8EAB;&#x62E5;&#x6709;&#x5176;&#x4ED6;&#x7684; <code>Observable</code> &#x65F6;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5C06;&#x6240;&#x6709;<strong>&#x5B50;</strong> <code>Observables</code> &#x7684;&#x5143;&#x7D20;&#x53D1;&#x9001;&#x51FA;&#x6765;&#x3002;</p>
+<pre><code class="lang-swift"><span class="hljs-keyword">let</span> first = <span class="hljs-type">BehaviorSubject</span>(value: <span class="hljs-string">&quot;&#x1F466;&#x1F3FB;&quot;</span>)
+<span class="hljs-keyword">let</span> second = <span class="hljs-type">BehaviorSubject</span>(value: <span class="hljs-string">&quot;&#x1F170;&#xFE0F;&quot;</span>)
+<span class="hljs-keyword">let</span> subject = <span class="hljs-type">BehaviorSubject</span>(value: first)
+
+subject.asObservable()
+        .flatMap { $<span class="hljs-number">0</span> }
+        .subscribe(onNext: { <span class="hljs-built_in">print</span>($<span class="hljs-number">0</span>) })
+        .disposed(by: disposeBag)
+
+first.onNext(<span class="hljs-string">&quot;&#x1F431;&quot;</span>)
+subject.onNext(second)
+second.onNext(<span class="hljs-string">&quot;&#x1F171;&#xFE0F;&quot;</span>)
+first.onNext(<span class="hljs-string">&quot;&#x1F436;&quot;</span>)
+<span class="hljs-comment">/*
+&#x1F466;&#x1F3FB;
+&#x1F431;
+&#x1F170;&#xFE0F;
+&#x1F171;&#xFE0F;
+&#x1F436;
+*/</span>
+</code></pre>
+<h3 id="flatmaplatest">flatMapLatest</h3>
+<p><strong>flatMapLatest</strong> &#x64CD;&#x4F5C;&#x7B26;&#x5C06;&#x6E90; <code>Observable</code> &#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x5E94;&#x7528;&#x4E00;&#x4E2A;&#x8F6C;&#x6362;&#x65B9;&#x6CD5;&#xFF0C;&#x5C06;&#x4ED6;&#x4EEC;&#x8F6C;&#x6362;&#x6210; <code>Observables</code>&#x3002;&#x4E00;&#x65E6;&#x8F6C;&#x6362;&#x51FA;&#x4E00;&#x4E2A;&#x65B0;&#x7684; <code>Observable</code>&#xFF0C;&#x5C31;&#x53EA;&#x53D1;&#x51FA;&#x5B83;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x65E7;&#x7684; <code>Observables</code> &#x7684;&#x5143;&#x7D20;&#x5C06;&#x88AB;&#x5FFD;&#x7565;&#x6389;&#x3002;</p>
+<pre><code class="lang-swift"><span class="hljs-keyword">let</span> first = <span class="hljs-type">BehaviorSubject</span>(value: <span class="hljs-string">&quot;&#x1F466;&#x1F3FB;&quot;</span>)
+<span class="hljs-keyword">let</span> second = <span class="hljs-type">BehaviorSubject</span>(value: <span class="hljs-string">&quot;&#x1F170;&#xFE0F;&quot;</span>)
+<span class="hljs-keyword">let</span> subject = <span class="hljs-type">BehaviorSubject</span>(value: first)
+
+subject.asObservable()
+        .flatMapLatest { $<span class="hljs-number">0</span> }
+        .subscribe(onNext: { <span class="hljs-built_in">print</span>($<span class="hljs-number">0</span>) })
+        .disposed(by: disposeBag)
+
+first.onNext(<span class="hljs-string">&quot;&#x1F431;&quot;</span>)
+subject.onNext(second)
+second.onNext(<span class="hljs-string">&quot;&#x1F171;&#xFE0F;&quot;</span>)
+first.onNext(<span class="hljs-string">&quot;&#x1F436;&quot;</span>)
+<span class="hljs-comment">/*
+&#x1F466;&#x1F3FB;
+&#x1F431;
+&#x1F170;&#xFE0F;
+&#x1F171;&#xFE0F;
+*/</span>
+</code></pre>
+<h3 id="from">from</h3>
+<p>&#x5F53;&#x4F60;&#x5728;&#x4F7F;&#x7528; <code>Observable</code> &#x65F6;&#xFF0C;&#x5982;&#x679C;&#x80FD;&#x591F;&#x76F4;&#x63A5;&#x5C06;&#x5176;&#x4ED6;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x4E3A; <code>Observable</code>&#xFF0C;&#x8FD9;&#x5C06;&#x662F;&#x975E;&#x5E38;&#x7701;&#x4E8B;&#x7684;&#x3002;<strong>from</strong> &#x64CD;&#x4F5C;&#x7B26;&#x5C31;&#x63D0;&#x4F9B;&#x4E86;&#x8FD9;&#x79CD;&#x529F;&#x80FD;&#x3002;</p>
+<pre><code class="lang-swift"><span class="hljs-keyword">let</span> numbers = <span class="hljs-type">Observable</span>.from([<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>])
+<span class="hljs-comment">//&#x76F8;&#x5F53;&#x4E8E;</span>
+<span class="hljs-keyword">let</span> numbers = <span class="hljs-type">Observable</span>&lt;<span class="hljs-type">Int</span>&gt;.create { observer <span class="hljs-keyword">in</span>
+    observer.onNext(<span class="hljs-number">0</span>)
+    observer.onNext(<span class="hljs-number">1</span>)
+    observer.onNext(<span class="hljs-number">2</span>)
+    observer.onCompleted()
+    <span class="hljs-keyword">return</span> <span class="hljs-type">Disposables</span>.create()
+}
+
+<span class="hljs-keyword">let</span> <span class="hljs-keyword">optional</span>: <span class="hljs-type">Int</span>? = <span class="hljs-number">1</span>
+<span class="hljs-keyword">let</span> value = <span class="hljs-type">Observable</span>.from(<span class="hljs-keyword">optional</span>: <span class="hljs-keyword">optional</span>)
+<span class="hljs-comment">//&#x76F8;&#x5F53;&#x4E8E;</span>
+<span class="hljs-keyword">let</span> <span class="hljs-keyword">optional</span>: <span class="hljs-type">Int</span>? = <span class="hljs-number">1</span>
+<span class="hljs-keyword">let</span> value = <span class="hljs-type">Observable</span>&lt;<span class="hljs-type">Int</span>&gt;.create { observer <span class="hljs-keyword">in</span>
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">let</span> element = <span class="hljs-keyword">optional</span> {
+        observer.onNext(element)
+    }
+    observer.onCompleted()
+    <span class="hljs-keyword">return</span> <span class="hljs-type">Disposables</span>.create()
+}
+</code></pre>
+<h3 id="groupby">groupBy</h3>
+<p><strong>groupBy</strong> &#x64CD;&#x4F5C;&#x7B26;&#x5C06;&#x6E90; <code>Observable</code> &#x5206;&#x89E3;&#x4E3A;&#x591A;&#x4E2A;&#x5B50; <code>Observable</code>&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x8FD9;&#x4E9B;&#x5B50; <code>Observable</code> &#x53D1;&#x9001;&#x51FA;&#x6765;&#x3002;</p>
+<p>&#x5B83;&#x4F1A;&#x5C06;&#x5143;&#x7D20;&#x901A;&#x8FC7;&#x67D0;&#x4E2A;&#x952E;&#x8FDB;&#x884C;&#x5206;&#x7EC4;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x5206;&#x7EC4;&#x540E;&#x7684;&#x5143;&#x7D20;&#x5E8F;&#x5217;&#x4EE5; <code>Observable</code> &#x7684;&#x5F62;&#x6001;&#x53D1;&#x9001;&#x51FA;&#x6765;&#x3002;</p>
+<h3 id="ignoreelements">ignoreElements</h3>
+<p><strong>ignoreElements</strong> &#x64CD;&#x4F5C;&#x7B26;&#x5C06;&#x963B;&#x6B62; <code>Observable</code> &#x53D1;&#x51FA; <code>next</code> &#x4E8B;&#x4EF6;&#xFF0C;&#x4F46;&#x662F;&#x5141;&#x8BB8;&#x4ED6;&#x53D1;&#x51FA; <code>error</code> &#x6216; <code>completed</code> &#x4E8B;&#x4EF6;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x4F60;&#x5E76;&#x4E0D;&#x5173;&#x5FC3; <code>Observable</code> &#x7684;&#x4EFB;&#x4F55;&#x5143;&#x7D20;&#xFF0C;&#x4F60;&#x53EA;&#x60F3;&#x77E5;&#x9053; <code>Observable</code> &#x5728;&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x7EC8;&#x6B62;&#xFF0C;&#x90A3;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <strong>ignoreElements</strong> &#x64CD;&#x4F5C;&#x7B26;&#x3002;</p>
+<h3 id="interval">interval</h3>
+<p><strong>interval</strong> &#x64CD;&#x4F5C;&#x7B26;&#x5C06;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; <code>Observable</code>&#xFF0C;&#x5B83;&#x6BCF;&#x9694;&#x4E00;&#x6BB5;&#x8BBE;&#x5B9A;&#x7684;&#x65F6;&#x95F4;&#xFF0C;&#x53D1;&#x51FA;&#x4E00;&#x4E2A;&#x7D22;&#x5F15;&#x6570;&#x7684;&#x5143;&#x7D20;&#x3002;&#x5B83;&#x5C06;&#x53D1;&#x51FA;&#x65E0;&#x6570;&#x4E2A;&#x5143;&#x7D20;&#x3002;</p>
+<h3 id="just">just</h3>
+<p><strong>just</strong> &#x64CD;&#x4F5C;&#x7B26;&#x5C06;&#x67D0;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x8F6C;&#x6362;&#x4E3A; <code>Observable</code>&#x3002;</p>
+<pre><code class="lang-swift"><span class="hljs-keyword">let</span> id = <span class="hljs-type">Observable</span>.just(<span class="hljs-number">0</span>)
+<span class="hljs-comment">// ==</span>
+<span class="hljs-keyword">let</span> id = <span class="hljs-type">Observable</span>&lt;<span class="hljs-type">Int</span>&gt;.create { observer <span class="hljs-keyword">in</span>
+    observer.onNext(<span class="hljs-number">0</span>)
+    observer.onCompleted()
+    <span class="hljs-keyword">return</span> <span class="hljs-type">Disposables</span>.create()
+}
+</code></pre>
+<h3 id="map">map</h3>
+<p>&#x76F8;&#x5F53;&#x4E8E; map &#x9AD8;&#x9636;&#x51FD;&#x6570;&#xFF0C;&#x6570;&#x636E;&#x8F6C;&#x6362;</p>
+<pre><code class="lang-swift"><span class="hljs-type">Observable</span>.of(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)
+    .<span class="hljs-built_in">map</span> { $<span class="hljs-number">0</span> * <span class="hljs-number">10</span> }
+    .subscribe(onNext: { <span class="hljs-built_in">print</span>($<span class="hljs-number">0</span>) })
+    .disposed(by: disposeBag)
+</code></pre>
+<h3 id="merge">merge</h3>
+<p>&#x901A;&#x8FC7;&#x4F7F;&#x7528; <strong>merge</strong> &#x64CD;&#x4F5C;&#x7B26;&#x4F60;&#x53EF;&#x4EE5;&#x5C06;&#x591A;&#x4E2A; <code>Observables</code> &#x5408;&#x5E76;&#x6210;&#x4E00;&#x4E2A;&#xFF0C;&#x5F53;&#x67D0;&#x4E00;&#x4E2A; <code>Observable</code> &#x53D1;&#x51FA;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x65F6;&#xFF0C;&#x4ED6;&#x5C31;&#x5C06;&#x8FD9;&#x4E2A;&#x5143;&#x7D20;&#x53D1;&#x51FA;&#x3002;</p>
+<p>&#x5982;&#x679C;&#xFF0C;&#x67D0;&#x4E00;&#x4E2A; <code>Observable</code> &#x53D1;&#x51FA;&#x4E00;&#x4E2A; <code>onError</code> &#x4E8B;&#x4EF6;&#xFF0C;&#x90A3;&#x4E48;&#x88AB;&#x5408;&#x5E76;&#x7684; <code>Observable</code> &#x4E5F;&#x4F1A;&#x5C06;&#x5B83;&#x53D1;&#x51FA;&#xFF0C;&#x5E76;&#x4E14;&#x7ACB;&#x5373;&#x7EC8;&#x6B62;&#x5E8F;&#x5217;&#x3002;</p>
+<pre><code class="lang-swift"><span class="hljs-keyword">let</span> subject1 = <span class="hljs-type">PublishSubject</span>&lt;<span class="hljs-type">String</span>&gt;()
+<span class="hljs-keyword">let</span> subject2 = <span class="hljs-type">PublishSubject</span>&lt;<span class="hljs-type">String</span>&gt;()
+
+<span class="hljs-type">Observable</span>.of(subject1, subject2)
+    .merge()
+    .subscribe(onNext: { <span class="hljs-built_in">print</span>($<span class="hljs-number">0</span>) })
+    .disposed(by: disposeBag)
+
+subject1.onNext(<span class="hljs-string">&quot;&#x1F170;&#xFE0F;&quot;</span>)
+subject1.onNext(<span class="hljs-string">&quot;&#x1F171;&#xFE0F;&quot;</span>)
+subject2.onNext(<span class="hljs-string">&quot;&#x2460;&quot;</span>)
+subject2.onNext(<span class="hljs-string">&quot;&#x2461;&quot;</span>)
+subject1.onNext(<span class="hljs-string">&quot;&#x1F18E;&quot;</span>)
+subject2.onNext(<span class="hljs-string">&quot;&#x2462;&quot;</span>)
+<span class="hljs-comment">/*
+&#x1F170;&#xFE0F;
+&#x1F171;&#xFE0F;
+&#x2460;
+&#x2461;
+&#x1F18E;
+&#x2462;
+*/</span>
+</code></pre>
+<h3 id="materialize">materialize</h3>
+<p>&#x901A;&#x5E38;&#xFF0C;&#x4E00;&#x4E2A;&#x6709;&#x9650;&#x7684; <code>Observable</code> &#x5C06;&#x4EA7;&#x751F;&#x96F6;&#x4E2A;&#x6216;&#x8005;&#x591A;&#x4E2A; <code>onNext</code> &#x4E8B;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#x4EA7;&#x751F;&#x4E00;&#x4E2A; <code>onCompleted</code> &#x6216;&#x8005; <code>onError</code> &#x4E8B;&#x4EF6;&#x3002;</p>
+<p><strong>materialize</strong> &#x64CD;&#x4F5C;&#x7B26;&#x5C06; <code>Observable</code> &#x4EA7;&#x751F;&#x7684;&#x8FD9;&#x4E9B;&#x4E8B;&#x4EF6;&#x5168;&#x90E8;&#x8F6C;&#x6362;&#x6210;&#x5143;&#x7D20;&#xFF0C;&#x7136;&#x540E;&#x53D1;&#x9001;&#x51FA;&#x6765;&#x3002;</p>
+<h3 id="never">never</h3>
+<p><strong>never</strong> &#x64CD;&#x4F5C;&#x7B26;&#x5C06;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; <code>Observable</code>&#xFF0C;&#x8FD9;&#x4E2A; <code>Observable</code> &#x4E0D;&#x4F1A;&#x4EA7;&#x751F;&#x4EFB;&#x4F55;&#x4E8B;&#x4EF6;&#x3002;</p>
+<pre><code class="lang-swift"><span class="hljs-keyword">let</span> id = <span class="hljs-type">Observable</span>&lt;<span class="hljs-type">Int</span>&gt;.never()
+<span class="hljs-comment">// ==</span>
+<span class="hljs-keyword">let</span> id = <span class="hljs-type">Observable</span>&lt;<span class="hljs-type">Int</span>&gt;.create { observer <span class="hljs-keyword">in</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-type">Disposables</span>.create()
+}
+</code></pre>
+<h3 id="observeon">observeOn</h3>
+<p>&#x6307;&#x5B9A; Observable &#x4E8B;&#x4EF6;&#x518D;&#x54EA;&#x4E2A;&#x7EBF;&#x7A0B;&#x89E6;&#x53D1;</p>
+<h3 id="publish">publish</h3>
+<p>&#x53C2;&#x8003; connect</p>
+<h2 id="reduce">reduce</h2>
+<p><strong>reduce</strong> &#x64CD;&#x4F5C;&#x7B26;&#x5C06;&#x5BF9;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x5E94;&#x7528;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x3002;&#x7136;&#x540E;&#xFF0C;&#x5C06;&#x7ED3;&#x679C;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x586B;&#x5165;&#x5230;&#x7B2C;&#x4E8C;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x5E94;&#x7528;&#x51FD;&#x6570;&#x4E2D;&#x3002;&#x4EE5;&#x6B64;&#x7C7B;&#x63A8;&#xFF0C;&#x76F4;&#x5230;&#x904D;&#x5386;&#x5B8C;&#x5168;&#x90E8;&#x7684;&#x5143;&#x7D20;&#x540E;&#x53D1;&#x51FA;&#x6700;&#x7EC8;&#x7ED3;&#x679C;&#x3002;</p>
+<pre><code class="lang-swift"><span class="hljs-type">Observable</span>.of(<span class="hljs-number">10</span>, <span class="hljs-number">100</span>, <span class="hljs-number">1000</span>)
+    .<span class="hljs-built_in">reduce</span>(<span class="hljs-number">1</span>, accumulator: +)
+    .subscribe(onNext: { <span class="hljs-built_in">print</span>($<span class="hljs-number">0</span>) })
+    .disposed(by: disposeBag)
+
+<span class="hljs-comment">/* 1111 */</span>
+</code></pre>
+<h3 id="refcount">refCount</h3>
+<p><strong>&#x53EF;&#x88AB;&#x8FDE;&#x63A5;&#x7684; <code>Observable</code></strong> &#x548C;&#x666E;&#x901A;&#x7684; <code>Observable</code> &#x5341;&#x5206;&#x76F8;&#x4F3C;&#xFF0C;&#x4E0D;&#x8FC7;&#x5728;&#x88AB;&#x8BA2;&#x9605;&#x540E;&#x4E0D;&#x4F1A;&#x53D1;&#x51FA;&#x5143;&#x7D20;&#xFF0C;&#x76F4;&#x5230; <a href="https://beeth0ven.github.io/RxSwift-Chinese-Documentation/content/decision_tree/connect.html" target="_blank">connect</a> &#x64CD;&#x4F5C;&#x7B26;&#x88AB;&#x5E94;&#x7528;&#x4E3A;&#x6B62;&#x3002;&#x8FD9;&#x6837;&#x4E00;&#x6765;&#x4F60;&#x53EF;&#x4EE5;&#x63A7;&#x5236; <code>Observable</code> &#x5728;&#x4EC0;&#x4E48;&#x65F6;&#x5019;<strong>&#x5F00;&#x59CB;</strong>&#x53D1;&#x51FA;&#x5143;&#x7D20;&#x3002;</p>
+<p><strong>refCount</strong> &#x64CD;&#x4F5C;&#x7B26;&#x5C06;&#x81EA;&#x52A8;&#x8FDE;&#x63A5;&#x548C;&#x65AD;&#x5F00;<strong>&#x53EF;&#x88AB;&#x8FDE;&#x63A5;&#x7684; <code>Observable</code></strong>&#x3002;&#x5B83;&#x5C06;<strong>&#x53EF;&#x88AB;&#x8FDE;&#x63A5;&#x7684; <code>Observable</code></strong> &#x8F6C;&#x6362;&#x4E3A;&#x666E;&#x901A; <code>Observable</code>&#x3002;&#x5F53;&#x7B2C;&#x4E00;&#x4E2A;&#x89C2;&#x5BDF;&#x8005;&#x5BF9;&#x5B83;&#x8BA2;&#x9605;&#x65F6;&#xFF0C;&#x90A3;&#x4E48;&#x5E95;&#x5C42;&#x7684; <code>Observable</code> &#x5C06;&#x88AB;&#x8FDE;&#x63A5;&#x3002;&#x5F53;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x89C2;&#x5BDF;&#x8005;&#x79BB;&#x5F00;&#x65F6;&#xFF0C;&#x90A3;&#x4E48;&#x5E95;&#x5C42;&#x7684; <code>Observable</code> &#x5C06;&#x88AB;&#x65AD;&#x5F00;&#x8FDE;&#x63A5;&#x3002;</p>
+<h3 id="repeatelement">repeatElement</h3>
+<p><strong>repeatElement</strong> &#x64CD;&#x4F5C;&#x7B26;&#x5C06;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; <code>Observable</code>&#xFF0C;&#x8FD9;&#x4E2A; <code>Observable</code> &#x5C06;&#x65E0;&#x6B62;&#x5C3D;&#x5730;&#x53D1;&#x51FA;&#x540C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x3002;</p>
+<pre><code class="lang-swift"><span class="hljs-keyword">let</span> id = <span class="hljs-type">Observable</span>.repeatElement(<span class="hljs-number">0</span>)
+<span class="hljs-comment">// ==</span>
+<span class="hljs-keyword">let</span> id = <span class="hljs-type">Observable</span>&lt;<span class="hljs-type">Int</span>&gt;.create { observer <span class="hljs-keyword">in</span>
+    observer.onNext(<span class="hljs-number">0</span>)
+    observer.onNext(<span class="hljs-number">0</span>)
+    observer.onNext(<span class="hljs-number">0</span>)
+    observer.onNext(<span class="hljs-number">0</span>)
+    ... <span class="hljs-comment">// &#x65E0;&#x6570;&#x6B21;</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-type">Disposables</span>.create()
+}
+</code></pre>
+<h3 id="replay">replay</h3>
+<p><strong>&#x53EF;&#x88AB;&#x8FDE;&#x63A5;&#x7684; <code>Observable</code></strong> &#x548C;&#x666E;&#x901A;&#x7684; <code>Observable</code> &#x5341;&#x5206;&#x76F8;&#x4F3C;&#xFF0C;&#x4E0D;&#x8FC7;&#x5728;&#x88AB;&#x8BA2;&#x9605;&#x540E;&#x4E0D;&#x4F1A;&#x53D1;&#x51FA;&#x5143;&#x7D20;&#xFF0C;&#x76F4;&#x5230; <a href="https://beeth0ven.github.io/RxSwift-Chinese-Documentation/content/decision_tree/connect.html" target="_blank">connect</a> &#x64CD;&#x4F5C;&#x7B26;&#x88AB;&#x5E94;&#x7528;&#x4E3A;&#x6B62;&#x3002;&#x8FD9;&#x6837;&#x4E00;&#x6765;&#x4F60;&#x53EF;&#x4EE5;&#x63A7;&#x5236; <code>Observable</code> &#x5728;&#x4EC0;&#x4E48;&#x65F6;&#x5019;<strong>&#x5F00;&#x59CB;</strong>&#x53D1;&#x51FA;&#x5143;&#x7D20;&#x3002;</p>
+<p><strong>replay</strong> &#x64CD;&#x4F5C;&#x7B26;&#x5C06; <code>Observable</code> &#x8F6C;&#x6362;&#x4E3A;<strong>&#x53EF;&#x88AB;&#x8FDE;&#x63A5;&#x7684; <code>Observable</code></strong>&#xFF0C;&#x5E76;&#x4E14;&#x8FD9;&#x4E2A;<strong>&#x53EF;&#x88AB;&#x8FDE;&#x63A5;&#x7684; <code>Observable</code></strong> &#x5C06;&#x7F13;&#x5B58;&#x6700;&#x65B0;&#x7684; n &#x4E2A;&#x5143;&#x7D20;&#x3002;&#x5F53;&#x6709;&#x65B0;&#x7684;&#x89C2;&#x5BDF;&#x8005;&#x5BF9;&#x5B83;&#x8FDB;&#x884C;&#x8BA2;&#x9605;&#x65F6;&#xFF0C;&#x5B83;&#x5C31;&#x628A;&#x8FD9;&#x4E9B;&#x88AB;&#x7F13;&#x5B58;&#x7684;&#x5143;&#x7D20;&#x53D1;&#x9001;&#x7ED9;&#x89C2;&#x5BDF;&#x8005;&#x3002;</p>
+<pre><code class="lang-swift"><span class="hljs-keyword">let</span> intSequence = <span class="hljs-type">Observable</span>&lt;<span class="hljs-type">Int</span>&gt;.interval(<span class="hljs-number">1</span>, scheduler: <span class="hljs-type">MainScheduler</span>.instance)
+    .replay(<span class="hljs-number">5</span>)
+
+<span class="hljs-number">_</span> = intSequence
+    .subscribe(onNext: { <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Subscription 1:, Event: <span class="hljs-subst">\($<span class="hljs-number">0</span>)</span>&quot;</span>) })
+
+<span class="hljs-type">DispatchQueue</span>.main.asyncAfter(deadline: .now() + <span class="hljs-number">2</span>) {
+    <span class="hljs-number">_</span> = intSequence.connect()
+}
+
+<span class="hljs-type">DispatchQueue</span>.main.asyncAfter(deadline: .now() + <span class="hljs-number">4</span>) {
+  <span class="hljs-number">_</span> = intSequence
+      .subscribe(onNext: { <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Subscription 2:, Event: <span class="hljs-subst">\($<span class="hljs-number">0</span>)</span>&quot;</span>) })
+}
+
+<span class="hljs-type">DispatchQueue</span>.main.asyncAfter(deadline: .now() + <span class="hljs-number">8</span>) {
+  <span class="hljs-number">_</span> = intSequence
+      .subscribe(onNext: { <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Subscription 3:, Event: <span class="hljs-subst">\($<span class="hljs-number">0</span>)</span>&quot;</span>) })
+}
+<span class="hljs-comment">/*
+Subscription 1:, Event: 0
+Subscription 2:, Event: 0
+Subscription 1:, Event: 1
+Subscription 2:, Event: 1
+Subscription 1:, Event: 2
+Subscription 2:, Event: 2
+Subscription 1:, Event: 3
+Subscription 2:, Event: 3
+Subscription 1:, Event: 4
+Subscription 2:, Event: 4
+Subscription 3:, Event: 0
+Subscription 3:, Event: 1
+Subscription 3:, Event: 2
+Subscription 3:, Event: 3
+Subscription 3:, Event: 4
+Subscription 1:, Event: 5
+Subscription 2:, Event: 5
+Subscription 3:, Event: 5
+Subscription 1:, Event: 6
+Subscription 2:, Event: 6
+Subscription 3:, Event: 6
+...
+*/</span>
+</code></pre>
+<h3 id="retry">retry</h3>
+<p><strong>retry</strong> &#x64CD;&#x4F5C;&#x7B26;&#x5C06;&#x4E0D;&#x4F1A;&#x5C06; <code>error</code> &#x4E8B;&#x4EF6;&#xFF0C;&#x4F20;&#x9012;&#x7ED9;&#x89C2;&#x5BDF;&#x8005;&#xFF0C;&#x7136;&#x800C;&#xFF0C;&#x5B83;&#x4F1A;&#x4ECE;&#x65B0;&#x8BA2;&#x9605;&#x6E90; <code>Observable</code>&#xFF0C;&#x7ED9;&#x8FD9;&#x4E2A; <code>Observable</code> &#x4E00;&#x4E2A;&#x91CD;&#x8BD5;&#x7684;&#x673A;&#x4F1A;&#xFF0C;&#x8BA9;&#x5B83;&#x6709;&#x673A;&#x4F1A;&#x4E0D;&#x4EA7;&#x751F; <code>error</code> &#x4E8B;&#x4EF6;&#x3002;<strong>retry</strong> &#x603B;&#x662F;&#x5BF9;&#x89C2;&#x5BDF;&#x8005;&#x53D1;&#x51FA; <code>next</code> &#x4E8B;&#x4EF6;&#xFF0C;&#x5373;&#x4FBF;&#x6E90;&#x5E8F;&#x5217;&#x4EA7;&#x751F;&#x4E86;&#x4E00;&#x4E2A; <code>error</code> &#x4E8B;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x6837;&#x53EF;&#x80FD;&#x4F1A;&#x4EA7;&#x751F;&#x91CD;&#x590D;&#x7684;&#x5143;&#x7D20;&#xFF08;&#x5982;&#x4E0A;&#x56FE;&#x6240;&#x793A;&#xFF09;&#x3002;</p>
+<pre><code class="lang-swift"><span class="hljs-keyword">var</span> <span class="hljs-built_in">count</span> = <span class="hljs-number">1</span>
+<span class="hljs-keyword">let</span> sequenceThatErrors = <span class="hljs-type">Observable</span>&lt;<span class="hljs-type">String</span>&gt;.create { observer <span class="hljs-keyword">in</span>
+    observer.onNext(<span class="hljs-string">&quot;&#x1F34E;&quot;</span>)
+    observer.onNext(<span class="hljs-string">&quot;&#x1F350;&quot;</span>)
+    observer.onNext(<span class="hljs-string">&quot;&#x1F34A;&quot;</span>)
+
+    <span class="hljs-keyword">if</span> <span class="hljs-built_in">count</span> == <span class="hljs-number">1</span> {
+        observer.onError(<span class="hljs-type">TestError</span>.test)
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Error encountered&quot;</span>)
+        <span class="hljs-built_in">count</span> += <span class="hljs-number">1</span>
+    }
+
+    observer.onNext(<span class="hljs-string">&quot;&#x1F436;&quot;</span>)
+    observer.onNext(<span class="hljs-string">&quot;&#x1F431;&quot;</span>)
+    observer.onNext(<span class="hljs-string">&quot;&#x1F42D;&quot;</span>)
+    observer.onCompleted()
+
+    <span class="hljs-keyword">return</span> <span class="hljs-type">Disposables</span>.create()
+}
+
+sequenceThatErrors
+    .retry()
+    .subscribe(onNext: { <span class="hljs-built_in">print</span>($<span class="hljs-number">0</span>) })
+    .disposed(by: disposeBag)
+<span class="hljs-comment">/*
+&#x1F34E;
+&#x1F350;
+&#x1F34A;
+Error encountered
+&#x1F34E;
+&#x1F350;
+&#x1F34A;
+&#x1F436;
+&#x1F431;
+&#x1F42D;
+*/</span>
+
+<span class="hljs-comment">//============</span>
+<span class="hljs-keyword">var</span> <span class="hljs-built_in">count</span> = <span class="hljs-number">1</span>
+<span class="hljs-keyword">let</span> sequenceThatErrors = <span class="hljs-type">Observable</span>&lt;<span class="hljs-type">String</span>&gt;.create { observer <span class="hljs-keyword">in</span>
+    observer.onNext(<span class="hljs-string">&quot;&#x1F34E;&quot;</span>)
+    observer.onNext(<span class="hljs-string">&quot;&#x1F350;&quot;</span>)
+    observer.onNext(<span class="hljs-string">&quot;&#x1F34A;&quot;</span>)
+
+    <span class="hljs-keyword">if</span> <span class="hljs-built_in">count</span> &lt; <span class="hljs-number">5</span> {
+        observer.onError(<span class="hljs-type">TestError</span>.test)
+        <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;Error encountered&quot;</span>)
+        <span class="hljs-built_in">count</span> += <span class="hljs-number">1</span>
+    }
+
+    observer.onNext(<span class="hljs-string">&quot;&#x1F436;&quot;</span>)
+    observer.onNext(<span class="hljs-string">&quot;&#x1F431;&quot;</span>)
+    observer.onNext(<span class="hljs-string">&quot;&#x1F42D;&quot;</span>)
+    observer.onCompleted()
+
+    <span class="hljs-keyword">return</span> <span class="hljs-type">Disposables</span>.create()
+}
+
+sequenceThatErrors
+    .retry(<span class="hljs-number">3</span>)
+    .subscribe(onNext: { <span class="hljs-built_in">print</span>($<span class="hljs-number">0</span>) })
+    .disposed(by: disposeBag)
+<span class="hljs-comment">/*
+&#x1F34E;
+&#x1F350;
+&#x1F34A;
+Error encountered
+&#x1F34E;
+&#x1F350;
+&#x1F34A;
+Error encountered
+&#x1F34E;
+&#x1F350;
+&#x1F34A;
+Error encountered
+Unhandled error happened: test
+ subscription called from:
+*/</span>
+</code></pre>
+<h3 id="sample">sample</h3>
+<p><strong>sample</strong> &#x64CD;&#x4F5C;&#x7B26;&#x5C06;&#x4E0D;&#x5B9A;&#x671F;&#x7684;&#x5BF9;&#x6E90; <code>Observable</code> &#x8FDB;&#x884C;&#x53D6;&#x6837;&#x64CD;&#x4F5C;&#x3002;&#x901A;&#x8FC7;&#x7B2C;&#x4E8C;&#x4E2A; <code>Observable</code> &#x6765;&#x63A7;&#x5236;&#x53D6;&#x6837;&#x65F6;&#x673A;&#x3002;&#x4E00;&#x65E6;&#x7B2C;&#x4E8C;&#x4E2A; <code>Observable</code> &#x53D1;&#x51FA;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x5C31;&#x4ECE;&#x6E90; <code>Observable</code> &#x4E2D;&#x53D6;&#x51FA;&#x6700;&#x540E;&#x4EA7;&#x751F;&#x7684;&#x5143;&#x7D20;&#x3002;</p>
+<h3 id="scan">scan</h3>
+<p><strong>scan</strong> &#x64CD;&#x4F5C;&#x7B26;&#x5C06;&#x5BF9;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x5E94;&#x7528;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x5C06;&#x7ED3;&#x679C;&#x4F5C;&#x4E3A;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x53D1;&#x51FA;&#x3002;&#x7136;&#x540E;&#xFF0C;&#x5C06;&#x7ED3;&#x679C;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x586B;&#x5165;&#x5230;&#x7B2C;&#x4E8C;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x5E94;&#x7528;&#x51FD;&#x6570;&#x4E2D;&#xFF0C;&#x521B;&#x5EFA;&#x7B2C;&#x4E8C;&#x4E2A;&#x5143;&#x7D20;&#x3002;&#x4EE5;&#x6B64;&#x7C7B;&#x63A8;&#xFF0C;&#x76F4;&#x5230;&#x904D;&#x5386;&#x5B8C;&#x5168;&#x90E8;&#x7684;&#x5143;&#x7D20;&#x3002;</p>
+<pre><code class="lang-swift"><span class="hljs-type">Observable</span>.of(<span class="hljs-number">10</span>, <span class="hljs-number">100</span>, <span class="hljs-number">1000</span>)
+    .scan(<span class="hljs-number">1</span>) { aggregateValue, newValue <span class="hljs-keyword">in</span>
+        aggregateValue + newValue
+    }
+    .subscribe(onNext: { <span class="hljs-built_in">print</span>($<span class="hljs-number">0</span>) })
+    .disposed(by: disposeBag)
+<span class="hljs-comment">/*
+11
+111
+1111
+*/</span>
+</code></pre>
+<h3 id="sharereplay">shareReplay</h3>
+<p><strong>shareReplay</strong> &#x64CD;&#x4F5C;&#x7B26;&#x5C06;&#x4F7F;&#x5F97;&#x89C2;&#x5BDF;&#x8005;&#x5171;&#x4EAB;&#x6E90; <code>Observable</code>&#xFF0C;&#x5E76;&#x4E14;&#x7F13;&#x5B58;&#x6700;&#x65B0;&#x7684; <strong>n</strong> &#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x5C06;&#x8FD9;&#x4E9B;&#x5143;&#x7D20;&#x76F4;&#x63A5;&#x53D1;&#x9001;&#x7ED9;&#x65B0;&#x7684;&#x89C2;&#x5BDF;&#x8005;&#x3002;</p>
+<h3 id="single">single</h3>
+<p><strong>single</strong> &#x64CD;&#x4F5C;&#x7B26;&#x5C06;&#x9650;&#x5236; <code>Observable</code> &#x53EA;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x3002;&#x5982;&#x679C; <code>Observable</code> &#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x5B83;&#x5C06;&#x955C;&#x50CF;&#x8FD9;&#x4E2A; <code>Observable</code> &#x3002;&#x5982;&#x679C; <code>Observable</code> &#x6CA1;&#x6709;&#x5143;&#x7D20;&#x6216;&#x8005;&#x5143;&#x7D20;&#x6570;&#x91CF;&#x5927;&#x4E8E;&#x4E00;&#xFF0C;&#x5B83;&#x5C06;&#x4EA7;&#x751F;&#x4E00;&#x4E2A; <code>error</code> &#x4E8B;&#x4EF6;&#x3002;</p>
+<h3 id="skip">skip</h3>
+<p><strong>skip</strong> &#x64CD;&#x4F5C;&#x7B26;&#x53EF;&#x4EE5;&#x8BA9;&#x4F60;&#x8DF3;&#x8FC7; <code>Observable</code> &#x4E2D;&#x5934; n &#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x53EA;&#x5173;&#x6CE8;&#x540E;&#x9762;&#x7684;&#x5143;&#x7D20;&#x3002;</p>
+<pre><code class="lang-swift"><span class="hljs-type">Observable</span>.of(<span class="hljs-string">&quot;&#x1F431;&quot;</span>, <span class="hljs-string">&quot;&#x1F430;&quot;</span>, <span class="hljs-string">&quot;&#x1F436;&quot;</span>, <span class="hljs-string">&quot;&#x1F438;&quot;</span>, <span class="hljs-string">&quot;&#x1F437;&quot;</span>, <span class="hljs-string">&quot;&#x1F435;&quot;</span>)
+    .skip(<span class="hljs-number">2</span>)
+    .subscribe(onNext: { <span class="hljs-built_in">print</span>($<span class="hljs-number">0</span>) })
+    .disposed(by: disposeBag)
+<span class="hljs-comment">/*
+&#x1F436;
+&#x1F438;
+&#x1F437;
+&#x1F435;
+*/</span>
+</code></pre>
+<h3 id="skipuntil">skipUntil</h3>
+<p><strong>skipUntil</strong> &#x64CD;&#x4F5C;&#x7B26;&#x53EF;&#x4EE5;&#x8BA9;&#x4F60;&#x5FFD;&#x7565;&#x6E90; <code>Observable</code> &#x4E2D;&#x5934;&#x51E0;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x76F4;&#x5230;&#x53E6;&#x4E00;&#x4E2A; <code>Observable</code> &#x53D1;&#x51FA;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x540E;&#xFF0C;&#x5B83;&#x624D;&#x955C;&#x50CF;&#x6E90; <code>Observable</code>&#x3002;</p>
+<pre><code class="lang-swift"><span class="hljs-keyword">let</span> sourceSequence = <span class="hljs-type">PublishSubject</span>&lt;<span class="hljs-type">String</span>&gt;()
+<span class="hljs-keyword">let</span> referenceSequence = <span class="hljs-type">PublishSubject</span>&lt;<span class="hljs-type">String</span>&gt;()
+
+sourceSequence
+    .skipUntil(referenceSequence)
+    .subscribe(onNext: { <span class="hljs-built_in">print</span>($<span class="hljs-number">0</span>) })
+    .disposed(by: disposeBag)
+
+sourceSequence.onNext(<span class="hljs-string">&quot;&#x1F431;&quot;</span>)
+sourceSequence.onNext(<span class="hljs-string">&quot;&#x1F430;&quot;</span>)
+sourceSequence.onNext(<span class="hljs-string">&quot;&#x1F436;&quot;</span>)
+
+referenceSequence.onNext(<span class="hljs-string">&quot;&#x1F534;&quot;</span>)
+
+sourceSequence.onNext(<span class="hljs-string">&quot;&#x1F438;&quot;</span>)
+sourceSequence.onNext(<span class="hljs-string">&quot;&#x1F437;&quot;</span>)
+sourceSequence.onNext(<span class="hljs-string">&quot;&#x1F435;&quot;</span>)
+
+<span class="hljs-comment">/*
+&#x1F438;
+&#x1F437;
+&#x1F435;
+*/</span>
+</code></pre>
+<h3 id="skipwhile">skipWhile</h3>
+<p><strong>skipWhile</strong> &#x64CD;&#x4F5C;&#x7B26;&#x53EF;&#x4EE5;&#x8BA9;&#x4F60;&#x5FFD;&#x7565;&#x6E90; <code>Observable</code> &#x4E2D;&#x5934;&#x51E0;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x76F4;&#x5230;&#x5143;&#x7D20;&#x7684;&#x5224;&#x5B9A;&#x4E3A;&#x5426;&#x540E;&#xFF0C;&#x5B83;&#x624D;&#x955C;&#x50CF;&#x6E90; <code>Observable</code>&#x3002;</p>
+<pre><code class="lang-swift"><span class="hljs-type">Observable</span>.of(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>)
+    .skipWhile { $<span class="hljs-number">0</span> &lt; <span class="hljs-number">4</span> }
+    .subscribe(onNext: { <span class="hljs-built_in">print</span>($<span class="hljs-number">0</span>) })
+    .disposed(by: disposeBag)
+<span class="hljs-comment">/*
+4
+3
+2
+1
+*/</span>
+</code></pre>
+<h3 id="startwith">startWith</h3>
+<p><strong>startWith</strong> &#x64CD;&#x4F5C;&#x7B26;&#x4F1A;&#x5728; <code>Observable</code> &#x5934;&#x90E8;&#x63D2;&#x5165;&#x4E00;&#x4E9B;&#x5143;&#x7D20;&#x3002;</p>
+<pre><code class="lang-swift"><span class="hljs-type">Observable</span>.of(<span class="hljs-string">&quot;&#x1F436;&quot;</span>, <span class="hljs-string">&quot;&#x1F431;&quot;</span>, <span class="hljs-string">&quot;&#x1F42D;&quot;</span>, <span class="hljs-string">&quot;&#x1F439;&quot;</span>)
+    .startWith(<span class="hljs-string">&quot;1&quot;</span>)
+    .startWith(<span class="hljs-string">&quot;2&quot;</span>)
+    .startWith(<span class="hljs-string">&quot;3&quot;</span>, <span class="hljs-string">&quot;&#x1F170;&#xFE0F;&quot;</span>, <span class="hljs-string">&quot;&#x1F171;&#xFE0F;&quot;</span>)
+    .subscribe(onNext: { <span class="hljs-built_in">print</span>($<span class="hljs-number">0</span>) })
+    .disposed(by: disposeBag)
+<span class="hljs-comment">/*
+3
+&#x1F170;&#xFE0F;
+&#x1F171;&#xFE0F;
+2
+1
+&#x1F436;
+&#x1F431;
+&#x1F42D;
+&#x1F439;
+*/</span>
+</code></pre>
+<h3 id="subscribeon">subscribeOn</h3>
 <h3 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h3>
 <p><a href="https://beeth0ven.github.io/RxSwift-Chinese-Documentation/" target="_blank">https://beeth0ven.github.io/RxSwift-Chinese-Documentation/</a></p>
+<p><a href="https://github.com/beeth0ven/RxSwift-Chinese-Documentation" target="_blank">RxSwift-Chinese-Documentation</a></p>
 
                                 
                                 </section>
@@ -4256,7 +4746,7 @@ Subscription 3:, Event: 5
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"操作符","level":"1.3.4.2.2","depth":4,"next":{"title":"Subject","level":"1.3.4.2.3","depth":4,"path":"Swift/第三方库/RxSwift/Subject.md","ref":"Swift/第三方库/RxSwift/Subject.md","articles":[]},"previous":{"title":"Relay","level":"1.3.4.2.1","depth":4,"path":"Swift/第三方库/RxSwift/Relay.md","ref":"Swift/第三方库/RxSwift/Relay.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","expandable-chapters","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"vhuichen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NoteBook","language":"zh-hans","gitbook":"*","description":"笔记、分享"},"file":{"path":"Swift/第三方库/RxSwift/操作符.md","mtime":"2024-11-06T17:16:30.646Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-11-06T17:17:00.409Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"操作符","level":"1.3.4.2.2","depth":4,"next":{"title":"Subject","level":"1.3.4.2.3","depth":4,"path":"Swift/第三方库/RxSwift/Subject.md","ref":"Swift/第三方库/RxSwift/Subject.md","articles":[]},"previous":{"title":"Relay","level":"1.3.4.2.1","depth":4,"path":"Swift/第三方库/RxSwift/Relay.md","ref":"Swift/第三方库/RxSwift/Relay.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","expandable-chapters","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"vhuichen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NoteBook","language":"zh-hans","gitbook":"*","description":"笔记、分享"},"file":{"path":"Swift/第三方库/RxSwift/操作符.md","mtime":"2024-11-07T11:30:43.553Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-11-07T16:45:47.362Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
