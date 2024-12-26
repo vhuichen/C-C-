@@ -554,7 +554,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.8.3" data-path="../../iOS/工具/WebDriverAgent.html">
+        <li class="chapter " data-level="1.2.8.3" data-path="../../iOS/工具/InjectionIII.html">
+            
+                <a href="../../iOS/工具/InjectionIII.html">
+            
+                    
+                    InjectionIII
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8.4" data-path="../../iOS/工具/WebDriverAgent.html">
             
                 <a href="../../iOS/工具/WebDriverAgent.html">
             
@@ -567,7 +580,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.8.4" data-path="../../iOS/工具/Xcodeproj.html">
+        <li class="chapter " data-level="1.2.8.5" data-path="../../iOS/工具/Xcodeproj.html">
             
                 <a href="../../iOS/工具/Xcodeproj.html">
             
@@ -580,7 +593,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.8.5" data-path="../../iOS/工具/pbxproj.html">
+        <li class="chapter " data-level="1.2.8.6" data-path="../../iOS/工具/pbxproj.html">
             
                 <a href="../../iOS/工具/pbxproj.html">
             
@@ -2727,6 +2740,25 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.5.1" data-path="../../Computer/Docker/Debug.html">
+            
+                <a href="../../Computer/Docker/Debug.html">
+            
+                    
+                    Debug
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter " data-level="1.8.6" data-path="../../Computer/macOS/">
@@ -3958,6 +3990,51 @@
             
         </li>
     
+        <li class="chapter " data-level="1.17" data-path="../../Ubuntu/">
+            
+                <a href="../../Ubuntu/">
+            
+                    
+                    Ubuntu
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.17.1" data-path="../../Ubuntu/Ubuntu.html">
+            
+                <a href="../../Ubuntu/Ubuntu.html">
+            
+                    
+                    Ubuntu
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17.2" data-path="../../Ubuntu/Linux.html">
+            
+                <a href="../../Ubuntu/Linux.html">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
     
 
@@ -4004,6 +4081,21 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x547D;&#x4EE4;">&#x547D;&#x4EE4;</h1>
+<h3 id="scp">scp</h3>
+<pre><code class="lang-shell"># scp [&#x672C;&#x5730;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;] [&#x7528;&#x6237;&#x540D;]@[&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;&#x5730;&#x5740;]:[&#x8FDC;&#x7A0B;&#x8DEF;&#x5F84;]
+-r&#xFF1A;&#x9012;&#x5F52;&#x590D;&#x5236;&#x6574;&#x4E2A;&#x76EE;&#x5F55;&#x3002;
+-v&#xFF1A;&#x8BE6;&#x7EC6;&#x6A21;&#x5F0F;&#xFF0C;&#x663E;&#x793A;&#x4F20;&#x8F93;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#x3002;
+-C&#xFF1A;&#x538B;&#x7F29;&#x6587;&#x4EF6;&#x6570;&#x636E;&#x5728;&#x4F20;&#x8F93;&#x65F6;&#x3002;
+-P&#xFF1A;&#x6307;&#x5B9A;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;&#x7684;&#x7AEF;&#x53E3;&#x53F7;&#xFF08;&#x6CE8;&#x610F;&#x662F;&#x5927;&#x5199;&#x7684;P&#xFF09;&#x3002;
+-i&#xFF1A;&#x6307;&#x5B9A;&#x8EAB;&#x4EFD;&#x6587;&#x4EF6;&#xFF08;&#x7528;&#x4E8E;&#x5BC6;&#x94A5;&#x8BA4;&#x8BC1;&#xFF09;&#x3002;
+-4&#xFF1A;&#x4EC5;&#x4F7F;&#x7528;IPv4&#x5730;&#x5740;&#x3002;
+-6&#xFF1A;&#x4EC5;&#x4F7F;&#x7528;IPv6&#x5730;&#x5740;&#x3002;
+
+# &#x5C06;&#x672C;&#x5730;&#x6587;&#x4EF6;&#x590D;&#x5236;&#x5230;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;&#x6307;&#x5B9A;&#x8DEF;&#x5F84;
+scp /path/to/local/file username@remote_host:/path/to/remote/directory
+# &#x5C06;&#x8FDC;&#x7A0B;&#x4E3B;&#x673A;&#x6587;&#x4EF6;&#x590D;&#x5236;&#x5230;&#x672C;&#x5730;&#x8DEF;&#x5F84;
+scp username@remote_host:/path/to/remote/file /path/to/local/directory
+</code></pre>
 <h3 id="curl">curl</h3>
 <pre><code class="lang-shell"># -s: &#x8868;&#x793A; &quot;silent&quot; &#x6216; &quot;silent mode&quot;&#xFF0C;&#x5373;&#x9759;&#x9ED8;&#x6A21;&#x5F0F;&#xFF0C;&#x4E0D;&#x663E;&#x793A;&#x8FDB;&#x5EA6;&#x548C;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x3002;
 # --head: &#x4EC5;&#x53D1;&#x9001; HTTP &#x5934;&#x90E8;&#x4FE1;&#x606F;&#xFF0C;&#x4E0D;&#x4E0B;&#x8F7D;&#x5185;&#x5BB9;&#x3002;
@@ -4089,7 +4181,7 @@ done
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"命令","level":"1.13.4","depth":2,"next":{"title":"find","level":"1.13.4.1","depth":3,"path":"Shell/命令/find.md","ref":"Shell/命令/find.md","articles":[]},"previous":{"title":"问题集","level":"1.13.3","depth":2,"path":"Shell/问题集.md","ref":"Shell/问题集.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","expandable-chapters","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"vhuichen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NoteBook","language":"zh-hans","gitbook":"*","description":"笔记、分享"},"file":{"path":"Shell/命令/README.md","mtime":"2024-08-27T14:47:16.976Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-12-22T16:21:25.534Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"命令","level":"1.13.4","depth":2,"next":{"title":"find","level":"1.13.4.1","depth":3,"path":"Shell/命令/find.md","ref":"Shell/命令/find.md","articles":[]},"previous":{"title":"问题集","level":"1.13.3","depth":2,"path":"Shell/问题集.md","ref":"Shell/问题集.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","expandable-chapters","search-pro"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-pro":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}},"theme":"default","author":"vhuichen","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NoteBook","language":"zh-hans","gitbook":"*","description":"笔记、分享"},"file":{"path":"Shell/命令/README.md","mtime":"2024-12-23T13:45:32.839Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-12-26T16:53:48.916Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
